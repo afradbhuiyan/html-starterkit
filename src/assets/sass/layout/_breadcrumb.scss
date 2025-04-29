@@ -43,7 +43,7 @@
     color: hsl(var(--black));
     padding: 0 5px;
     font-weight: 400;
-    @include fs-16;
+    font-size: rem(16px);
 
     &-text {
       color: hsl(var(--base));

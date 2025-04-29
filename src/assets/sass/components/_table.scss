@@ -35,13 +35,15 @@
 
   &__name {
     margin-bottom: 0;
-    @include fs-13;
+    font-size: rem(13px);
     color: hsl(var(--black) / 0.7);
   }
 }
 
 .action-buttons {
-  @extend .flex-align;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
   justify-content: flex-end;
 }
@@ -97,7 +99,7 @@
 
         &::before {
           display: block;
-          @include fs-14;
+          font-size: rem(14px);
           color: hsl(var(--black) / 0.7);
         }
       }
@@ -132,7 +134,7 @@
         font-weight: 600;
         border-bottom: 0;
         max-width: 170px;
-        @include fs-14;
+        font-size: rem(14px);
         border: 1px solid hsl(var(--black) / 0.08);
         background-color: hsl(var(--base) / 0.03);
 
@@ -192,14 +194,14 @@
         color: hsl(var(--black) / 0.7);
         font-weight: 500;
         max-width: 170px;
-        @include fs-13;
+        font-size: rem(13px);
         border-bottom: 1px solid hsl(var(--black) / 0.08);
         border-right: 1px solid hsl(var(--black) / 0.08);
 
         &::before {
           content: attr(data-label);
           font-family: var(--heading-font);
-          @include fs-15;
+          font-size: rem(15px);
           color: hsl(var(--black));
           font-weight: 500;
           display: none;
@@ -210,7 +212,7 @@
         &:first-child {
           text-align: left;
           border-left: 1px solid hsl(var(--black) / 0.08);
-          @include fs-14;
+          font-size: rem(14px);
         }
 
         &:last-child {

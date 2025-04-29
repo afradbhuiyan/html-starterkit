@@ -50,7 +50,7 @@
 
     &-icon {
       color: hsl(var(--base));
-      @include fs-15;
+      font-size: rem(15px);
       margin-right: 5px;
     }
   }
@@ -69,12 +69,12 @@
     }
 
     &-icon {
-      @include fs-14;
+      font-size: rem(14px);
       transform: scaleX(-1);
       margin-left: 5px;
 
       @include sm-screen {
-        @include fs-12;
+        font-size: rem(12px);
       }
     }
   }

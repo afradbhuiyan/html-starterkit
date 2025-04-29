@@ -18,13 +18,6 @@
     "body": ["hsl(var(--${1|base,black,white,base-tow|})/ 0.${2})"],
     "description": "make hsla valu to var"
   },
-
-  "height and width": {
-    "prefix": "@size",
-    "scope": "scss",
-    "body": ["@include size(${1})"],
-    "description": "If Size are equal it will be display grid place item Center"
-  },
   "CSS calculation": {
     "prefix": "calc()",
     "scope": "scss",

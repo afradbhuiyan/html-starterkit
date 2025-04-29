@@ -30,7 +30,6 @@ function style() {
         cascade: false,
       })
     )
-    .pipe(sourcemaps.write('.'))
     .pipe(cssbeautify())
 
     .pipe(gulp.dest('./src/assets/css'))

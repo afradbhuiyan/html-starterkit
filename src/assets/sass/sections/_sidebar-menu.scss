@@ -87,7 +87,7 @@
       padding: 12px 15px;
       color: #9da9b5;
       font-weight: 600;
-      @include fs-13;
+      font-size: rem(13px);
     }
 
     /* Hr Css */
@@ -145,7 +145,7 @@
               top: 14px;
               transition: 0.1s linear;
               color: hsl(var(--text-color) / 0.6);
-              @include fs-13;
+              font-size: rem(13px);
             }
           }
         }
@@ -159,7 +159,7 @@
         width: 100%;
         color: #6b717e;
         font-weight: 500;
-        @include fs-15;
+        font-size: rem(15px);
         border-radius: 5px;
 
         &:hover {
@@ -172,7 +172,7 @@
 
         .icon {
           margin-right: 8px;
-          @include fs-15;
+          font-size: rem(15px);
           text-align: center;
           border-radius: 4px;
         }
@@ -210,7 +210,7 @@
         color: hsl(var(--body-color));
         color: #6b717e;
         font-weight: 500;
-        @include fs-15;
+        font-size: rem(15px);
         margin-left: 20px;
         border-radius: 5px;
         position: relative;
@@ -235,7 +235,7 @@
 
         .icon {
           margin-right: 8px;
-          @include fs-15;
+          font-size: rem(15px);
           text-align: center;
           border-radius: 4px;
         }
@@ -275,7 +275,7 @@
     border-radius: 5px;
     overflow: hidden;
     background-color: #f3f9fe;
-    @include fs-18;
+    font-size: rem(18px);
     border: 1px solid hsl(var(--black) / 0.1);
   }
 

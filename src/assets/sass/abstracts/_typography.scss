@@ -1,29 +1,28 @@
-/* ================================= Common Typography Css Start =========================== */
-* {
+/* ========================= Typography CSS Start ========================= */
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: var(--body-font);
-  color: hsl(var(--body-color));
-  word-break: break-word;
-  background-color: var(--background-color);
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: var(--body-font);
+  color: hsl(var(--body-color));
+  background-color: hsl(var(--body-bg));
+  word-break: break-word;
 }
 
 p {
-  @include fs-16;
-  font-weight: 200;
-  margin: 0;
-  color: hsl(var(--body-color));
-}
-
-span {
-  display: inline-block;
+  font-size: rem(16px);
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 0;
 }
 
 h1,
@@ -32,159 +31,36 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 20px 0;
+  font-weight: 700;
   font-family: var(--heading-font);
   color: hsl(var(--heading-color));
-  line-height: 1.3;
-  font-weight: 700;
+  margin-bottom: 0px;
+  line-height: 120%;
 
-  @include sm-screen {
-    margin: 0 0 15px 0;
-  }
 }
 
 h1 {
-  font-size: rem(60px);
-
-  @include xl-screen {
-    font-size: rem(50px);
-  }
-
-  @include lg-screen {
-    font-size: rem(45px);
-  }
-
-  @include md-screen {
-    font-size: rem(40px);
-  }
-
-  @include sm-screen {
-    font-size: rem(35px);
-  }
-
-  @include msm-screen {
-    font-size: rem(30px);
-  }
+  font-size: clamp(2.5rem, 1.8745rem + 3.1274vw, 5rem);
 }
 
 h2 {
-  font-size: rem(40px);
-
-  @include xl-screen {
-    font-size: rem(45px);
-  }
-
-  @include lg-screen {
-    font-size: rem(40px);
-  }
-
-  @include md-screen {
-    font-size: rem(35px);
-  }
-
-  @include sm-screen {
-    font-size: rem(30px);
-  }
-
-  @include msm-screen {
-    font-size: rem(25px);
-  }
+  font-size: clamp(2rem, 1.7615rem + 1.1923vw, 2.5rem);
 }
 
 h3 {
-  font-size: rem(30px);
-
-  @include xl-screen {
-    font-size: rem(28px);
-  }
-
-  @include lg-screen {
-    font-size: rem(25px);
-  }
-
-  @include md-screen {
-    font-size: rem(23px);
-  }
-
-  @include sm-screen {
-    font-size: rem(22px);
-  }
-
-  @include msm-screen {
-    font-size: rem(20px);
-  }
+  font-size: clamp(1.5rem, 1.2615rem + 1.1923vw, 2rem);
 }
 
 h4 {
-  font-size: rem(24px);
-
-  @include xl-screen {
-    font-size: rem(21px);
-  }
-
-  @include lg-screen {
-    font-size: rem(20px);
-  }
-
-  @include md-screen {
-    font-size: rem(19px);
-  }
-
-  @include sm-screen {
-    font-size: rem(18px);
-  }
-
-  @include msm-screen {
-    font-size: rem(17px);
-  }
+  font-size: clamp(1.25rem, 1.1308rem + 0.5961vw, 1.5rem);
 }
 
 h5 {
-  font-size: rem(20px);
-
-  @include xl-screen {
-    font-size: rem(19px);
-  }
-
-  @include lg-screen {
-    font-size: rem(18px);
-  }
-
-  @include md-screen {
-    font-size: rem(17px);
-  }
-
-  @include sm-screen {
-    font-size: rem(16px);
-  }
-
-  @include msm-screen {
-    font-size: rem(16px);
-  }
+  font-size: clamp(1.125rem, 1.0654rem + 0.2981vw, 1.25rem);
 }
 
 h6 {
-  font-size: rem(16px);
-
-  @include xl-screen {
-    font-size: rem(16px);
-  }
-
-  @include lg-screen {
-    font-size: rem(15px);
-  }
-
-  @include md-screen {
-    font-size: rem(14px);
-  }
-
-  @include sm-screen {
-    font-size: rem(14px);
-  }
-
-  @include msm-screen {
-    font-size: rem(14px);
-  }
+  font-size: clamp(1rem, 0.9404rem + 0.2981vw, 1.125rem);
 }
 
 h1>a,
@@ -196,62 +72,36 @@ h6>a {
   font-weight: inherit;
   font-size: inherit;
   color: inherit;
-  transition: 0.2s linear;
+  transition: 0.2s ease-in-out;
   line-height: inherit;
 }
 
 a {
   display: inline-block;
-  transition: 0.2s linear;
+  transition: 0.2s ease-in-out;
   text-decoration: none;
-  color: hsl(var(--info));
-}
-
-a:hover {
   color: hsl(var(--base));
+
+  &:hover {
+    color: hsl(var(--base-d-400));
+  }
 }
 
 img {
   max-width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
-select {
-  cursor: pointer;
+span {
+  display: inline-block;
 }
 
 ul,
 ol {
-  padding: 0;
-  margin: 0;
+  padding-left: 0;
+  margin-bottom: 0;
   list-style: none;
 }
 
-button {
-  border: 0;
-  background-color: transparent;
-
-  &:focus {
-    outline: none;
-    box-shadow: none;
-  }
-}
-
-.form-select:focus {
-  outline: 0;
-  box-shadow: none;
-}
-
-.dashboard-body {
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--body-font);
-  }
-}
-
-/* ================================= Common Typography Css End =========================== */
+/* ========================= Typography CSS End ========================= */

@@ -2,7 +2,7 @@
 /* Form Label */
 .form--label {
   margin-bottom: 6px;
-  @include fs-15;
+  font-size: rem(15px);
   color: hsl(var(--black) / 0.6);
   font-weight: 500;
 }
@@ -42,7 +42,7 @@
 
   &::placeholder {
     color: hsl(var(--black) / 0.6);
-    @include fs-14;
+    font-size: rem(14px);
   }
 
   &:focus {
@@ -148,7 +148,8 @@ input[type='number'] {
 
 /* Custom Checkbox Design */
 .form--check {
-  @extend .flex-wrap;
+  display: flex;
+  flex-wrap: wrap;
 
   a {
     display: inline;
@@ -181,7 +182,7 @@ input[type='number'] {
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
         color: hsl(var(--white));
-        @include fs-11;
+        font-size: rem(11px);
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -194,26 +195,27 @@ input[type='number'] {
     width: calc(100% - 16px);
     padding-left: 12px;
     cursor: pointer;
-    @include fs-14;
+    font-size: rem(14px);
   }
 
   label {
     @include xsm-screen {
-      @include fs-15;
+      font-size: rem(15px);
     }
   }
 
   a {
     @include xsm-screen {
-      @include fs-15;
+      font-size: rem(15px);
     }
   }
 }
 
 /* Custom Radio Design */
 .form--radio {
-  @extend .flex-wrap;
-
+  display: flex;
+  flex-wrap: wrap;
+  
   .form-check-input {
     box-shadow: none;
     border: 1px solid hsl(var(--black) / 0.2);
@@ -256,7 +258,7 @@ input[type='number'] {
     width: calc(100% - 16px);
     padding-left: 12px;
     cursor: pointer;
-    @include fs-14;
+    font-size: rem(14px);
   }
 }
 

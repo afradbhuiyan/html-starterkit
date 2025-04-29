@@ -1,52 +1,21 @@
-@mixin setSpace($values, $property) {
-  #{$property}: map-get($values, xl);
-
-  @include md-screen {
-    #{$property}: map-get($values, md);
-  }
-
-  @include xsm-screen {
-    #{$property}: map-get($values, xsm);
-  }
-}
-
-@mixin createSpace($property, $section-spaces) {
-  $prefix: '';
-
-  @if($property==padding) {
-    $prefix: p;
-  }
-
-  @if($property==margin) {
-    $prefix: m;
-  }
-
-  @each $size, $values in $section-spaces {
-    .#{$prefix}y-#{$size} {
-      @include setSpace($values, #{$property}-block);
-    }
-
-    .#{$prefix}t-#{$size} {
-      @include setSpace($values, #{$property}-top);
-    }
-
-    .#{$prefix}b-#{$size} {
-      @include setSpace($values, #{$property}-bottom);
-    }
-  }
-}
-
-
+/* ========================= Spacing Utilities CSS Start ========================= */
 // Global Section Spacing
 $section: (
   120: (xl: 120px,
     md: 80px,
-    xsm: 60px),
+    msm: 60px),
+  80: (xl: 80px,
+    md: 60px,
+    msm: 40px),
   60: (xl: 60px,
     md: 40px,
-    xsm: 30px)
+    msm: 30px),
+  40: (xl: 40px,
+    md: 30px,
+    msm: 20px)
 );
 
 // Generate padding and margin classes separately
 @include createSpace(padding, $section);
 @include createSpace(margin, $section);
+/* ========================= Spacing Utilities CSS End ========================= */

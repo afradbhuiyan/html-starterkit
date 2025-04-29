@@ -1,84 +1,40 @@
-/* ====================== Section Heading ==================== */
+/* ========================= Global CSS Start ========================= */
 .section-heading {
+  $sh: &;
+  width: 100%;
   text-align: center;
-  margin-bottom: 80px;
-  position: relative;
-  z-index: 1;
+  margin-bottom: 40px;
 
   @include lg-screen {
-    margin-bottom: 60px;
-  }
-
-  @include md-screen {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
 
   @include sm-screen {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   &__title {
-    margin-bottom: 55px;
-
-    @include sm-screen {
-      margin-bottom: 20px;
-    }
-  }
-
-  position: relative;
-
-  &__section-name {
-    position: absolute;
-    inset-inline: 0;
-    top: -35px;
-    line-height: 0.6;
-    z-index: -1;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: hsl(var(--base));
-    -webkit-text-stroke-width: 1px;
-    opacity: 0.3;
+    font-size: clamp(2.5rem, 1.8745rem + 3.1274vw, 5rem);
     font-weight: 700;
-    font-size: clampCal(60px, 140px);
-    animation: section-name-blink 5s linear infinite;
-
-    @include md-screen {
-      top: -55px;
-    }
-
-    @include sm-screen {
-      top: -45px;
-    }
-
-    @include xsm-screen {
-      top: -25px;
-    }
+    line-height: 100%;
+    letter-spacing: -2px;
+    margin-bottom: 16px;
   }
 
   &__desc {
-    max-width: 670px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.8;
-    font-size: clampCal(16px, 18px);
+    font-size: rem(20px);
+    font-weight: 500;
+    line-height: 140%;
+    color: hsl(var(--light));
+
+    @include lg-screen {
+      font-size: rem(18px);
+    }
   }
 
-  // Style left
   &.style-left {
     text-align: left;
-
-    .section-heading {
-      &__title {
-        &::before {
-          left: 0;
-          transform: translateX(0);
-        }
-      }
-
-      &__desc {
-        margin-left: 0;
-      }
-    }
   }
 }
 
-/* ====================== Section Heading End ==================== */
+/* ========================= Globale CSS End ========================= */

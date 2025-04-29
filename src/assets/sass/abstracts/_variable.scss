@@ -1,83 +1,55 @@
-// /* Font Family*/
-@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* ========================= Css Variables Start ======================== */
+/* ========================= CSS Variables Start ========================= */
 :root {
   /* Font Family */
   --heading-font: 'Ubuntu', sans-serif;
   --body-font: 'Geologica', sans-serif;
-
-  /* ========================= Theme Color Start ============================= */
-
   /* Base Color */
-  @include colorVariable(--base, #c37aff, 10);
+  @include colorVariable(--base, #842BE2, 5);
 
   /* Base Two Color */
-  @include colorVariable(--base-two, #a640fa, 10);
+  @include colorVariable(--base-two, #007AFF, 5);
 
-  /* ========================= Theme Color End ============================= */
-
-  /* ========================= Color Variables Start =========================== */
-  // White Color
-  @include colorVariable(--white, #ffffff);
-
-  // Body Color
-  @include colorVariable(--body-color, #cccccc);
-
-  // heading-color
-  @include colorVariable(--heading-color, #e2e2e2);
-
-  // Black Color
-  @include colorVariable(--black, #000);
-
-  //Border Color
-  @include colorVariable(--border-color, #e0e0e0);
-
-  // Section Background
-  @include colorVariable(--section-bg, #f0f8ff);
-
-  --background-color: var(--black);
-
-  /* ================================ Box Shadow Start =============================== */
-  // Header Box shadow
-  --header-box-shadow: 0px -1px 15px 3px hsl(var(--black) / 0.3);
-  // Mobile bottom fix menu box shadow
-  --mobile-box-shadow: 0px -1px 5px 0px hsl(var(--black) / 0.92);
-  // Card box shadow
-  --box-shadow: 0px 2px 15px hsl(var(--black) / 0.05);
-  /* ================================ Box Shadow End =============================== */
-
-  /* ============================== Bootstrap Modifier Start ============================== */
   /* Primary Color */
-  @include colorVariable(--primary, #0007cc, 5);
+  @include colorVariable(--primary, #6338ff, 5);
 
   /* Secondary Color */
-  @include colorVariable(--secondary, #6d767e, 5);
+  @include colorVariable(--secondary, #7f8250, 5);
 
   /* Success Color */
-  @include colorVariable(--success, #1bcc00, 5);
+  @include colorVariable(--success, #35C75A, 5);
 
   /* Danger Color */
-  @include colorVariable(--danger, #fb4646, 5);
+  @include colorVariable(--danger, #EB4E3D, 5);
 
   /* Warning Color */
-  @include colorVariable(--warning, #eb9c00, 5);
+  @include colorVariable(--warning, #FC0, 5);
 
   /* Info Color */
-  @include colorVariable(--info, #00bbff, 5);
+  @include colorVariable(--info, #3c83f6, 5);
 
-  /* ============================== Bootstrap Modifier End ============================== */
-
-  /* ============================== Dark Mood Color Modify Start ============================== */
-  [data-theme='dark'] {
-    // Reverse White
-    @include colorVariable(--white, #101213);
-
-    // Reverse Black
-    @include colorVariable(--black, #f8fafc);
-  }
-
-  /* ============================== Dark Mood Color Modify End ============================== */
+  /* Color Variables */
+  --white: 0 0% 100%; //#ffffff 
+  --black: 0 0% 0%; //#000000
+  --gray: 215 16% 47%; //#64748b
+  --gray-d-100: 215 19% 35%; //#475569
+  --gray-d-200: 215 25% 27%; //#334155
+  --gray-d-300: 217 33% 17%; //#1e293b
+  --gray-d-400: 222 47% 11%; //#0f172a
+  --gray-d-500: 229 84% 5%; //#020617
+  --gray-l-100: 215 20% 65%; //#94a3b8
+  --gray-l-200: 213 27% 84%; //#cbd5e1
+  --gray-l-300: 214 32% 91%; //#e2e8f0
+  --gray-l-400: 210 40% 96%; //#f1f5f9
+  --gray-l-500: 210 40% 98%; //#f8fafc
+  --body-bg: var(--white);
+  --section-bg: var(--gray-l-100);
+  --body-color: var(--gray);
+  --heading-color: var(--gray-d-500);
+  --border-color: var(--gray-l-300);
+  /* Shadow Variables */
+  --box-shadow: 0px 2px 15px hsl(var(--black) / 0.05);
 }
 
-/* ========================= Css Variables End =========================== */
+/* ========================= CSS Variables End ========================= */

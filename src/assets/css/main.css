@@ -1,79 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700;900&display=swap");
-/* ========================= Css Variables Start ======================== */
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/* ========================= CSS Variables Start ========================= */
 :root {
   /* Font Family */
     --heading-font: "Ubuntu", sans-serif;
     --body-font: "Geologica", sans-serif;
-  /* ========================= Theme Color Start ============================= */
   /* Base Color */
-    --base-h: 273;
-    --base-s: 100%;
-    --base-l: 74%;
+    --base-h: 269;
+    --base-s: 76%;
+    --base-l: 53%;
     --base: var(--base-h) var(--base-s) var(--base-l);
     --base-d-100: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.1);
     --base-d-200: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.2);
     --base-d-300: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.3);
     --base-d-400: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.4);
     --base-d-500: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.5);
-    --base-d-600: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.6);
-    --base-d-700: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.7);
-    --base-d-800: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.8);
-    --base-d-900: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.9);
-    --base-d-1000: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 1);
     --base-l-100: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.1);
     --base-l-200: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.2);
     --base-l-300: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.3);
     --base-l-400: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.4);
     --base-l-500: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.5);
-    --base-l-600: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.6);
-    --base-l-700: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.7);
-    --base-l-800: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.8);
-    --base-l-900: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.9);
-    --base-l-1000: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 1);
   /* Base Two Color */
-    --base-two-h: 273;
-    --base-two-s: 95%;
-    --base-two-l: 62%;
+    --base-two-h: 211;
+    --base-two-s: 100%;
+    --base-two-l: 50%;
     --base-two: var(--base-two-h) var(--base-two-s) var(--base-two-l);
     --base-two-d-100: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.1);
     --base-two-d-200: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.2);
     --base-two-d-300: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.3);
     --base-two-d-400: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.4);
     --base-two-d-500: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.5);
-    --base-two-d-600: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.6);
-    --base-two-d-700: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.7);
-    --base-two-d-800: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.8);
-    --base-two-d-900: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.9);
-    --base-two-d-1000: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 1);
     --base-two-l-100: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.1);
     --base-two-l-200: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.2);
     --base-two-l-300: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.3);
     --base-two-l-400: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.4);
     --base-two-l-500: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.5);
-    --base-two-l-600: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.6);
-    --base-two-l-700: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.7);
-    --base-two-l-800: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.8);
-    --base-two-l-900: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.9);
-    --base-two-l-1000: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 1);
-  /* ========================= Theme Color End ============================= */
-  /* ========================= Color Variables Start =========================== */
-    --white: 0 0% 100%;
-    --body-color: 0 0% 80%;
-    --heading-color: 0 0% 89%;
-    --black: 0 0% 0%;
-    --border-color: 0 0% 88%;
-    --section-bg: 208 100% 97%;
-    --background-color: var(--black);
-  /* ================================ Box Shadow Start =============================== */
-    --header-box-shadow: 0px -1px 15px 3px hsl(var(--black) / 0.3);
-    --mobile-box-shadow: 0px -1px 5px 0px hsl(var(--black) / 0.92);
-    --box-shadow: 0px 2px 15px hsl(var(--black) / 0.05);
-  /* ================================ Box Shadow End =============================== */
-  /* ============================== Bootstrap Modifier Start ============================== */
   /* Primary Color */
-    --primary-h: 238;
+    --primary-h: 253;
     --primary-s: 100%;
-    --primary-l: 40%;
+    --primary-l: 61%;
     --primary: var(--primary-h) var(--primary-s) var(--primary-l);
     --primary-d-100: var(--primary-h) var(--primary-s) calc(var(--primary-l) - var(--primary-l) * 0.1);
     --primary-d-200: var(--primary-h) var(--primary-s) calc(var(--primary-l) - var(--primary-l) * 0.2);
@@ -86,9 +50,9 @@
     --primary-l-400: var(--primary-h) calc(var(--primary-s)) calc(var(--primary-l) + (100% - var(--primary-l)) * 0.4);
     --primary-l-500: var(--primary-h) calc(var(--primary-s)) calc(var(--primary-l) + (100% - var(--primary-l)) * 0.5);
   /* Secondary Color */
-    --secondary-h: 208;
-    --secondary-s: 7%;
-    --secondary-l: 46%;
+    --secondary-h: 64;
+    --secondary-s: 24%;
+    --secondary-l: 41%;
     --secondary: var(--secondary-h) var(--secondary-s) var(--secondary-l);
     --secondary-d-100: var(--secondary-h) var(--secondary-s) calc(var(--secondary-l) - var(--secondary-l) * 0.1);
     --secondary-d-200: var(--secondary-h) var(--secondary-s) calc(var(--secondary-l) - var(--secondary-l) * 0.2);
@@ -101,9 +65,9 @@
     --secondary-l-400: var(--secondary-h) calc(var(--secondary-s)) calc(var(--secondary-l) + (100% - var(--secondary-l)) * 0.4);
     --secondary-l-500: var(--secondary-h) calc(var(--secondary-s)) calc(var(--secondary-l) + (100% - var(--secondary-l)) * 0.5);
   /* Success Color */
-    --success-h: 112;
-    --success-s: 100%;
-    --success-l: 40%;
+    --success-h: 135;
+    --success-s: 58%;
+    --success-l: 49%;
     --success: var(--success-h) var(--success-s) var(--success-l);
     --success-d-100: var(--success-h) var(--success-s) calc(var(--success-l) - var(--success-l) * 0.1);
     --success-d-200: var(--success-h) var(--success-s) calc(var(--success-l) - var(--success-l) * 0.2);
@@ -116,9 +80,9 @@
     --success-l-400: var(--success-h) calc(var(--success-s)) calc(var(--success-l) + (100% - var(--success-l)) * 0.4);
     --success-l-500: var(--success-h) calc(var(--success-s)) calc(var(--success-l) + (100% - var(--success-l)) * 0.5);
   /* Danger Color */
-    --danger-h: 0;
-    --danger-s: 96%;
-    --danger-l: 63%;
+    --danger-h: 6;
+    --danger-s: 81%;
+    --danger-l: 58%;
     --danger: var(--danger-h) var(--danger-s) var(--danger-l);
     --danger-d-100: var(--danger-h) var(--danger-s) calc(var(--danger-l) - var(--danger-l) * 0.1);
     --danger-d-200: var(--danger-h) var(--danger-s) calc(var(--danger-l) - var(--danger-l) * 0.2);
@@ -131,9 +95,9 @@
     --danger-l-400: var(--danger-h) calc(var(--danger-s)) calc(var(--danger-l) + (100% - var(--danger-l)) * 0.4);
     --danger-l-500: var(--danger-h) calc(var(--danger-s)) calc(var(--danger-l) + (100% - var(--danger-l)) * 0.5);
   /* Warning Color */
-    --warning-h: 40;
+    --warning-h: 48;
     --warning-s: 100%;
-    --warning-l: 46%;
+    --warning-l: 50%;
     --warning: var(--warning-h) var(--warning-s) var(--warning-l);
     --warning-d-100: var(--warning-h) var(--warning-s) calc(var(--warning-l) - var(--warning-l) * 0.1);
     --warning-d-200: var(--warning-h) var(--warning-s) calc(var(--warning-l) - var(--warning-l) * 0.2);
@@ -146,9 +110,9 @@
     --warning-l-400: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.4);
     --warning-l-500: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.5);
   /* Info Color */
-    --info-h: 196;
-    --info-s: 100%;
-    --info-l: 50%;
+    --info-h: 217;
+    --info-s: 91%;
+    --info-l: 60%;
     --info: var(--info-h) var(--info-s) var(--info-l);
     --info-d-100: var(--info-h) var(--info-s) calc(var(--info-l) - var(--info-l) * 0.1);
     --info-d-200: var(--info-h) var(--info-s) calc(var(--info-l) - var(--info-l) * 0.2);
@@ -160,159 +124,34 @@
     --info-l-300: var(--info-h) calc(var(--info-s)) calc(var(--info-l) + (100% - var(--info-l)) * 0.3);
     --info-l-400: var(--info-h) calc(var(--info-s)) calc(var(--info-l) + (100% - var(--info-l)) * 0.4);
     --info-l-500: var(--info-h) calc(var(--info-s)) calc(var(--info-l) + (100% - var(--info-l)) * 0.5);
-  /* ============================== Bootstrap Modifier End ============================== */
-  /* ============================== Dark Mood Color Modify Start ============================== */
-  /* ============================== Dark Mood Color Modify End ============================== */
+  /* Color Variables */
+    --white: 0 0% 100%;
+    --black: 0 0% 0%;
+    --gray: 215 16% 47%;
+    --gray-d-100: 215 19% 35%;
+    --gray-d-200: 215 25% 27%;
+    --gray-d-300: 217 33% 17%;
+    --gray-d-400: 222 47% 11%;
+    --gray-d-500: 229 84% 5%;
+    --gray-l-100: 215 20% 65%;
+    --gray-l-200: 213 27% 84%;
+    --gray-l-300: 214 32% 91%;
+    --gray-l-400: 210 40% 96%;
+    --gray-l-500: 210 40% 98%;
+    --body-bg: var(--white);
+    --section-bg: var(--gray-l-100);
+    --body-color: var(--gray);
+    --heading-color: var(--gray-d-500);
+    --border-color: var(--gray-l-300);
+  /* Shadow Variables */
+    --box-shadow: 0px 2px 15px hsl(var(--black) / 0.05);
 }
 
-:root [data-theme=dark] {
-    --white: 200 9% 7%;
-    --black: 210 40% 98%;
-}
-
-/* ========================= Css Variables End =========================== */
-/* Fully Fit image Css */
-.fit-image {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-}
-
-/* ============================= Display Flex Css Start ============================= */
-.flex-wrap, .form--radio, .form--check {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-.flex-align, .action-buttons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.flex-center {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.flex-between {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-/* ============================= Display Flex Css End ============================= */
-/* ===================== Font Size For responsive devices Start =================== */
-.fs-10 {
-    font-size: 0.625rem;
-}
-
-.fs-11 {
-    font-size: 0.6875rem;
-}
-
-.fs-12 {
-    font-size: 0.75rem;
-}
-
-.fs-13 {
-    font-size: 0.8125rem;
-}
-
-.fs-14 {
-    font-size: 0.875rem;
-}
-
-.fs-15 {
-    font-size: 0.9375rem;
-}
-
-.fs-16 {
-    font-size: 1rem;
-}
-
-@media screen and (max-width: 1199px) {
-    .fs-16 {
-        font-size: 0.9375rem;
-    }
-}
-
-.fs-17 {
-    font-size: 1.0625rem;
-}
-
-@media screen and (max-width: 1199px) {
-    .fs-17 {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .fs-17 {
-        font-size: 0.9375rem;
-    }
-}
-
-.fs-18 {
-    font-size: 1.125rem;
-}
-
-@media screen and (max-width: 1399px) {
-    .fs-18 {
-        font-size: 1.0625rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .fs-18 {
-        font-size: 1rem;
-    }
-}
-
-.fs-20 {
-    font-size: 1.25rem;
-}
-
-@media screen and (max-width: 1399px) {
-    .fs-20 {
-        font-size: 1.125rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .fs-20 {
-        font-size: 1.0625rem;
-    }
-}
-/* ===================== Font Size For responsive devices End =================== */
-/* ================================= Common Typography Css Start =========================== */
-* {
+/* ========================= CSS Variables End ========================= */
+/* ========================= Typography CSS Start ========================= */
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
@@ -320,10 +159,7 @@
 }
 
 body {
-    font-family: var(--body-font);
-    color: hsl(var(--body-color));
-    word-break: break-word;
-    background-color: var(--background-color);
+    width: 100%;
     min-height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -332,17 +168,17 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    font-family: var(--body-font);
+    color: hsl(var(--body-color));
+    background-color: hsl(var(--body-bg));
+    word-break: break-word;
 }
 
 p {
     font-size: 1rem;
-    font-weight: 200;
-    margin: 0;
-    color: hsl(var(--body-color));
-}
-
-span {
-    display: inline-block;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 0;
 }
 
 h1,
@@ -351,226 +187,35 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 20px 0;
+    font-weight: 700;
     font-family: var(--heading-font);
     color: hsl(var(--heading-color));
-    line-height: 1.3;
-    font-weight: 700;
-}
-
-@media screen and (max-width: 767px) {
-    h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-        margin: 0 0 15px 0;
-    }
+    margin-bottom: 0px;
+    line-height: 120%;
 }
 
 h1 {
-    font-size: 3.75rem;
-}
-
-@media screen and (max-width: 1399px) {
-    h1 {
-        font-size: 3.125rem;
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    h1 {
-        font-size: 2.8125rem;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    h1 {
-        font-size: 2.1875rem;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    h1 {
-        font-size: 1.875rem;
-    }
+    font-size: clamp(2.5rem, 1.8745rem + 3.1274vw, 5rem);
 }
 
 h2 {
-    font-size: 2.5rem;
-}
-
-@media screen and (max-width: 1399px) {
-    h2 {
-        font-size: 2.8125rem;
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    h2 {
-        font-size: 2.5rem;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    h2 {
-        font-size: 2.1875rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    h2 {
-        font-size: 1.875rem;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    h2 {
-        font-size: 1.5625rem;
-    }
+    font-size: clamp(2rem, 1.7615rem + 1.1923vw, 2.5rem);
 }
 
 h3 {
-    font-size: 1.875rem;
-}
-
-@media screen and (max-width: 1399px) {
-    h3 {
-        font-size: 1.75rem;
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    h3 {
-        font-size: 1.5625rem;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    h3 {
-        font-size: 1.4375rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    h3 {
-        font-size: 1.375rem;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    h3 {
-        font-size: 1.25rem;
-    }
+    font-size: clamp(1.5rem, 1.2615rem + 1.1923vw, 2rem);
 }
 
 h4 {
-    font-size: 1.5rem;
-}
-
-@media screen and (max-width: 1399px) {
-    h4 {
-        font-size: 1.3125rem;
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    h4 {
-        font-size: 1.25rem;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    h4 {
-        font-size: 1.1875rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    h4 {
-        font-size: 1.125rem;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    h4 {
-        font-size: 1.0625rem;
-    }
+    font-size: clamp(1.25rem, 1.1308rem + 0.5961vw, 1.5rem);
 }
 
 h5 {
-    font-size: 1.25rem;
-}
-
-@media screen and (max-width: 1399px) {
-    h5 {
-        font-size: 1.1875rem;
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    h5 {
-        font-size: 1.125rem;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    h5 {
-        font-size: 1.0625rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    h5 {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    h5 {
-        font-size: 1rem;
-    }
+    font-size: clamp(1.125rem, 1.0654rem + 0.2981vw, 1.25rem);
 }
 
 h6 {
-    font-size: 1rem;
-}
-
-@media screen and (max-width: 1399px) {
-    h6 {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    h6 {
-        font-size: 0.9375rem;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    h6 {
-        font-size: 0.875rem;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    h6 {
-        font-size: 0.875rem;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    h6 {
-        font-size: 0.875rem;
-    }
+    font-size: clamp(1rem, 0.9404rem + 0.2981vw, 1.125rem);
 }
 
 h1 > a,
@@ -582,90 +227,77 @@ h6 > a {
     font-weight: inherit;
     font-size: inherit;
     color: inherit;
-    -webkit-transition: 0.2s linear;
-    transition: 0.2s linear;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
     line-height: inherit;
 }
 
 a {
     display: inline-block;
-    -webkit-transition: 0.2s linear;
-    transition: 0.2s linear;
+    -webkit-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
     text-decoration: none;
-    color: hsl(var(--info));
+    color: hsl(var(--base));
 }
 
 a:hover {
-    color: hsl(var(--base));
+    color: hsl(var(--base-d-400));
 }
 
 img {
     max-width: 100%;
     height: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
-select {
-    cursor: pointer;
+span {
+    display: inline-block;
 }
 
 ul,
 ol {
-    padding: 0;
-    margin: 0;
+    padding-left: 0;
+    margin-bottom: 0;
     list-style: none;
 }
 
-button {
-    border: 0;
-    background-color: transparent;
+/* ========================= Typography CSS End ========================= */
+/* ========================= Classes CSS Start ========================= */
+.page-wrapper {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    overflow: hidden;
 }
 
-button:focus {
-    outline: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+@media screen and (min-width: 1600px) {
+    .custom--container {
+        max-width: 1392px;
+    }
 }
 
-.form-select:focus {
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.dashboard-body h1,
-.dashboard-body h2,
-.dashboard-body h3,
-.dashboard-body h4,
-.dashboard-body h5,
-.dashboard-body h6 {
-    font-family: var(--body-font);
-}
-
-/* ================================= Common Typography Css End =========================== */
-/* ================================= Custom Classes Css Start =========================== */
-/* Column Extra Small Screen */
 @media screen and (min-width: 425px) and (max-width: 575px) {
     .col-xsm-6 {
         width: 50%;
     }
 }
-/* Section Background */
-.section-bg {
-    background-color: hsl(var(--section-bg));
-}
 
-.text-muted {
-    color: hsl(var(--white)/0.6) !important;
-}
-
-/* Bg Image Css */
 .bg-img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
-/* Hide Scroll bar Css For Custom Modal */
+.mask-img {
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    mask-position: center center;
+}
+
 .scroll-hide {
     position: absolute;
     overflow-y: hidden;
@@ -689,52 +321,14 @@ button:focus {
     width: calc(100% - 0px);
 }
 
-.body-overlay {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    inset: 0;
-    z-index: 999;
-    background-color: hsl(var(--black)/0.5);
-    -webkit-transition: 0.2s linear;
-    transition: 0.2s linear;
-    visibility: hidden;
-    opacity: 0;
-}
-
-@media screen and (max-width: 991px) {
-    .body-overlay.show {
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
-.gradient-text {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(hsl(var(--base-d-200))), to(hsl(var(--base))));
-    background-image: linear-gradient(180deg, hsl(var(--base-d-200)) 0%, hsl(var(--base)) 100%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.gradient-text::-moz-selection {
-    color: hsl(var(--white));
-    -webkit-text-fill-color: hsl(var(--white));
-    background: transparent;
-}
-
-.gradient-text::selection {
-    color: hsl(var(--white));
-    -webkit-text-fill-color: hsl(var(--white));
-    background: transparent;
-}
-
+.body-overlay,
 .sidebar-overlay {
     width: 100%;
     height: 100%;
     position: fixed;
     inset: 0;
-    z-index: 1049;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
     background-color: hsl(var(--black)/0.5);
     -webkit-transition: 0.2s linear;
     transition: 0.2s linear;
@@ -743,110 +337,86 @@ button:focus {
 }
 
 @media screen and (max-width: 991px) {
-    .sidebar-overlay.show {
+    .body-overlay.show,
+.sidebar-overlay.show {
         visibility: visible;
         opacity: 1;
     }
 }
-/* Overlay End */
-/* ================================= Custom Classes Css End =========================== */
-/* ====================== Section Heading ==================== */
+
+.body-overlay {
+    z-index: 999;
+}
+
+.sidebar-overlay {
+    z-index: 1049;
+}
+
+.modal-backdrop,
+.offcanvas-backdrop {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: hsl(var(--black)/0.15);
+}
+
+.modal-backdrop.show,
+.offcanvas-backdrop.show {
+    opacity: 1;
+}
+
+/* ========================= Classes CSS End ========================= */
+/* ========================= Global CSS Start ========================= */
 .section-heading {
+    width: 100%;
     text-align: center;
-    margin-bottom: 80px;
-    position: relative;
-    z-index: 1;
-    position: relative;
+    margin-bottom: 40px;
 }
 
 @media screen and (max-width: 1199px) {
     .section-heading {
-        margin-bottom: 60px;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    .section-heading {
-        margin-bottom: 30px;
+        margin-bottom: 32px;
     }
 }
 
 @media screen and (max-width: 767px) {
     .section-heading {
-        margin-bottom: 20px;
+        margin-bottom: 24px;
     }
 }
 
 .section-heading__title {
-    margin-bottom: 55px;
-}
-
-@media screen and (max-width: 767px) {
-    .section-heading__title {
-        margin-bottom: 20px;
-    }
-}
-
-.section-heading__section-name {
-    position: absolute;
-    inset-inline: 0;
-    top: -35px;
-    line-height: 0.6;
-    z-index: -1;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: hsl(var(--base));
-    -webkit-text-stroke-width: 1px;
-    opacity: 0.3;
+    font-size: clamp(2.5rem, 1.8745rem + 3.1274vw, 5rem);
     font-weight: 700;
-    font-size: clamp(3.75rem, 1.4745rem + 9.7087vw, 8.75rem);
-    -webkit-animation: section-name-blink 5s linear infinite;
-    animation: section-name-blink 5s linear infinite;
-}
-
-@media screen and (max-width: 991px) {
-    .section-heading__section-name {
-        top: -55px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .section-heading__section-name {
-        top: -45px;
-    }
-}
-
-@media screen and (max-width: 424px) {
-    .section-heading__section-name {
-        top: -25px;
-    }
+    line-height: 100%;
+    letter-spacing: -2px;
+    margin-bottom: 16px;
 }
 
 .section-heading__desc {
-    max-width: 670px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.8;
-    font-size: clamp(1rem, 0.9431rem + 0.2427vw, 1.125rem);
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 140%;
+    color: hsl(var(--light));
+}
+
+@media screen and (max-width: 1199px) {
+    .section-heading__desc {
+        font-size: 1.125rem;
+    }
 }
 
 .section-heading.style-left {
     text-align: left;
 }
 
-.section-heading.style-left .section-heading__title::before {
-    left: 0;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-
-.section-heading.style-left .section-heading__desc {
-    margin-left: 0;
-}
-
-/* ====================== Section Heading End ==================== */
-/* ================================= Background Color Css Start =========================== */
+/* ========================= Globale CSS End ========================= */
+/* ========================= BG Utilities CSS Start ========================= */
 .bg--base {
     background-color: hsl(var(--base)) !important;
+}
+
+.bg--base-two {
+    background-color: hsl(var(--base-two)) !important;
 }
 
 .bg--primary {
@@ -873,10 +443,14 @@ button:focus {
     background-color: hsl(var(--info)) !important;
 }
 
-/* ================================= Background Color Css End =========================== */
-/* ================================= Color Css Start =========================== */
+/* ========================= BG Utilities CSS End ========================= */
+/* ========================= Color Utilities CSS Start ========================= */
 .text--base {
     color: hsl(var(--base)) !important;
+}
+
+.text--base-two {
+    color: hsl(var(--base-two)) !important;
 }
 
 .text--primary {
@@ -903,7 +477,8 @@ button:focus {
     color: hsl(var(--info)) !important;
 }
 
-/* ================================= Color Css End =========================== */
+/* ========================= Color Utilities CSS End ========================= */
+/* ========================= Spacing Utilities CSS Start ========================= */
 .py-120 {
     padding-block: 120px;
 }
@@ -911,12 +486,6 @@ button:focus {
 @media screen and (max-width: 991px) {
     .py-120 {
         padding-block: 80px;
-    }
-}
-
-@media screen and (max-width: 424px) {
-    .py-120 {
-        padding-block: 60px;
     }
 }
 
@@ -930,12 +499,6 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 424px) {
-    .pt-120 {
-        padding-top: 60px;
-    }
-}
-
 .pb-120 {
     padding-bottom: 120px;
 }
@@ -946,8 +509,32 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 424px) {
-    .pb-120 {
+.py-80 {
+    padding-block: 80px;
+}
+
+@media screen and (max-width: 991px) {
+    .py-80 {
+        padding-block: 60px;
+    }
+}
+
+.pt-80 {
+    padding-top: 80px;
+}
+
+@media screen and (max-width: 991px) {
+    .pt-80 {
+        padding-top: 60px;
+    }
+}
+
+.pb-80 {
+    padding-bottom: 80px;
+}
+
+@media screen and (max-width: 991px) {
+    .pb-80 {
         padding-bottom: 60px;
     }
 }
@@ -962,12 +549,6 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 424px) {
-    .py-60 {
-        padding-block: 30px;
-    }
-}
-
 .pt-60 {
     padding-top: 60px;
 }
@@ -975,12 +556,6 @@ button:focus {
 @media screen and (max-width: 991px) {
     .pt-60 {
         padding-top: 40px;
-    }
-}
-
-@media screen and (max-width: 424px) {
-    .pt-60 {
-        padding-top: 30px;
     }
 }
 
@@ -994,8 +569,32 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 424px) {
-    .pb-60 {
+.py-40 {
+    padding-block: 40px;
+}
+
+@media screen and (max-width: 991px) {
+    .py-40 {
+        padding-block: 30px;
+    }
+}
+
+.pt-40 {
+    padding-top: 40px;
+}
+
+@media screen and (max-width: 991px) {
+    .pt-40 {
+        padding-top: 30px;
+    }
+}
+
+.pb-40 {
+    padding-bottom: 40px;
+}
+
+@media screen and (max-width: 991px) {
+    .pb-40 {
         padding-bottom: 30px;
     }
 }
@@ -1010,12 +609,6 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 424px) {
-    .my-120 {
-        margin-block: 60px;
-    }
-}
-
 .mt-120 {
     margin-top: 120px;
 }
@@ -1023,12 +616,6 @@ button:focus {
 @media screen and (max-width: 991px) {
     .mt-120 {
         margin-top: 80px;
-    }
-}
-
-@media screen and (max-width: 424px) {
-    .mt-120 {
-        margin-top: 60px;
     }
 }
 
@@ -1042,8 +629,32 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 424px) {
-    .mb-120 {
+.my-80 {
+    margin-block: 80px;
+}
+
+@media screen and (max-width: 991px) {
+    .my-80 {
+        margin-block: 60px;
+    }
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+@media screen and (max-width: 991px) {
+    .mt-80 {
+        margin-top: 60px;
+    }
+}
+
+.mb-80 {
+    margin-bottom: 80px;
+}
+
+@media screen and (max-width: 991px) {
+    .mb-80 {
         margin-bottom: 60px;
     }
 }
@@ -1058,12 +669,6 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 424px) {
-    .my-60 {
-        margin-block: 30px;
-    }
-}
-
 .mt-60 {
     margin-top: 60px;
 }
@@ -1071,12 +676,6 @@ button:focus {
 @media screen and (max-width: 991px) {
     .mt-60 {
         margin-top: 40px;
-    }
-}
-
-@media screen and (max-width: 424px) {
-    .mt-60 {
-        margin-top: 30px;
     }
 }
 
@@ -1090,14 +689,43 @@ button:focus {
     }
 }
 
-@media screen and (max-width: 424px) {
-    .mb-60 {
+.my-40 {
+    margin-block: 40px;
+}
+
+@media screen and (max-width: 991px) {
+    .my-40 {
+        margin-block: 30px;
+    }
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 991px) {
+    .mt-40 {
+        margin-top: 30px;
+    }
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 991px) {
+    .mb-40 {
         margin-bottom: 30px;
     }
 }
-/* ================================= Border Color Css Start =========================== */
+/* ========================= Spacing Utilities CSS End ========================= */
+/* ========================= Border Utilities CSS Start ========================= */
 .border--base {
     border-color: hsl(var(--base)) !important;
+}
+
+.border--base-two {
+    border-color: hsl(var(--base-two)) !important;
 }
 
 .border--primary {
@@ -1124,7 +752,30 @@ button:focus {
     border-color: hsl(var(--info)) !important;
 }
 
-/* ================================= Border Color Css End =========================== */
+.border--gradient {
+    --border-width: 1px;
+    --border-gradient: linear-gradient(180deg hsl(var(--base)), hsl(var(--base-two)));
+    position: relative;
+    z-index: 1;
+}
+
+.border--gradient::before {
+    content: "";
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+    background: var(--border-gradient) border-box;
+    border: var(--border-width) solid transparent;
+    -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+/* ========================= Border Utilities CSS End =========================== */
 /* =========================== Accordion Css start ============================= */
 .custom--accordion .accordion-item {
     border: 1px solid hsl(var(--black)/0.09);
@@ -1695,6 +1346,14 @@ input[type=number] {
 }
 
 /* Custom Checkbox Design */
+.form--check {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
 .form--check a {
     display: inline;
 }
@@ -1757,6 +1416,14 @@ input[type=number] {
     }
 }
 /* Custom Radio Design */
+.form--radio {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
 .form--radio .form-check-input {
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -2110,6 +1777,14 @@ input[type=number] {
 }
 
 .action-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     gap: 10px;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
@@ -3914,4 +3589,3 @@ input[type=number] {
 /* ======================  Plugin Customization End  ======================*/
 /* ======================  Pages Design Start  ======================*/
 /* ======================  Pages Design End  ======================*/
-/*# sourceMappingURL=main.css.map */

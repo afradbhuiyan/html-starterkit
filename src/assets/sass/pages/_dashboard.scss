@@ -60,7 +60,7 @@
       color: hsl(var(--base));
       border-radius: 5px;
       font-weight: 600;
-      @include fs-16;
+      font-size: rem(16px);
 
       &:hover {
         background-color: hsl(var(--base) / 0.2);
@@ -113,7 +113,7 @@
         top: 50%;
         transform: translateY(-50%);
         color: hsl(var(--black) / 0.4);
-        @include fs-14;
+        font-size: rem(14px);
         pointer-events: none;
       }
     }
@@ -161,7 +161,7 @@
         width: 100%;
         font-weight: 600;
         text-align: left;
-        @include fs-15;
+        font-size: rem(15px);
         border-radius: 5px;
 
         &.active {
@@ -189,7 +189,7 @@
     &__name {
       color: hsl(var(--white));
       margin-left: 10px;
-      @include fs-15;
+      font-size: rem(15px);
     }
   }
 
@@ -268,7 +268,7 @@
       @include msm-screen {
         width: 40px;
         height: 40px;
-        @include fs-16;
+        font-size: rem(16px);
       }
     }
 
@@ -288,12 +288,12 @@
 
     &__text {
       color: hsl(var(--text-color) / 0.7);
-      @include fs-14;
+      font-size: rem(14px);
       margin-bottom: 5px;
       font-weight: 600;
 
       @include msm-screen {
-        @include fs-13;
+        font-size: rem(13px);
       }
     }
   }

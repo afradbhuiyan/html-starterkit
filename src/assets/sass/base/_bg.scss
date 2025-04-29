@@ -1,7 +1,11 @@
-/* ================================= Background Color Css Start =========================== */
+/* ========================= BG Utilities CSS Start ========================= */
 .bg {
   &--base {
     background-color: hsl(var(--base)) !important;
+  }
+
+  &--base-two {
+    background-color: hsl(var(--base-two)) !important;
   }
 
   &--primary {
@@ -29,4 +33,4 @@
   }
 }
 
-/* ================================= Background Color Css End =========================== */
+/* ========================= BG Utilities CSS End ========================= */

@@ -23,12 +23,12 @@
   border: 1px solid transparent;
   font-family: var(--body-font);
   display: inline-block !important;
-  @include fs-16;
+  font-size: rem(16px);
   line-height: 1;
 
   @include sm-screen {
     padding: 14px 25px;
-    @include fs-14;
+    font-size: rem(14px);
   }
 
   @include msm-screen {
@@ -71,7 +71,7 @@
     width: 35px;
     height: 35px;
     line-height: 35px;
-    @include fs-15;
+    font-size: rem(15px);
     padding: 0;
   }
 

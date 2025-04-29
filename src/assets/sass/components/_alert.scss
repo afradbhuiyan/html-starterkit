@@ -35,7 +35,7 @@
   }
 
   &__title {
-    @include fs-16;
+    font-size: rem(16px);
     color: hsl(var(--base-two) / 0.8);
     font-weight: 600;
     font-family: var(--heading-font);
@@ -48,7 +48,7 @@
     line-height: 1.375;
 
     @include xsm-screen {
-      @include fs-13;
+      font-size: rem(13px);
     }
   }
 

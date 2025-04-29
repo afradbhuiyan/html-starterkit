@@ -39,7 +39,7 @@
   .accordion-button {
     background-color: hsl(var(--section-bg));
     color: var(--heading-color);
-    @include fs-18;
+    font-size: rem(18px);
     padding: 15px;
 
     @include msm-screen {
