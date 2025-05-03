@@ -991,52 +991,105 @@ ol {
 }
 
 /* ========================= Alert CSS End ======================= */
-/* ================================= Badge Css Start =========================== */
-.custom--badge {
-    font-size: 0.75rem;
-    border-radius: 5px;
-    padding: 8px 10px;
+/* ========================= Badge CSS Start ========================= */
+.badge {
+    font-size: 1rem;
     font-weight: 500;
-    position: relative;
+    line-height: 150%;
+    padding: 4px 16px;
+    border-radius: 250px;
     text-align: center;
 }
 
 .badge--base {
-    background-color: hsl(var(--base)/0.15) !important;
-    color: hsl(var(--base)) !important;
+    color: hsl(var(--base));
+    background-color: hsl(var(--base)/0.15);
+}
+
+.badge-outline--base {
+    color: hsl(var(--base));
+    border: 1px solid hsl(var(--base));
+    background-color: hsl(var(--base)/0.15);
+}
+
+.badge--base-two {
+    background-color: hsl(var(--base-two)/0.15);
+    color: hsl(var(--base-two));
+}
+
+.badge-outline--base-two {
+    color: hsl(var(--base-two));
+    border: 1px solid hsl(var(--base-two));
+    background-color: hsl(var(--base-two)/0.15);
 }
 
 .badge--primary {
-    background-color: hsl(var(--primary)/0.15) !important;
-    color: hsl(var(--primary)) !important;
+    background-color: hsl(var(--primary)/0.15);
+    color: hsl(var(--primary));
+}
+
+.badge-outline--primary {
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary));
+    background-color: hsl(var(--primary)/0.15);
 }
 
 .badge--secondary {
-    background-color: hsl(var(--secondary)/0.15) !important;
-    color: hsl(var(--secondary)) !important;
+    background-color: hsl(var(--secondary)/0.15);
+    color: hsl(var(--secondary));
+}
+
+.badge-outline--secondary {
+    color: hsl(var(--secondary));
+    border: 1px solid hsl(var(--secondary));
+    background-color: hsl(var(--secondary)/0.15);
 }
 
 .badge--success {
-    background-color: hsl(var(--success)/0.15) !important;
-    color: hsl(var(--success)) !important;
+    color: hsl(var(--success));
+    background-color: hsl(var(--success)/0.15);
+}
+
+.badge-outline--success {
+    color: hsl(var(--success));
+    border: 1px solid hsl(var(--success));
+    background-color: hsl(var(--success)/0.15);
 }
 
 .badge--danger {
-    background-color: hsl(var(--danger)/0.15) !important;
-    color: hsl(var(--danger)) !important;
+    background-color: hsl(var(--danger)/0.15);
+    color: hsl(var(--danger));
+}
+
+.badge-outline--danger {
+    color: hsl(var(--danger));
+    border: 1px solid hsl(var(--danger));
+    background-color: hsl(var(--danger)/0.15);
 }
 
 .badge--warning {
-    background-color: hsl(var(--warning)/0.15) !important;
-    color: hsl(var(--warning)) !important;
+    background-color: hsl(var(--warning)/0.15);
+    color: hsl(var(--warning));
+}
+
+.badge-outline--warning {
+    color: hsl(var(--warning));
+    border: 1px solid hsl(var(--warning));
+    background-color: hsl(var(--warning)/0.15);
 }
 
 .badge--info {
-    background-color: hsl(var(--info)/0.15) !important;
-    color: hsl(var(--info)) !important;
+    background-color: hsl(var(--info)/0.15);
+    color: hsl(var(--info));
 }
 
-/* ================================= Badge Css End =========================== */
+.badge-outline--info {
+    color: hsl(var(--info));
+    border: 1px solid hsl(var(--info));
+    background-color: hsl(var(--info)/0.15);
+}
+
+/* ========================= Badge CSS End ========================= */
 /* ================================= Button Css Start =========================== */
 .btn-check:checked + .btn,
 .btn.active,
