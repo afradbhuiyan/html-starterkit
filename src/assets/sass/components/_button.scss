@@ -75,6 +75,28 @@
     padding: 0;
   }
 
+  &--close {
+    --size: 48px;
+    width: var(--size);
+    height: var(--size);
+    padding: 0px !important;
+    background: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: '\f00d';
+      font-size: calc(var(--size) * 0.5);
+      font-family: 'Line Awesome Free';
+      font-weight: 900;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
   // ============= Gradient Button Start =======================
   @include gradient-btn(--base, --base, --base-two, 90deg);
   // ============= Gradient Button End =======================

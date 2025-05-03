@@ -875,152 +875,122 @@ ol {
     }
 }
 /* ========================= Accordion CSS End =============================== */
-/* ====================================== Alert Css Start =============================== */
+/* ========================= Alert CSS Start ======================= */
 .alert {
+    --color: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    gap: 12px;
+    border: 1px solid hsl(var(--color)/0.15);
+    background-color: hsl(var(--color)/0.15);
+    border-radius: 12px;
     margin-bottom: 0;
-    background-color: hsl(var(--white)) !important;
-    font-weight: 400;
-    padding: 17px 24px;
-    border-radius: 5px;
 }
 
-@media screen and (max-width: 991px) {
-    .alert {
-        padding: 16px;
-    }
-}
-
-@media screen and (max-width: 575px) {
-    .alert {
-        padding: 12px;
-    }
+.alert:not(:last-child) {
+    margin-bottom: 1rem;
 }
 
 .alert__icon {
-    font-size: 1.5rem;
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    padding: 0px !important;
+    background: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: calc(var(--size) * 0.5);
+    color: hsl(var(--color));
+    background-color: hsl(var(--color)/0.15);
+    border: 1px solid hsl(var(--color)/0.15);
     line-height: 1;
-}
-
-.alert__content {
-    width: calc(100% - 24px);
-    padding-left: 32px;
-}
-
-@media screen and (max-width: 991px) {
-    .alert__content {
-        padding-left: 16px;
-    }
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
 }
 
 @media screen and (max-width: 575px) {
-    .alert__content {
-        padding-left: 0;
-        width: 100%;
-        margin-top: 6px;
+    .alert__icon {
+        --size: 32px;
     }
+}
+
+.alert__content {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
 }
 
 .alert__title {
-    font-size: 1rem;
-    color: hsl(var(--base-two)/0.8);
-    font-weight: 600;
-    font-family: var(--heading-font);
-    margin-bottom: 6px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: hsl(var(--heading-color));
 }
 
 .alert__desc {
-    color: hsl(var(--base-two)/0.5);
-    display: block;
-    line-height: 1.375;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: hsl(var(--body-color));
 }
 
-@media screen and (max-width: 424px) {
-    .alert__desc {
-        font-size: 0.8125rem;
+.alert .btn--close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: hsl(var(--color));
+}
+
+@media screen and (max-width: 575px) {
+    .alert .btn--close {
+        --size: 40px;
     }
 }
 
-.alert__link {
-    position: relative;
-}
-
-.alert__link:hover::before {
-    visibility: visible;
-    opacity: 1;
-    bottom: 0;
-}
-
-.alert__link::before {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 1px;
-    background-color: hsl(var(--base));
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out;
-}
-
 .alert--base {
-    border-color: hsl(var(--base)/0.6);
+    --color: var(--base);
 }
 
-.alert--base .alert__icon {
-    color: hsl(var(--base));
+.alert--base-two {
+    --color: var(--base-two);
 }
 
 .alert--primary {
-    border-color: hsl(var(--primary)/0.6);
-}
-
-.alert--primary .alert__icon {
-    color: hsl(var(--primary));
-}
-
-.alert--success {
-    border-color: hsl(var(--success)/0.6);
-}
-
-.alert--success .alert__icon {
-    color: hsl(var(--success));
-}
-
-.alert--info {
-    border-color: hsl(var(--info)/0.6);
-}
-
-.alert--info .alert__icon {
-    color: hsl(var(--info));
-}
-
-.alert--danger {
-    border-color: hsl(var(--danger)/0.6);
-}
-
-.alert--danger .alert__icon {
-    color: hsl(var(--danger));
-}
-
-.alert--warning {
-    border-color: hsl(var(--warning)/0.6);
-}
-
-.alert--warning .alert__icon {
-    color: hsl(var(--warning));
+    --color: var(--primary);
 }
 
 .alert--secondary {
-    border-color: hsl(var(--secondary)/0.6);
+    --color: var(--secondary);
 }
 
-.alert--secondary .alert__icon {
-    color: hsl(var(--secondary));
+.alert--success {
+    --color: var(--success);
 }
 
-/* ====================================== Alert Css End =============================== */
+.alert--danger {
+    --color: var(--danger);
+}
+
+.alert--warning {
+    --color: var(--warning);
+}
+
+.alert--info {
+    --color: var(--info);
+}
+
+/* ========================= Alert CSS End ======================= */
 /* ================================= Badge Css Start =========================== */
 .custom--badge {
     font-size: 0.75rem;
@@ -1152,6 +1122,35 @@ ol {
     line-height: 35px;
     font-size: 0.9375rem;
     padding: 0;
+}
+
+.btn--close {
+    --size: 48px;
+    width: var(--size);
+    height: var(--size);
+    padding: 0px !important;
+    background: none;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.btn--close::after {
+    content: "\f00d";
+    font-size: calc(var(--size) * 0.5);
+    font-family: "Line Awesome Free";
+    font-weight: 900;
+}
+
+.btn--close:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .btn--base {

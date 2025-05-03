@@ -1,137 +1,100 @@
-/* ====================================== Alert Css Start =============================== */
+/* ========================= Alert CSS Start ======================= */
 .alert {
+  $alert: &;
+  --color: transparent;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid hsl(var(--color) / 0.15);
+  background-color: hsl(var(--color) / 0.15);
+  border-radius: 12px;
   margin-bottom: 0;
-  background-color: hsl(var(--white)) !important;
-  font-weight: 400;
-  padding: 17px 24px;
-  border-radius: 5px;
 
-  @include md-screen {
-    padding: 16px;
-  }
-
-  @include msm-screen {
-    padding: 12px;
+  &:not(:last-child) {
+    margin-bottom: 1rem;
   }
 
   &__icon {
-    font-size: 1.5rem;
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    padding: 0px !important;
+    background: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(var(--size) * 0.5);
+    color: hsl(var(--color));
+    background-color: hsl(var(--color)/0.15);
+    border: 1px solid hsl(var(--color) / 0.15);
     line-height: 1;
-  }
-
-  &__content {
-    width: calc(100% - 24px);
-    padding-left: 32px;
-
-    @include md-screen {
-      padding-left: 16px;
-    }
+    flex-shrink: 0;
 
     @include msm-screen {
-      padding-left: 0;
-      width: 100%;
-      margin-top: 6px;
+      --size: 32px;
     }
+  }
+  
+  &__content {
+    flex-grow: 1;
   }
 
   &__title {
-    font-size: rem(16px);
-    color: hsl(var(--base-two) / 0.8);
-    font-weight: 600;
-    font-family: var(--heading-font);
-    margin-bottom: 6px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: hsl(var(--heading-color));
   }
 
   &__desc {
-    color: hsl(var(--base-two) / 0.5);
-    display: block;
-    line-height: 1.375;
-
-    @include xsm-screen {
-      font-size: rem(13px);
-    }
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: 150%;
+    color: hsl(var(--body-color));
   }
 
-  &__link {
-    position: relative;
+  .btn--close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: hsl(var(--color));
 
-    &:hover {
-      &::before {
-        visibility: visible;
-        opacity: 1;
-        bottom: 0;
-      }
-    }
-
-    &::before {
-      position: absolute;
-        content: '';
-      left: 0;
-      bottom: -5px;
-      width: 100%;
-      height: 1px;
-      background-color: hsl(var(--base));
-      visibility: hidden;
-      opacity: 0;
-      transition: 0.2s ease-in-out;
+    @include msm-screen {
+      --size: 40px;
     }
   }
 
   &--base {
-    border-color: hsl(var(--base) / 0.6);
+    --color: var(--base);
+  }
 
-    .alert__icon {
-      color: hsl(var(--base));
-    }
+  &--base-two {
+    --color: var(--base-two);
   }
 
   &--primary {
-    border-color: hsl(var(--primary) / 0.6);
-
-    .alert__icon {
-      color: hsl(var(--primary));
-    }
-  }
-
-  &--success {
-    border-color: hsl(var(--success) / 0.6);
-
-    .alert__icon {
-      color: hsl(var(--success));
-    }
-  }
-
-  &--info {
-    border-color: hsl(var(--info) / 0.6);
-
-    .alert__icon {
-      color: hsl(var(--info));
-    }
-  }
-
-  &--danger {
-    border-color: hsl(var(--danger) / 0.6);
-
-    .alert__icon {
-      color: hsl(var(--danger));
-    }
-  }
-
-  &--warning {
-    border-color: hsl(var(--warning) / 0.6);
-
-    .alert__icon {
-      color: hsl(var(--warning));
-    }
+    --color: var(--primary);
   }
 
   &--secondary {
-    border-color: hsl(var(--secondary) / 0.6);
+    --color: var(--secondary);
+  }
 
-    .alert__icon {
-      color: hsl(var(--secondary));
-    }
+  &--success {
+    --color: var(--success);
+  }
+
+  &--danger {
+    --color: var(--danger);
+  }
+
+  &--warning {
+    --color: var(--warning);
+  }
+
+  &--info {
+    --color: var(--info);
   }
 }
 
-/* ====================================== Alert Css End =============================== */
+/* ========================= Alert CSS End ======================= */
