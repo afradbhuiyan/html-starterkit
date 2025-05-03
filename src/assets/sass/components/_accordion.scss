@@ -1,93 +1,87 @@
-/* =========================== Accordion Css start ============================= */
+/* ========================= Accordion CSS Start ============================= */
 .custom--accordion {
   .accordion-item {
-    border: 1px solid hsl(var(--black) / 0.09);
-    background-color: transparent !important;
-    border-radius: 5px;
-    overflow: hidden;
+    border-radius: 12px !important;
+    border: 1px solid hsl(var(--border-color));
+
+    &:not(:has(.accordion-button.collapsed)) {
+      border-color: hsl(var(--base));
+    }
 
     &:not(:last-child) {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
-  }
-
-  .accordion-header {
-    line-height: 1;
   }
 
   .accordion-body {
-    padding: 20px;
-    background-color: hsl(var(--section-bg));
-
-    .text {
-      max-width: 60%;
-
-      @include msm-screen {
-        max-width: 100%;
-      }
-    }
-  }
-
-  &:first-of-type .accordion-button.collapsed {
-    border-radius: 5px;
-  }
-
-  &:last-of-type .accordion-button.collapsed {
-    border-radius: 5px;
+    padding: 16px;
   }
 
   .accordion-button {
-    background-color: hsl(var(--section-bg));
-    color: var(--heading-color);
     font-size: rem(18px);
-    padding: 15px;
+    font-weight: 700;
+    line-height: 120%;
+    padding: 16px;
+    color: hsl(var(--black));
+    background-color: transparent;
+    border-radius: 10px 10px 0px 0px !important;
+    gap: 8px;
 
     @include msm-screen {
-      padding: 13px;
-      padding-right: 30px;
+      font-size: rem(16px);
     }
 
     &::after {
+      --size: 24px;
+      content: '\2b';
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: hsl(var(--body-color));
+      border: 1px solid hsl(var(--body-color));
       background-image: none;
+      font-family: 'Font Awesome 6 Free';
+      font-size: calc(var(--size) * 0.6);
+      font-weight: 900;
+
+      @include msm-screen {
+        --size: 20px;
+      }
+    }
+
+    &:not(.collapsed) {
+      box-shadow: none;
+      color: hsl(var(--white));
+      background-color: hsl(var(--base));
+
+      &::after {
+        color: hsl(var(--base));
+        border-color: hsl(var(--white));
+        background-color: hsl(var(--white));
+        transform: rotate(45deg);
+      }
     }
 
     &:focus {
       box-shadow: none;
     }
+  }
 
-    &:not(.collapsed) {
-      color: hsl(var(--white));
-      background-color: hsl(var(--black)) !important;
-      box-shadow: none;
+  .accordion-text {
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: 150%;
+    color: hsl(var(--gray));
+    padding-top: 16px;
+    border-top: 1px solid hsl(var(--white) / 0.15);
 
-      &::after {
-        background-image: none;
-        color: hsl(var(--base));
-      }
-    }
-
-    &[aria-expanded='true'],
-    &[aria-expanded='false'] {
-      &::after {
-        font-family: 'Line Awesome Free';
-        font-weight: 900;
-        content: '\f068';
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-          transform: translateY(-50%);
-        right: 15px;
-        height: unset;
-      }
-    }
-
-    &[aria-expanded='false'] {
-      &::after {
-        content: '\f067';
-        color: hsl(var(--body-color));
-      }
+    @include msm-screen {
+      font-size: rem(14px);
     }
   }
 }
 
-/* ================================= Accordion Css End =========================== */
+/* ========================= Accordion CSS End =============================== */
