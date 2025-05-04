@@ -180,101 +180,140 @@
 @mixin btn-style($name, $color: --white) {
 
   //solid button style
-  &#{$name} {
-      background-color: hsl(var(#{$name})) !important;
+  &#{$name},
+  &#{$name}:disabled,
+  &#{$name}.disabled {
+    color: hsl(var(#{$color}));
+    border-color: hsl(var(#{$name}));
+    background-color: hsl(var(#{$name}));
+  }
 
-      &:hover,
-      &:focus &:focus-visible {
-          background-color: hsl(var(#{$name}-d-200)) !important;
-          border: 1px solid hsl(var(#{$name}-d-200)) !important;
-      }
+  &#{$name} {
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-visible {
+      color: hsl(var(#{$color})) !important;
+      border-color: hsl(var(#{$name}-d-200)) !important;
+      background-color: hsl(var(#{$name}-d-200)) !important;
+    }
   }
 
   // Outline button styles
-  &-outline#{$name} {
-      background-color: transparent !important;
-      border: 1px solid hsl(var(#{$name})) !important;
-      color: hsl(var(#{$name})) !important;
+  &-outline#{$name},
+  &-outline#{$name}:disabled,
+  &-outline#{$name}.disabled {
+    color: hsl(var(#{$name}));
+    border-color: hsl(var(#{$name}));
+    background-color: transparent;
+  }
 
-      &:hover,
-      &:focus &:focus-visible {
-          background-color: hsl(var(#{$name})) !important;
-          color: hsl(var(#{$color})) !important;
-      }
+  &-outline#{$name} {
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-visible {
+      color: hsl(var(#{$color})) !important;
+      border-color: hsl(var(#{$name})) !important;
+      background-color: hsl(var(#{$name})) !important;
+    }
+  }
+
+  // Soft button styles
+  &-soft#{$name},
+  &-soft#{$name}:disabled,
+  &-soft#{$name}.disabled {
+    color: hsl(var(#{$name}));
+    border-color: transparent;
+    background-color: hsl(var(#{$name}) / 0.15);
+  }
+
+  &-soft#{$name} {
+
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-visible {
+      color: hsl(var(#{$color})) !important;
+      border-color: hsl(var(#{$name})) !important;
+      background-color: hsl(var(#{$name})) !important;
+    }
   }
 }
 
 // Gradient button style;
 @mixin gradient-btn($name, $color1, $color2, $deg: 90deg) {
   &#{$name} {
-      position: relative;
+    position: relative;
 
-      &::before,
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
+      border-radius: inherit !important;
+      z-index: -1;
+      transition: 0.2s linear;
+    }
+
+    &::after {
+      background: linear-gradient($deg, hsl(var($color1)) 0%, hsl(var($color2)) 100%);
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
       &::after {
-          position: absolute;
-          content: '';
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: calc(100% + 2px);
-          height: calc(100% + 2px);
-          background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
-          border-radius: inherit !important;
-          z-index: -1;
-          transition: 0.2s linear;
+        visibility: visible;
+        opacity: 1;
       }
-
-      &::after {
-          background: linear-gradient($deg, hsl(var($color1)) 0%, hsl(var($color2)) 100%);
-          visibility: hidden;
-          opacity: 0;
-      }
-
-      &:hover,
-      &:focus,
-      &:focus-visible {
-          &::after {
-              visibility: visible;
-              opacity: 1;
-          }
-      }
+    }
   }
 
   // Outline button styles
   &-outline#{$name} {
-      background-color: transparent !important;
-      border: 1px solid hsl(var(--base)) !important;
-      color: hsl(var(--base)) !important;
-      position: relative;
+    background-color: transparent !important;
+    border: 1px solid hsl(var(--base)) !important;
+    color: hsl(var(--base)) !important;
+    position: relative;
+    transition: 0.2s linear;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
+      border-radius: inherit !important;
+      z-index: -1;
       transition: 0.2s linear;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      color: hsl(var(--white)) !important;
 
       &::before,
       &::after {
-          position: absolute;
-          content: '';
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: calc(100% + 2px);
-          height: calc(100% + 2px);
-          background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
-          border-radius: inherit !important;
-          z-index: -1;
-          transition: 0.2s linear;
-          visibility: hidden;
-          opacity: 0;
+        visibility: visible;
+        opacity: 1;
       }
-
-      &:hover,
-      &:focus,
-      &:focus-visible {
-          color: hsl(var(--white)) !important;
-
-          &::before,
-          &::after {
-              visibility: visible;
-              opacity: 1;
-          }
-      }
+    }
   }
 }

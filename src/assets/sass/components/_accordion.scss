@@ -1,7 +1,7 @@
 /* ========================= Accordion CSS Start ============================= */
 .custom--accordion {
   .accordion-item {
-    border-radius: 12px !important;
+    border-radius: 6px !important;
     border: 1px solid hsl(var(--border-color));
 
     &:not(:has(.accordion-button.collapsed)) {
@@ -24,7 +24,7 @@
     padding: 16px;
     color: hsl(var(--black));
     background-color: transparent;
-    border-radius: 10px 10px 0px 0px !important;
+    border-radius: 4px 4px 0px 0px !important;
     gap: 8px;
 
     @include msm-screen {
