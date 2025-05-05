@@ -1,32 +1,46 @@
-/* ================================= Card Css Start =========================== */
+/* ========================= Card CSS Start =========================== */
 .custom--card {
-  border-radius: 5px;
-  box-shadow: var(--box-shadow);
-  background-color: hsl(var(--white));
-  ;
-  border: transparent;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid hsl(var(--border-color));
+
+  @include msm-screen {
+    padding: 16px;
+  }
+
+  .card-header,
+  .card-body,
+  .card-footer {
+    padding: 0px;
+    background-color: transparent;
+  }
 
   .card-header {
-    padding: 12px 24px;
-    background-color: transparent;
-    border-bottom: 1px solid hsl(var(--black)/.1);
+    padding-bottom: 16px;
+    border-bottom: 1px solid hsl(var(--border-color));
 
-    .title {
-      margin-bottom: 0;
+    &:not(:last-child) {
+      margin-bottom: 16px;
     }
   }
 
   .card-body {
-    background-color: hsl(var(--white));
-    padding: 24px;
-    border-radius: 5px;
+    color: hsl(var(--body-color));
   }
 
   .card-footer {
-    padding: 12px 24px;
-    background-color: transparent;
-    border-top: 1px solid hsl(var(--black)/.1);
+    padding-top: 16px;
+    border-top: 1px solid hsl(var(--border-color));
+
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+
+  .card-title {
+    color: hsl(var(--heading-color));
+    margin-bottom: 0;
   }
 }
 
-/* ================================= Card Css End =========================== */
+/* ========================= Card CSS End ========================= */
