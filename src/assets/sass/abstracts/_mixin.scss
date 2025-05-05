@@ -244,76 +244,154 @@
 }
 
 // Gradient button style;
-@mixin gradient-btn($name, $color1, $color2, $deg: 90deg) {
+@mixin gradient-btn($name, $gradient: --gradient, $color: --white) {
+
+  &#{$name},
+  &#{$name}:disabled,
+  &#{$name}.disabled {
+    color: hsl(var(#{$color}));
+    background: var(#{$gradient});
+  }
+
   &#{$name} {
-    position: relative;
-
-    &::before,
-    &::after {
-      position: absolute;
-      content: '';
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: calc(100% + 2px);
-      height: calc(100% + 2px);
-      background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
-      border-radius: inherit !important;
-      z-index: -1;
-      transition: 0.2s linear;
-    }
-
-    &::after {
-      background: linear-gradient($deg, hsl(var($color1)) 0%, hsl(var($color2)) 100%);
-      visibility: hidden;
-      opacity: 0;
-    }
 
     &:hover,
+    &:active,
     &:focus,
     &:focus-visible {
-      &::after {
-        visibility: visible;
-        opacity: 1;
-      }
+      color: hsl(var(#{$color})) !important;
+      border-color: transparent !important;
     }
   }
 
   // Outline button styles
-  &-outline#{$name} {
-    background-color: transparent !important;
-    border: 1px solid hsl(var(--base)) !important;
-    color: hsl(var(--base)) !important;
+  &-outline#{$name},
+  &-outline#{$name}:disabled,
+  &-outline#{$name}.disabled {
     position: relative;
-    transition: 0.2s linear;
+    z-index: 1;
+    background: var(#{$gradient});
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: .2s linear;
+    border-color: transparent;
 
     &::before,
     &::after {
-      position: absolute;
       content: '';
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: calc(100% + 2px);
-      height: calc(100% + 2px);
-      background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
-      border-radius: inherit !important;
+      border-radius: inherit;
+      position: absolute;
+      inset: 0;
       z-index: -1;
-      transition: 0.2s linear;
-      visibility: hidden;
-      opacity: 0;
+      transition: inherit;
     }
 
+    &::before {
+      background: var(#{$gradient}) border-box;
+      border: 1px solid transparent;
+      mask: linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+    }
+
+    &::after {
+      opacity: 0;
+      visibility: hidden;
+      background: var(#{$gradient});
+    }
+  }
+
+  &-outline#{$name} {
+
     &:hover,
+    &:active,
     &:focus,
     &:focus-visible {
-      color: hsl(var(--white)) !important;
+      border-color: transparent !important;
+      -webkit-text-fill-color: hsl(var(#{$color}));
 
-      &::before,
+      &::before {
+        opacity: 0;
+        visibility: hidden;
+      }
+
       &::after {
-        visibility: visible;
         opacity: 1;
+        visibility: visible;
       }
     }
   }
+
+
+  // &#{$name} {
+  //   position: relative;
+
+  //   &::before,
+  //   &::after {
+  //     position: absolute;
+  //     content: '';
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translate(-50%, -50%);
+  //     width: calc(100% + 2px);
+  //     height: calc(100% + 2px);
+  //     background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
+  //     border-radius: inherit !important;
+  //     z-index: -1;
+  //     transition: 0.2s linear;
+  //   }
+
+  //   &::after {
+  //     background: linear-gradient($deg, hsl(var($color1)) 0%, hsl(var($color2)) 100%);
+  //     visibility: hidden;
+  //     opacity: 0;
+  //   }
+
+  //   &:hover,
+  //   &:focus,
+  //   &:focus-visible {
+  //     &::after {
+  //       visibility: visible;
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
+
+  // // Outline button styles
+  // &-outline#{$name} {
+  //   background-color: transparent !important;
+  //   border: 1px solid hsl(var(--base)) !important;
+  //   color: hsl(var(--base)) !important;
+  //   position: relative;
+  //   transition: 0.2s linear;
+
+  //   &::before,
+  //   &::after {
+  //     position: absolute;
+  //     content: '';
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translate(-50%, -50%);
+  //     width: calc(100% + 2px);
+  //     height: calc(100% + 2px);
+  //     background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
+  //     border-radius: inherit !important;
+  //     z-index: -1;
+  //     transition: 0.2s linear;
+  //     visibility: hidden;
+  //     opacity: 0;
+  //   }
+
+  //   &:hover,
+  //   &:focus,
+  //   &:focus-visible {
+  //     color: hsl(var(--white)) !important;
+
+  //     &::before,
+  //     &::after {
+  //       visibility: visible;
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 }

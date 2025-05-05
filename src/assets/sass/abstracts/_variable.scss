@@ -50,6 +50,8 @@
   --border-color: var(--gray-l-300);
   /* Shadow Variables */
   --box-shadow: 0px 2px 15px hsl(var(--black) / 0.05);
+   /* Gradient Variable */
+   --gradient: linear-gradient(90deg, hsl(var(--base-two)) -177.5%, hsl(var(--base)) 64.5%);
 }
 
 /* ========================= CSS Variables End ========================= */

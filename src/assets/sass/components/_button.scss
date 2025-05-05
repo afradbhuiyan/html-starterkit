@@ -105,11 +105,6 @@
     }
   }
 
-  // ============= Gradient Button Start =======================
-  // @include gradient-btn(--base, --base, --base-two, 90deg);
-  // ============= Gradient Button End =======================
-
-  // ============= Different Color Button Start ==================
   @include btn-style(--base);
   @include btn-style(--base-two);
   @include btn-style(--primary);
@@ -118,6 +113,7 @@
   @include btn-style(--danger);
   @include btn-style(--warning, --black);
   @include btn-style(--info);
+  @include gradient-btn(--gradient);
 }
 
 /* ========================= Button CSS End =========================== */
