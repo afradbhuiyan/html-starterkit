@@ -40,12 +40,6 @@
 
         })();
 
-        // ========================== Small Device Header Menu On Click Dropdown menu collapse Stop Js Start =====================
-        $('.dropdown-item').on('click', function () {
-            $(this).closest('.dropdown-menu').addClass('d-block');
-        });
-        // ========================== Small Device Header Menu On Click Dropdown menu collapse Stop Js End =====================
-
         // ========================== Add Attribute For Bg Image Js Start =====================
         $('.bg-img').css('background-image', function () {
             return `url(${$(this).data('background-image')})`;

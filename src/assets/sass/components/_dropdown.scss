@@ -1,0 +1,364 @@
+/* ========================= Dropdown CSS Start ========================= */
+.dropdown {
+    $parent: &;
+    $lang: '.dropdown--lang';
+    $profile: '.dropdown--profile';
+    $notification: '.dropdown--notification';
+
+    @at-root {
+        #{$lang} {
+            #{$parent}-toggle {
+                font-size: rem(16px);
+                font-weight: 500;
+                line-height: 120%;
+                color: hsl(var(--gray));
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                border: none;
+                background-color: transparent;
+
+                &:hover,
+                &:focus {
+                    color: hsl(var(--gray-d-100));
+                }
+
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+
+                &__flag {
+                    --size: 20px;
+                    width: var(--size);
+                    height: var(--size);
+                    object-fit: cover;
+                }
+
+                &::after {
+                    margin-left: 0;
+                    border-radius: 6px;
+                }
+
+                &[aria-expanded="true"]::after {
+                    transform: rotate(180deg);
+                }
+            }
+
+            #{$parent}-menu {
+                max-width: 5rem;
+                overflow: hidden;
+                padding: 0;
+                border-radius: 6;
+                border: 1px solid hsl(var(--border-color));
+                background-color: hsl(var(--white));
+            }
+
+            #{$parent}-item {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                font-size: rem(16px);
+                font-weight: 500;
+                line-height: 120%;
+                color: hsl(var(--gray));
+                padding: 12px 16px;
+
+                &:hover,
+                &:focus {
+                    color: hsl(var(--base));
+                    background-color: hsl(var(--base) / 0.15);
+                }
+
+                &__flag {
+                    --size: 16px;
+                    width: var(--size);
+                    height: var(--size);
+                }
+            }
+        }
+    }
+
+    @at-root {
+        #{$notification} {
+
+            #{$parent}-toggle {
+                .badge {
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    line-height: 100%;
+                    position: absolute;
+                    color: hsl(var(--white));
+                    background-color: hsl(var(--danger));
+                    padding: 3px 6px;
+                    top: 0;
+                    right: -15%;
+                    border-radius: 999px;
+                }
+
+                &::after {
+                    display: none;
+                }
+
+                @include lg-screen {
+                    --size: 40px;
+                }
+
+                @include xsm-screen {
+                    --size: 32px;
+                }
+            }
+
+            #{$parent}-menu {
+                max-width: 100%;
+                min-width: 325px;
+                max-height: 375px;
+                padding: 0px;
+                border-radius: 20px;
+                border: 1px solid hsl(var(--border-color));
+                background-color: hsl(var(--white));
+                overflow: hidden;
+
+                @include msm-screen {
+                    min-width: 270px;
+                    max-height: 350px;
+                }
+
+                @include xsm-screen {
+                    min-width: 250px;
+                }
+
+                &-end {
+                    @include xxsm-screen {
+                        right: -70px;
+                    }
+                }
+
+                &.show {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                &__header {
+                    padding: 16px;
+                    border-bottom: 1px solid hsl(var(--border-color));
+                }
+
+                &__body {
+                    flex-grow: 1;
+                    overflow: hidden auto;
+                    scrollbar-width: thin;
+                    scrollbar-color: hsl(var(--black) / 0.05) hsl(var(--black) / 0.05);
+                }
+
+                &__footer {
+                    padding: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-top: 1px solid hsl(var(--border-color));
+                }
+
+
+                &__title {
+                    font-size: rem(18px);
+                    font-weight: 700;
+                    line-height: 120%;
+                    color: hsl(var(--gray-d-400));
+                    margin-bottom: 0;
+
+                    @include lg-screen {
+                        font-size: rem(16px);
+                        line-height: 100%;
+                    }
+
+                }
+
+                &__view-all {
+                    font-size: rem(16px);
+                    font-weight: 600;
+                    line-height: 150%;
+                    color: hsl(var(--base));
+                    
+                    &:has(svg, i) {
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+                    }
+
+                    i {
+                        font-size: rem(18px);
+                    }
+
+                    @include lg-screen {
+                        font-size: rem(14px);
+                    }
+
+                    &:hover,
+                    &:focus {
+                        outline: none;
+                        color: hsl(var(--base-d-200));
+                    }
+                }
+            }
+
+            #{$parent}-item {
+                width: 100%;
+                padding: 16px;
+                white-space: wrap;
+                background-color: transparent;
+                transition: .2s linear;
+
+                &:not(:last-child) {
+                    position: relative;
+                    z-index: 1;
+                    padding-bottom: 16px;
+
+                    &::after {
+                        content: '';
+                        width: calc(100% - 24px);
+                        height: 1px;
+                        background-color: hsl(var(--border-color));
+                        display: inline-block;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        bottom: 0;
+                        z-index: -1;
+                    }
+
+                    @include lg-screen {
+                        padding-bottom: 8px;
+                        margin-bottom: 8px;
+                    }
+                }
+
+                &__title {
+                    font-size: rem(18px);
+                    font-weight: 700;
+                    line-height: 120%;
+                    color: inherit;
+                    @include line-clamp(2);
+                    margin-bottom: 8px;
+                    transition: .2s linear;
+
+                    @include lg-screen {
+                        font-size: rem(16px);
+                        line-height: 100%;
+                    }
+                }
+
+                &__date {
+                    font-size: rem(14px);
+                    font-weight: 500;
+                    line-height: 150%;
+                    text-align: right;
+                    color: hsl(var(--gray));
+
+                    @include lg-screen {
+                        font-size: rem(12px);
+                    }
+                }
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                    color: hsl(var(--base));
+                    background-color: hsl(var(--base)/0.1);
+                }
+            }
+        }
+    }
+
+    @at-root {
+        #{$profile} {
+            #{$parent}-toggle {
+                &::after {
+                    display: none;
+                }
+
+                @include lg-screen {
+                    --size: 40px;
+                }
+
+                @include xsm-screen {
+                    --size: 32px;
+                }
+            }
+
+            #{$parent}-menu {
+                min-width: 280px;
+                padding: 24px;
+                overflow: hidden;
+                border-radius: 20px;
+                border: 1px solid hsl(var(--white) / 0.20);
+                background-color: hsl(var(--white) / 0.15);
+                backdrop-filter: blur(25px);
+
+                @include lg-screen {
+                    padding: 16px;
+                }
+
+                @include msm-screen {
+                    min-width: 270px;
+                }
+
+                @include xsm-screen {
+                    min-width: 250px;
+                }
+
+                @include xxsm-screen {
+                    min-width: 230px;
+                }
+            }
+
+            #{$parent}-item {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                font-size: rem(18px);
+                font-weight: 700;
+                line-height: 120%;
+                color: hsl(var(--light));
+                background-color: transparent;
+                padding: 0px;
+                transition: .10s linear;
+
+                @include lg-screen {
+                    font-size: rem(16px);
+                    line-height: 100%;
+
+                    svg {
+                        width: 16px;
+                        height: 16px;
+                    }
+                }
+
+                &:not(:last-child) {
+                    padding-bottom: 8px;
+                    margin-bottom: 8px;
+                    border-bottom: 1px solid hsl(var(--white)/0.15);
+                }
+
+                &.logout {
+                    color: hsl(var(--danger));
+                }
+
+                &:hover,
+                &:focus {
+                    background-color: transparent;
+                }
+
+                &:not(.logout):hover,
+                &:not(.logout):focus {
+                    color: hsl(var(--base));
+                }
+            }
+        }
+    }
+}
+
+/* ========================= Dropdown CSS End ========================= */
