@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="assets/css/slick.css">
   <!-- line awesome -->
   <link rel="stylesheet" href="assets/css/line-awesome.min.css">
-  <!-- Odometer -->
-  <link rel="stylesheet" href="assets/css/odometer.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="assets/css/select2.min.css">
   <!-- Main css -->
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -38,7 +38,12 @@
   <!--==================== Sidebar Overlay End ====================-->
 
   <!-- ==================== Scroll to Top End Here ==================== -->
-  <a class="scroll-top"><i class="fas fa-angle-double-up"></i></a>
+  <button class="scroll-top" type="button">
+    <svg class="scroll-top-progress" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98">
+      </path>
+    </svg>
+  </button>
   <!-- ==================== Scroll to Top End Here ==================== -->
 
 <section class="py-120">
@@ -543,8 +548,9 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                                        <button type="button" class="btn btn--sm btn--close btn-outline--secondary rounded-full" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
+                                        <button type="button"
+                                            class="btn btn--sm btn--close btn-outline--secondary rounded-full"
+                                            data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sequi hic
@@ -560,9 +566,66 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="modal-backdrop"></div> -->
                     </div>
                     <!-- Modal Ends -->
+
+                    <!-- Form Starts -->
+                    <div>
+                        <h3 class="mb-3">
+                            <span class="text-primary">#</span>
+                            Form
+                        </h3>
+                        <div class="d-flex flex-column gap-4">
+                            <div class="d-flex flex-column gap-2">
+                                <input type="text" class="form-control form-control--lg form--control"
+                                    placeholder="Large Input">
+                                <input type="text" class="form-control form--control" placeholder="Default Input">
+                                <input type="text" class="form-control form-control--sm form--control"
+                                    placeholder="Small Input">
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                <select class="form-select form-select--lg form--select">
+                                    <option disabled>Large Select</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                                <select class="form-select form--select">
+                                    <option disabled>Large Select</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                                <select class="form-select form-select--sm form--select">
+                                    <option disabled>Large Select</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                <select class="form-select form-select--lg form--select select2">
+                                    <option disabled>Large Select</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                                <select class="form-select form--select select2">
+                                    <option disabled>Large Select</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                                <select class="form-select form-select--sm form--select select2">
+                                    <option disabled>Large Select</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Form Ends -->
                 </div>
 
 
@@ -578,8 +641,7 @@
                         <hr>
                     </div> -->
 
-                    <!-- ================ Modal Section Start==================== -->
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <div class="">
                             <h1>Table </h1>
                             <table class="table table--responsive--md">
@@ -615,8 +677,7 @@
                             <br>
                             <br>
                         </div>
-                    </div>
-                    <!-- ================ Modal Section End==================== -->
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-4 col-xxl-3">
@@ -720,19 +781,16 @@
 
 
 
-
 <!-- Jquery js -->
 <script src="assets/js/jquery-3.7.1.min.js"></script>
 <!-- Bootstrap Bundle Js -->
 <script src="assets/js/boostrap.bundle.min.js"></script>
 <!-- Slick js -->
 <script src="assets/js/slick.min.js"></script>
-<!-- Odometer js -->
-<script src="assets/js/odometer.min.js"></script>
-<!-- Viewport js -->
-<script src="assets/js/viewport.jquery.js"></script>
-
- <!-- main js -->
- <script src="assets/js/main.js"></script>
+<!-- Select js -->
+<script src="assets/js/select2.min.js"></script>
+<!-- main js -->
+<script src="assets/js/main.js"></script>
 </body>
+
 </html>
