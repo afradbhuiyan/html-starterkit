@@ -469,7 +469,7 @@
                                     </svg>
                                     <span class="badge badge--danger">9+</span>
                                 </button>
-                                <div class="dropdown-menu dropdown-menu-end">
+                                <div class="dropdown-menu">
                                     <div class="dropdown-menu__header">
                                         <h6 class="dropdown-menu__title">Notifications</h6>
                                     </div>
@@ -480,7 +480,8 @@
                                             <span class="dropdown-item__date">24/12/2024 7:40 PM</span>
                                         </a>
                                         <a class="dropdown-item unread" href="#">
-                                            <h6 class="dropdown-item__title">Please enable 2FA authentication to secure.</h6>
+                                            <h6 class="dropdown-item__title">Please enable 2FA authentication to secure.
+                                            </h6>
                                             <span class="dropdown-item__date">24/12/2024 7:40 PM</span>
                                         </a>
                                         <a class="dropdown-item unread" href="#">
@@ -497,7 +498,8 @@
                                             <span class="dropdown-item__date">24/12/2024 7:40 PM</span>
                                         </a>
                                         <a class="dropdown-item unread" href="#">
-                                            <h6 class="dropdown-item__title">Please enable 2FA authentication to secure.</h6>
+                                            <h6 class="dropdown-item__title">Please enable 2FA authentication to secure.
+                                            </h6>
                                             <span class="dropdown-item__date">24/12/2024 7:40 PM</span>
                                         </a>
                                         <a class="dropdown-item unread" href="#">
@@ -521,6 +523,46 @@
                         </div>
                     </div>
                     <!-- Dropdown Ends -->
+
+                    <!-- Modal Starts -->
+                    <div>
+                        <h3 class="mb-3">
+                            <span class="text-primary">#</span>
+                            Modal
+                        </h3>
+
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
+                            Launch Custom Modal
+                        </button>
+
+                        <div class="modal custom--modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                        <button type="button" class="btn btn--sm btn--close btn-outline--secondary rounded-full" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi sequi hic
+                                            molestiae commodi qui architecto in! Sapiente incidunt nesciunt inventore
+                                            odio natus, consequuntur nam nulla, obcaecati dolorem ex voluptates sequi.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn--sm btn--secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn--sm btn--base">Procced</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="modal-backdrop"></div> -->
+                    </div>
+                    <!-- Modal Ends -->
                 </div>
 
 
@@ -539,40 +581,6 @@
                     <!-- ================ Modal Section Start==================== -->
                     <div class="col-12">
                         <div class="">
-                            <br>
-                            <br>
-                            <br>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">
-                                Launch static backdrop modal
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal custom--modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            ...
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Understood</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <br>
                             <h1>Table </h1>
                             <table class="table table--responsive--md">
                                 <thead>

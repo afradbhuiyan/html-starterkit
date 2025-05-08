@@ -11,8 +11,10 @@
   transition: .2s linear;
 
   &:hover,
+  &:active,
   &:focus,
   &:focus-visible {
+    outline: none;
     box-shadow: none !important;
   }
 
