@@ -57,10 +57,11 @@ input[type='number'] {
 .form--select {
   width: 100%;
   font-size: rem(16px);
+  font-weight: 500;
   font-style: normal;
-  line-height: 150%;
+  line-height: 100%;
   border-radius: 6px;
-  padding: 11px 20px;
+  padding: 14px 24px;
   border: 1px solid hsl(var(--border-color));
 
   &:focus {
@@ -88,16 +89,25 @@ input[type='number'] {
     color: hsl(var(--gray));
   }
 
-  &.form-control--sm {
-    font-size: rem(14px);
-    padding: 8.5px 16px;
+  &.form-control--xl {
+    @media screen and (min-width: 576px) {
+      padding: 20px 32px;
+      font-size: rem(20px);
+    }
   }
 
   &.form-control--lg {
     @media screen and (min-width: 576px) {
-      padding: 15px 24px;
+      padding: 17px 28px;
+      font-size: rem(18px);
     }
   }
+
+  &.form-control--sm {
+    font-size: rem(14px);
+    padding: 11px 20px;
+  }
+
 
   &[type='file'] {
     &::file-selector-button {
@@ -120,7 +130,6 @@ input[type='number'] {
       padding: 16px 16px 16px 24px;
     }
 
-
     &:hover:not(:disabled):not([readonly])::file-selector-button {
       background-color: hsl(var(--base)) !important;
     }
@@ -142,27 +151,33 @@ input[type='number'] {
 .form--select {
   --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%2387878780' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   color: hsl(var(--gray));
-  font-weight: 400;
   background-size: 24px 10px;
-
 
   option {
     color: hsl(var(--gray));
-    font-weight: 400;
     background-color: hsl(var(--dark));
   }
 
-  &.form-select--sm {
-    font-size: rem(14px);
-    padding: 8.5px 16px;
-    background-size: 16px 8px;
+  &.form-select--xl {
+    @media screen and (min-width: 576px) {
+      padding: 20px 32px;
+      font-size: rem(20px);
+      background-size: 24px 12px;
+    }
   }
 
   &.form-select--lg {
     @media screen and (min-width: 576px) {
-      padding: 15px 24px;
+      padding: 17px 28px;
+      font-size: rem(18px);
       background-size: 24px 12px;
     }
+  }
+
+  &.form-select--sm {
+    font-size: rem(14px);
+    padding: 11px 20px;
+    background-size: 16px 8px;
   }
 
   &.selected,

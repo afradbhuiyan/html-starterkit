@@ -18,9 +18,13 @@
     box-shadow: none !important;
   }
 
-  &--sm {
-    font-size: rem(14px);
-    padding: 12.5px 18px;
+  &--xl {
+    padding: 21.5px 32px;
+    font-size: rem(20px);
+
+    @include msm-screen {
+      padding: 18.5px 28px;
+    }
   }
 
   &--lg {
@@ -32,14 +36,11 @@
     }
   }
 
-  &--xl {
-    padding: 21.5px 32px;
-    font-size: rem(20px);
-
-    @include msm-screen {
-      padding: 18.5px 28px;
-    }
+  &--sm {
+    font-size: rem(14px);
+    padding: 12.5px 18px;
   }
+
 
   &--icon {
     --size: 48px;

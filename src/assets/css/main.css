@@ -1159,9 +1159,15 @@ ol {
     box-shadow: none !important;
 }
 
-.btn--sm {
-    font-size: 0.875rem;
-    padding: 12.5px 18px;
+.btn--xl {
+    padding: 21.5px 32px;
+    font-size: 1.25rem;
+}
+
+@media screen and (max-width: 575px) {
+    .btn--xl {
+        padding: 18.5px 28px;
+    }
 }
 
 .btn--lg {
@@ -1175,15 +1181,9 @@ ol {
     }
 }
 
-.btn--xl {
-    padding: 21.5px 32px;
-    font-size: 1.25rem;
-}
-
-@media screen and (max-width: 575px) {
-    .btn--xl {
-        padding: 18.5px 28px;
-    }
+.btn--sm {
+    font-size: 0.875rem;
+    padding: 12.5px 18px;
 }
 
 .btn--icon {
@@ -2159,10 +2159,11 @@ input[type=number] {
 .form--select {
     width: 100%;
     font-size: 1rem;
+    font-weight: 500;
     font-style: normal;
-    line-height: 150%;
+    line-height: 100%;
     border-radius: 6px;
-    padding: 11px 20px;
+    padding: 14px 24px;
     border: 1px solid hsl(var(--border-color));
 }
 
@@ -2215,15 +2216,23 @@ input[type=number] {
     color: hsl(var(--gray));
 }
 
-.form--control.form-control--sm {
-    font-size: 0.875rem;
-    padding: 8.5px 16px;
+@media screen and (min-width: 576px) {
+    .form--control.form-control--xl {
+        padding: 20px 32px;
+        font-size: 1.25rem;
+    }
 }
 
 @media screen and (min-width: 576px) {
     .form--control.form-control--lg {
-        padding: 15px 24px;
+        padding: 17px 28px;
+        font-size: 1.125rem;
     }
+}
+
+.form--control.form-control--sm {
+    font-size: 0.875rem;
+    padding: 11px 20px;
 }
 
 .form--control[type=file]::-webkit-file-upload-button {
@@ -2289,27 +2298,34 @@ textarea.form--control {
 .form--select {
     --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%2387878780' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     color: hsl(var(--gray));
-    font-weight: 400;
     background-size: 24px 10px;
 }
 
 .form--select option {
     color: hsl(var(--gray));
-    font-weight: 400;
     background-color: hsl(var(--dark));
 }
 
-.form--select.form-select--sm {
-    font-size: 0.875rem;
-    padding: 8.5px 16px;
-    background-size: 16px 8px;
+@media screen and (min-width: 576px) {
+    .form--select.form-select--xl {
+        padding: 20px 32px;
+        font-size: 1.25rem;
+        background-size: 24px 12px;
+    }
 }
 
 @media screen and (min-width: 576px) {
     .form--select.form-select--lg {
-        padding: 15px 24px;
+        padding: 17px 28px;
+        font-size: 1.125rem;
         background-size: 24px 12px;
     }
+}
+
+.form--select.form-select--sm {
+    font-size: 0.875rem;
+    padding: 11px 20px;
+    background-size: 16px 8px;
 }
 
 .form--select.selected, .form--select:focus {
