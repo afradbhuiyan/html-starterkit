@@ -2163,7 +2163,7 @@ input[type=number] {
     font-style: normal;
     line-height: 100%;
     border-radius: 6px;
-    padding: 14px 24px;
+    padding: 14px 20px;
     border: 1px solid hsl(var(--border-color));
 }
 
@@ -2188,51 +2188,71 @@ input[type=number] {
 
 .form--control {
     font-weight: 500;
-    color: hsl(var(--light)) !important;
+    color: hsl(var(--gray-d-300)) !important;
 }
 
 .form--control::-webkit-input-placeholder {
     font-weight: 400;
-    color: hsl(var(--gray));
+    color: hsl(var(--gray-l-100));
 }
 
 .form--control::-moz-placeholder {
     font-weight: 400;
-    color: hsl(var(--gray));
+    color: hsl(var(--gray-l-100));
 }
 
 .form--control:-ms-input-placeholder {
     font-weight: 400;
-    color: hsl(var(--gray));
+    color: hsl(var(--gray-l-100));
 }
 
 .form--control::-ms-input-placeholder {
     font-weight: 400;
-    color: hsl(var(--gray));
+    color: hsl(var(--gray-l-100));
 }
 
 .form--control::placeholder {
     font-weight: 400;
-    color: hsl(var(--gray));
+    color: hsl(var(--gray-l-100));
+}
+
+.form--control:focus:not(:disabled):not([readonly])::-webkit-input-placeholder {
+    color: hsl(var(--gray-d-300)) !important;
+}
+
+.form--control:focus:not(:disabled):not([readonly])::-moz-placeholder {
+    color: hsl(var(--gray-d-300)) !important;
+}
+
+.form--control:focus:not(:disabled):not([readonly]):-ms-input-placeholder {
+    color: hsl(var(--gray-d-300)) !important;
+}
+
+.form--control:focus:not(:disabled):not([readonly])::-ms-input-placeholder {
+    color: hsl(var(--gray-d-300)) !important;
+}
+
+.form--control:focus:not(:disabled):not([readonly])::placeholder {
+    color: hsl(var(--gray-d-300)) !important;
 }
 
 @media screen and (min-width: 576px) {
     .form--control.form-control--xl {
-        padding: 20px 32px;
+        padding: 20px 28px;
         font-size: 1.25rem;
     }
 }
 
 @media screen and (min-width: 576px) {
     .form--control.form-control--lg {
-        padding: 17px 28px;
+        padding: 17px 24px;
         font-size: 1.125rem;
     }
 }
 
 .form--control.form-control--sm {
     font-size: 0.875rem;
-    padding: 11px 20px;
+    padding: 11px 18px;
 }
 
 .form--control[type=file]::-webkit-file-upload-button {
@@ -2297,40 +2317,40 @@ textarea.form--control {
 
 .form--select {
     --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%2387878780' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    color: hsl(var(--gray));
-    background-size: 24px 10px;
+    color: hsl(var(--gray-l-100));
+    background-size: 12px 24px;
 }
 
 .form--select option {
-    color: hsl(var(--gray));
-    background-color: hsl(var(--dark));
+    color: hsl(var(--gray-l-100));
+    background-color: hsl(var(--white));
 }
 
 @media screen and (min-width: 576px) {
     .form--select.form-select--xl {
-        padding: 20px 32px;
+        padding: 20px 28px;
         font-size: 1.25rem;
-        background-size: 24px 12px;
+        background-size: 16px 32px;
     }
 }
 
 @media screen and (min-width: 576px) {
     .form--select.form-select--lg {
-        padding: 17px 28px;
+        padding: 17px 24px;
         font-size: 1.125rem;
-        background-size: 24px 12px;
+        background-size: 14px 28px;
     }
 }
 
 .form--select.form-select--sm {
     font-size: 0.875rem;
-    padding: 11px 20px;
-    background-size: 16px 8px;
+    padding: 11px 18px;
+    background-size: 10px 20px;
 }
 
 .form--select.selected, .form--select:focus {
     --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    color: hsl(var(--light));
+    color: hsl(var(--gray-d-300));
     font-weight: 500;
 }
 
@@ -4031,110 +4051,366 @@ textarea.form--control {
 
 /* =========================== Banner Section End Here ========================= */
 /* ======================  Plugin Customization Start  ======================*/
-/* ======================  Select2 Start  ======================*/
+/* ========================= Select2 CSS Start ================================== */
 .select2-wrapper {
-    --border-radius: 8px;
-    --height: 50px;
-    --select2-border: hsl(var(--border-color));
+    --select2-min-height: 48px;
+    --select2-arrow-size: 10px;
+    --select2-font-size: 16px;
+    --select2-padding-x: 20px;
+    --select2-padding-y: 11px;
+    --select2-border-radius: 6px;
+    --select2-border-color: hsl(var(--border-color));
+    --select2-border-color-focus: hsl(var(--base));
+    --select2-bg-color: hsl(var(--white));
+    --select2-color: hsl(var(--gray-d-300));
+    --select2-color-placeholder: hsl(var(--gray-l-100));
+    --select2-dropdown-bg-color: hsl(var(--white));
+    --select2-dropdown-border-radius: 8px;
+    --select2-dropdown-padding: 12px;
+    --select2-dropdown-field-padding: 8px 12px;
+    --select2-dropdown-field-radius: 5px;
+    --select2-dropdown-field-color: hsl(var(--gray-d-300));
+    --select2-dropdown-field-bg-color: transparent;
+    position: relative;
 }
 
-.select2 + .select2-container {
-    border: 1px solid var(--select2-border);
-    border-radius: var(--border-radius);
+@media screen and (min-width: 576px) {
+    .select2-wrapper:has(.form-select--lg) {
+        --select2-min-height: 56px;
+        --select2-arrow-size: 12px;
+        --select2-font-size: 16px;
+        --select2-padding-x: 20px;
+        --select2-padding-y: 15px;
+        --select2-dropdown-padding: 12px;
+    }
+}
+
+.select2-wrapper:has(.form-select--sm) {
+    --select2-min-height: 40px;
+    --select2-arrow-size: 8px;
+    --select2-font-size: 14px;
+    --select2-padding-x: 16px;
+    --select2-padding-y: 7px;
+    --select2-dropdown-padding: 6px 12px;
+    --select2-dropdown-field-pading: 6px 12px;
+}
+
+.selection,
+.select2-container {
     width: 100% !important;
-    height: 50px;
 }
 
-.select2 + .select2-container .select2-selection__rendered {
-    line-height: var(--height);
+.select2-container .select2-selection--single,
+.select2-container .select2-selection--multiple {
+    padding: var(--select2-padding-y) var(--select2-padding-x);
+    height: auto;
+    background-color: var(--select2-bg-color);
+    border: 1px solid var(--select2-border-color);
+    border-radius: var(--select2-border-radius);
 }
 
-.select2 + .select2-container .select2-selection--single {
-    height: var(--height);
+.select2-container .select2-selection--multiple {
+    padding-top: calc(var(--select2-padding-y) - 2px);
+    padding-bottom: calc(var(--select2-padding-y) - 2px);
 }
 
-.select2 + .select2-container .select2-selection {
-    border: 0;
-    background-color: transparent;
-    width: 100%;
+.select2-container--open.select2-container--below .select2-selection--single,
+.select2-container--open.select2-container--below .select2-selection--multiple {
+    border-top-left-radius: var(--select2-dropdown-border-radius);
+    border-top-right-radius: var(--select2-dropdown-border-radius);
 }
 
-.select2 + .select2-container .selection {
-    width: 100%;
+.select2-container--open.select2-container--above .select2-selection--single,
+.select2-container--open.select2-container--above .select2-selection--multiple {
+    border-bottom-left-radius: var(--select2-dropdown-border-radius);
+    border-bottom-right-radius: var(--select2-dropdown-border-radius);
 }
 
-.select2 + .select2-container .select2-selection__arrow {
-    top: 50%;
-    right: 5px;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    background-color: #F8F8F8;
-    border-radius: inherit;
-    height: calc(var(--height) - 10px);
-    width: calc(var(--height) - 10px);
+.select2-container .select2-selection--single {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 6px;
 }
 
-.select2 + .select2-container .select2-selection__arrow::after {
-    position: absolute;
-    content: "\f078";
-    inset: 0;
-    font-weight: 900;
-    font-family: "Font Awesome 6 Free";
+.select2-container--focus .select2-selection--single,
+.select2-container--open .select2-selection--single,
+.select2-container--focus .select2-selection--multiple,
+.select2-container--open .select2-selection--multiple {
+    border-color: var(--select2-border-color-focus) !important;
+    outline: none;
+}
+
+.select2-selection__placeholder {
+    font-weight: 400;
+    color: var(--select2-color-placeholder) !important;
+}
+
+.select2-container--focus .select2-selection__placeholder,
+.select2-container--open .select2-selection__placeholder {
+    color: var(--select2-color) !important;
+}
+
+.select2-selection--single .select2-selection__rendered {
+    font-size: var(--select2-font-size);
+    font-weight: 500;
+    color: var(--select2-color) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    line-height: 100% !important;
+    white-space: nowrap;
+}
+
+.select2-selection--single .select2-selection__rendered:has(.icon, .text) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
+    gap: 4px;
 }
 
-.select2 + .select2-container .select2-selection__arrow b {
-    border: 0;
+.select2-selection--single .select2-selection__rendered .icon {
+    --size: 1.5em;
+    width: var(--size);
+    height: var(--size);
+    display: block;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
-.select2-container--open:has(.select2-dropdown--above) {
-    margin-top: -12px;
+.select2-selection--single .select2-selection__rendered .text {
+    font-size: calc(var(--select2-font-size) + 2px);
+    font-weight: 600;
+    line-height: 120%;
+    color: hsl(var(--light));
+    white-space: nowrap;
 }
 
-.select2-container--open:has(.select2-dropdown--below) {
-    margin-top: 10px;
+.select2-selection--single .select2-selection__rendered .text:has(.crypto-name) {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.select2-selection--single .select2-selection__rendered .crypto-name {
+    font-size: var(--select2-font-size);
+    font-weight: 400;
+    line-height: 150%;
+    color: hsl(var(--gray));
+}
+
+@media screen and (max-width: 575px) {
+    .select2-selection--single .select2-selection__rendered .text {
+        font-size: 1rem;
+    }
+}
+
+.select2-selection--single .select2-selection__arrow {
+    width: auto !important;
+    height: auto !important;
+    position: relative !important;
+    top: 0 !important;
+    right: 0 !important;
+}
+
+.select2-selection--single .select2-selection__arrow b {
+    display: none;
+}
+
+.select2-selection--single .select2-selection__arrow::after {
+    content: "";
+    width: var(--select2-arrow-size);
+    height: var(--select2-arrow-size);
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%2387878780' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.select2-selection--single[aria-expanded=true] .select2-selection__arrow::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.select2-container--focus .select2-selection--single .select2-selection__arrow::after,
+.select2-container--open .select2-selection--single .select2-selection__arrow::after,
+.select2-container--selected .select2-selection--single .select2-selection__arrow::after {
+    color: var(--select2-color) !important;
+}
+
+.select2-dropdown {
+    overflow: hidden;
+    border-color: var(--select2-border-color) !important;
+    background-color: var(--select2-dropdown-bg-color);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
 }
 
 .select2-container--open .select2-dropdown {
-    border: 1px solid var(--select2-border) !important;
-    border-radius: var(--border-radius) !important;
-    overflow: hidden;
-}
-
-.select2-container--open .select2-dropdown--above {
-    margin-bottom: 10px;
-}
-
-.select2-search__field {
-    border-radius: var(--border-radius);
-    border: 1px solid var(--select2-border) !important;
-}
-
-.select2-search__field:focus {
-    outline: 0;
     border-color: hsl(var(--base)) !important;
 }
 
-.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-    background-color: hsl(var(--base));
+.select2-container--open .select2-dropdown.select2-dropdown--below {
+    border-bottom-left-radius: var(--select2-dropdown-border-radius);
+    border-bottom-right-radius: var(--select2-dropdown-border-radius);
 }
 
-.select2-container--below.select2-container--open .select2-selection__arrow::after {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+.select2-container--open .select2-dropdown.select2-dropdown--above {
+    border-top-left-radius: var(--select2-dropdown-border-radius);
+    border-top-right-radius: var(--select2-dropdown-border-radius);
 }
 
-/* ======================  Select2 End  ======================*/
+.select2-search--dropdown {
+    padding: var(--select2-dropdown-padding);
+}
+
+.select2-search--dropdown .select2-search__field {
+    font-size: var(--select2-font-size);
+    border-color: var(--select2-border-color) !important;
+    border-radius: var(--select2-dropdown-field-radius);
+    padding: var(--select2-dropdown-field-padding);
+    color: var(--select2-dropdown-field-color);
+    background-color: var(--select2-dropdown-field-bg-color);
+}
+
+.select2-search--dropdown .select2-search__field:focus {
+    border-color: var(--select2-border-color-focus) !important;
+    outline: none;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--white)/0.1) hsl(var(--white)/0.05);
+}
+
+.select2-results__option--selectable {
+    font-size: var(--select2-font-size);
+    font-weight: 400;
+    line-height: 150%;
+    color: var(--select2-color) !important;
+    padding: var(--select2-dropdown-padding);
+}
+
+.select2-results__option--selectable:has(.icon, .text) {
+    width: 100%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.select2-results__option--selectable .icon {
+    --size: 1.5em;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.select2-results__option--selectable .text {
+    font-size: calc(var(--select2-font-size) + 2px);
+    font-weight: 600;
+    line-height: 120%;
+    color: hsl(var(--light));
+}
+
+.select2-results__option--selectable .text:has(.crypto-name) {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.select2-results__option--selectable .crypto-name {
+    font-size: var(--select2-font-size);
+    font-weight: 400;
+    line-height: 150%;
+    color: hsl(var(--gray));
+}
+
+.select2-results__option--selectable.select2-results__option--selected {
+    background-color: hsl(var(--white)/0.05) !important;
+}
+
+.select2-results__option--selectable.select2-results__option--highlighted {
+    color: hsl(var(--white)) !important;
+    background-color: hsl(var(--base)) !important;
+}
+
+.select2-results__option--selectable.select2-results__option--highlighted .crypto-name {
+    color: hsl(var(--light));
+}
+
+.select2-results__message {
+    text-align: center;
+    color: var(--select2-color);
+}
+
+.select2-selection--multiple {
+    min-height: var(--select2-min-height) !important;
+}
+
+.select2-selection--multiple:has(.select2-selection__choice) {
+    padding-top: calc(var(--select2-padding-y) - 8px);
+    padding-left: calc(var(--select2-padding-x) - 8px);
+}
+
+.select2-selection--multiple .select2-search--inline .select2-search__field {
+    height: calc(var(--select2-min-height) / 2) !important;
+    margin-top: 0 !important;
+}
+
+.select2-selection--multiple .select2-selection__choice {
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--select2-bg-color) !important;
+    border-color: var(--select2-border-color) !important;
+    color: var(--select2-color) !important;
+    padding: 0px 6px !important;
+    border-radius: 250px !important;
+    margin-top: 8px !important;
+    margin-left: 8px !important;
+}
+
+.select2-selection--multiple .select2-selection__choice__display {
+    padding-left: 5px !important;
+}
+
+.select2-selection--multiple .select2-selection__choice__remove {
+    border-right-color: var(--select2-border-color) !important;
+    color: var(--select2-color) !important;
+}
+
+.select2-selection--multiple .select2-selection__choice__remove:hover {
+    color: var(--select2-color) !important;
+    background-color: var(--select2-bg-color) !important;
+}
+
+.select2-selection--multiple .select2-search--inline .select2-search__field {
+    color: var(--select2-color);
+}
+
+/* ========================= Select2 CSS End ==================================== */
 /* ================= Slick Arrow & Dots css Start ================ */
 .slick-initialized.slick-slider {
     margin: 0 -10px;

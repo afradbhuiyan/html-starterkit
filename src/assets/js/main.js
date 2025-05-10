@@ -20,6 +20,32 @@
         });
         /* ==================== Header Navbar Collapse JS End ======================= */
 
+        /*===================== Dynamically Add Active Class JS Start ============================== */
+        function dynamicActiveMenuClass(selector) {
+            if (!($(selector).length)) return;
+
+            let fileName = window.location.pathname.split('/').reverse()[0];
+            selector.find('li').each(function () {
+                let anchor = $(this).find('a');
+                if ($(anchor).attr('href') == fileName) {
+                    $(this).addClass('active');
+                }
+            });
+            // if any li has active element add class
+            selector.children('li').each(function () {
+                if ($(this).find('.active').length) {
+                    $(this).addClass('active');
+                }
+            });
+            // if no file name return
+            if ('' == fileName) {
+                selector.find('li').eq(0).addClass('active');
+            }
+        }
+        // dynamicActiveMenuClass($('.header .nav-menu'));
+        // dynamicActiveMenuClass($('.offcanvas-sidebar--dashboard .offcanvas-sidebar-menu'));
+        /*===================== Dynamically Add Active Class JS End ================================ */
+
         /* ==================== Dynamically Add BG Image JS Start ====================== */
         $('.bg-img').css('background-image', function () {
             return `url(${$(this).data('background-image')})`;
@@ -47,32 +73,6 @@
             });
         });
         /* ==================== Add A Class In Select Input JS End ======================== */
-
-        /*===================== Dynamically Add Active Class JS Start ============================== */
-        function dynamicActiveMenuClass(selector) {
-            if (!($(selector).length)) return;
-
-            let fileName = window.location.pathname.split('/').reverse()[0];
-            selector.find('li').each(function () {
-                let anchor = $(this).find('a');
-                if ($(anchor).attr('href') == fileName) {
-                    $(this).addClass('active');
-                }
-            });
-            // if any li has active element add class
-            selector.children('li').each(function () {
-                if ($(this).find('.active').length) {
-                    $(this).addClass('active');
-                }
-            });
-            // if no file name return
-            if ('' == fileName) {
-                selector.find('li').eq(0).addClass('active');
-            }
-        }
-        // dynamicActiveMenuClass($('.header .nav-menu'));
-        // dynamicActiveMenuClass($('.offcanvas-sidebar--dashboard .offcanvas-sidebar-menu'));
-        /*===================== Dynamically Add Active Class JS End ================================ */
 
         /* ==================== Select2 Initialization JS Start ==================== */
         $('.select2').each((index, select) => {
