@@ -1,10 +1,10 @@
 /* ========================= Select2 CSS Start ================================== */
 .select2-wrapper {
   --select2-min-height: 48px;
-  --select2-arrow-size: 10px;
+  --select2-arrow-size: 16px;
   --select2-font-size: 16px;
-  --select2-padding-x: 20px;
   --select2-padding-y: 11px;
+  --select2-padding-x: 20px;
   --select2-border-radius: 6px;
   --select2-border-color: hsl(var(--border-color));
   --select2-border-color-focus: hsl(var(--base));
@@ -12,33 +12,45 @@
   --select2-color: hsl(var(--gray-d-300));
   --select2-color-placeholder: hsl(var(--gray-l-100));
   --select2-dropdown-bg-color: hsl(var(--white));
-  --select2-dropdown-border-radius: 8px;
-  --select2-dropdown-padding: 12px;
-  --select2-dropdown-field-padding: 8px 12px;
-  --select2-dropdown-field-radius: 5px;
+  --select2-dropdown-border-radius: var(--select2-border-radius);
+  --select2-dropdown-padding-y: 12px;
+  --select2-dropdown-padding-x: var(--select2-dropdown-padding-y);
+  --select2-dropdown-field-padding-y: 7px;
+  --select2-dropdown-field-padding-x: calc(var(--select2-dropdown-field-padding-y) * 1.5);
+  --select2-dropdown-field-radius: var(--select2-border-radius);
   --select2-dropdown-field-color: hsl(var(--gray-d-300));
   --select2-dropdown-field-bg-color: transparent;
   position: relative;
 
   @media screen and (min-width: 576px) {
+    &:has(.form-select--xl) {
+      --select2-min-height: 64px;
+      --select2-arrow-size: 20px;
+      --select2-font-size: 1.25rem;
+      --select2-padding-y: 16px;
+      --select2-padding-x: 24px;
+      --select2-dropdown-field-padding-y: 12px;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
     &:has(.form-select--lg) {
       --select2-min-height: 56px;
-      --select2-arrow-size: 12px;
-      --select2-font-size: 16px;
-      --select2-padding-x: 20px;
-      --select2-padding-y: 15px;
-      --select2-dropdown-padding: 12px;
+      --select2-arrow-size: 18px;
+      --select2-font-size: 1.125rem;
+      --select2-padding-y: 13.5px;
+      --select2-padding-x: 24px;
+      --select2-dropdown-field-padding-y: 9.5px;
     }
   }
 
   &:has(.form-select--sm) {
     --select2-min-height: 40px;
-    --select2-arrow-size: 8px;
-    --select2-font-size: 14px;
-    --select2-padding-x: 16px;
+    --select2-arrow-size: 14px;
+    --select2-font-size: 0.875rem;
     --select2-padding-y: 7px;
-    --select2-dropdown-padding: 6px 12px;
-    --select2-dropdown-field-pading: 6px 12px;
+    --select2-padding-x: 18px;
+    --select2-dropdown-field-padding-y: 6.5px;
   }
 }
 
@@ -59,6 +71,13 @@
 .select2-container .select2-selection--multiple {
   padding-top: calc(var(--select2-padding-y) - 2px);
   padding-bottom: calc(var(--select2-padding-y) - 2px);
+}
+
+.select2-container--disabled .select2-selection--single,
+.select2-container--disabled .select2-selection--multiple {
+  opacity: 0.65;
+  pointer-events: none;
+  background-color: var(--select2-bg-color) !important;
 }
 
 .select2-container--open.select2-container--below .select2-selection--single,
@@ -86,22 +105,12 @@
   gap: 6px;
 }
 
-.select2-container--focus .select2-selection--single,
+.select2-container--focus:not(.select2-container--disabled) .select2-selection--single,
+.select2-container--focus:not(.select2-container--disabled) .select2-selection--multiple,
 .select2-container--open .select2-selection--single,
-.select2-container--focus .select2-selection--multiple,
 .select2-container--open .select2-selection--multiple {
   border-color: var(--select2-border-color-focus) !important;
   outline: none;
-}
-
-.select2-selection__placeholder {
-  font-weight: 400;
-  color: var(--select2-color-placeholder) !important;
-}
-
-.select2-container--focus .select2-selection__placeholder,
-.select2-container--open .select2-selection__placeholder {
-  color: var(--select2-color) !important;
 }
 
 .select2-selection--single .select2-selection__rendered {
@@ -114,46 +123,13 @@
   white-space: nowrap;
 }
 
-.select2-selection--single .select2-selection__rendered:has(.icon, .text) {
-  display: flex;
-  align-items: center;
-  gap: 4px;
+.select2-selection__placeholder {
+  color: var(--select2-color-placeholder) !important;
 }
 
-.select2-selection--single .select2-selection__rendered .icon {
-  --size: 1.5em;
-  width: var(--size);
-  height: var(--size);
-  display: block;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.select2-selection--single .select2-selection__rendered .text {
-  font-size: calc(var(--select2-font-size) + 2px);
-  font-weight: 600;
-  line-height: 120%;
-  color: hsl(var(--light));
-  white-space: nowrap;
-}
-
-.select2-selection--single .select2-selection__rendered .text:has(.crypto-name) {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.select2-selection--single .select2-selection__rendered .crypto-name {
-  font-size: var(--select2-font-size);
-  font-weight: 400;
-  line-height: 150%;
-  color: hsl(var(--gray));
-}
-
-@include msm-screen {
-  .select2-selection--single .select2-selection__rendered .text {
-    font-size: rem(16px);
-  }
+.select2-container--focus:not(.select2-container--disabled) .select2-selection__placeholder,
+.select2-container--open .select2-selection__placeholder {
+  color: var(--select2-color) !important;
 }
 
 .select2-selection--single .select2-selection__arrow {
@@ -169,21 +145,18 @@
 }
 
 .select2-selection--single .select2-selection__arrow::after {
-  content: '';
-  width: var(--select2-arrow-size);
-  height: var(--select2-arrow-size);
-  display: inline-block;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%2387878780' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  content: '\f107';
+  font-size: var(--select2-arrow-size);
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+  color: var(--select2-color-placeholder);
 }
 
 .select2-selection--single[aria-expanded=true] .select2-selection__arrow::after {
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  content: '\f106';
 }
 
-.select2-container--focus .select2-selection--single .select2-selection__arrow::after,
+.select2-container--focus:not(.select2-container--disabled) .select2-selection--single .select2-selection__arrow::after,
 .select2-container--open .select2-selection--single .select2-selection__arrow::after,
 .select2-container--selected .select2-selection--single .select2-selection__arrow::after {
   color: var(--select2-color) !important;
@@ -211,14 +184,14 @@
 }
 
 .select2-search--dropdown {
-  padding: var(--select2-dropdown-padding);
+  padding: var(--select2-dropdown-padding-y) var(--select2-dropdown-padding-y);
 }
 
 .select2-search--dropdown .select2-search__field {
   font-size: var(--select2-font-size);
   border-color: var(--select2-border-color) !important;
   border-radius: var(--select2-dropdown-field-radius);
-  padding: var(--select2-dropdown-field-padding);
+  padding: var(--select2-dropdown-field-padding-y) var(--select2-dropdown-field-padding-x);
   color: var(--select2-dropdown-field-color);
   background-color: var(--select2-dropdown-field-bg-color);
 }
@@ -235,45 +208,10 @@
 
 .select2-results__option--selectable {
   font-size: var(--select2-font-size);
-  font-weight: 400;
-  line-height: 150%;
+  font-weight: 500;
+  line-height: 100%;
   color: var(--select2-color) !important;
-  padding: var(--select2-dropdown-padding);
-}
-
-.select2-results__option--selectable:has(.icon, .text) {
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.select2-results__option--selectable .icon {
-  --size: 1.5em;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.select2-results__option--selectable .text {
-  font-size: calc(var(--select2-font-size) + 2px);
-  font-weight: 600;
-  line-height: 120%;
-  color: hsl(var(--light));
-}
-
-.select2-results__option--selectable .text:has(.crypto-name) {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.select2-results__option--selectable .crypto-name {
-  font-size: var(--select2-font-size);
-  font-weight: 400;
-  line-height: 150%;
-  color: hsl(var(--gray));
+  padding: var(--select2-dropdown-padding-y) var(--select2-dropdown-padding-x);
 }
 
 .select2-results__option--selectable.select2-results__option--selected {
@@ -285,13 +223,12 @@
   background-color: hsl(var(--base)) !important;
 }
 
-.select2-results__option--selectable.select2-results__option--highlighted .crypto-name {
-  color: hsl(var(--light));
-}
-
 .select2-results__message {
-  text-align: center;
   color: var(--select2-color);
+  font-size: var(--select2-font-size);
+  font-weight: 500;
+  line-height: 100%;
+  text-align: center;
 }
 
 .select2-selection--multiple {

@@ -61,27 +61,31 @@ input[type='number'] {
   font-style: normal;
   line-height: 100%;
   border-radius: 6px;
-  padding: 14px 20px;
   border: 1px solid hsl(var(--border-color));
+  background-color: hsl(var(--white));
 
   &:focus {
     box-shadow: none;
     background-color: hsl(var(--white) / 0.02);
 
-    &:not(:disabled):not([readonly]) {
+    &:not(:disabled) {
       border-color: hsl(var(--base)) !important;
     }
   }
 
   &:disabled,
   &[readonly] {
-    border-color: hsl(var(--gray-two));
-    background-color: hsl(var(--gray-two));
+    background-color: hsl(var(--white));
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    pointer-events: none;
   }
 }
 
 .form--control {
-  font-weight: 500;
+  padding: 14px 20px;
   color: hsl(var(--gray-d-300)) !important;
 
   &::placeholder {
@@ -97,43 +101,54 @@ input[type='number'] {
 
   &.form-control--xl {
     @media screen and (min-width: 576px) {
-      padding: 20px 28px;
+      padding: 19.5px 24px;
       font-size: rem(20px);
     }
   }
 
   &.form-control--lg {
     @media screen and (min-width: 576px) {
-      padding: 17px 24px;
+      padding: 16.5px 24px;
       font-size: rem(18px);
     }
   }
 
   &.form-control--sm {
     font-size: rem(14px);
-    padding: 11px 18px;
+    padding: 10.5px 18px;
   }
 
 
   &[type='file'] {
     &::file-selector-button {
-      margin: -12px 12px -12px -20px;
-      padding: 12px 12px 12px 20px;
+      margin: -14px 14px -14px -20px;
+      padding: 15px 15px 15px 20px;
       color: hsl(var(--white));
-      background: var(--gradient);
+      background: hsl(var(--base));
       border-color: hsl(var(--base));
       border-top-left-radius: inherit;
       border-bottom-left-radius: inherit;
     }
 
-    &.form-control--sm::file-selector-button {
-      margin: -10px 10px -10px -17px;
-      padding: 10px 10px 10px 17px;
+    @media screen and (min-width: 576px) {
+      &.form-control--xl::file-selector-button {
+        margin: -20px 20px -20px -28px;
+        padding: 21px 21px 21px 28px;
+      }
     }
 
-    &.form-control--lg::file-selector-button {
-      margin: -16px 16px -16px -24px;
-      padding: 16px 16px 16px 24px;
+    @media screen and (min-width: 576px) {
+      &.form-control--lg::file-selector-button {
+        margin: -17px 17px -17px -24px;
+        padding: 18px 18px 18px 24px;
+      }
+    }
+
+    @media screen and (min-width: 576px) {
+      &.form-control--sm::file-selector-button {
+        margin: -11px 11px -11px -18px;
+        padding: 12px 12px 12px 18px;
+      }
     }
 
     &:hover:not(:disabled):not([readonly])::file-selector-button {
@@ -144,21 +159,16 @@ input[type='number'] {
   @at-root {
     textarea#{&} {
       resize: none;
-      min-height: 236px;
-      border-radius: 20px;
-
-      @include msm-screen {
-        min-height: 160px;
-      }
+      min-height: 160px;
     }
   }
 }
 
 .form--select {
-  --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%2387878780' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  padding: 15px 20px;
   color: hsl(var(--gray-l-100));
-  background-size: 12px 24px;
-
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  
   option {
     color: hsl(var(--gray-l-100));
     background-color: hsl(var(--white));
@@ -166,29 +176,26 @@ input[type='number'] {
 
   &.form-select--xl {
     @media screen and (min-width: 576px) {
-      padding: 20px 28px;
+      padding: 21px 24px;
       font-size: rem(20px);
-      background-size: 16px 32px;
     }
   }
 
   &.form-select--lg {
     @media screen and (min-width: 576px) {
-      padding: 17px 24px;
+      padding: 18px 24px;
       font-size: rem(18px);
-      background-size: 14px 28px;
     }
   }
 
   &.form-select--sm {
     font-size: rem(14px);
-    padding: 11px 18px;
-    background-size: 10px 20px;
+    padding: 12px 18px;
   }
 
   &.selected,
   &:focus {
-    --bs-form-select-bg-img: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%231d283a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
     color: hsl(var(--gray-d-300));
     font-weight: 500;
   }
