@@ -322,76 +322,62 @@
     }
   }
 
+  // Outline button styles
+  &-soft#{$name},
+  &-soft#{$name}:disabled,
+  &-soft#{$name}.disabled {
+    position: relative;
+    z-index: 1;
+    background: var(#{$gradient});
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: .2s linear;
+    border-color: transparent;
 
-  // &#{$name} {
-  //   position: relative;
+    &::before,
+    &::after {
+      content: '';
+      border-radius: inherit;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      transition: inherit;
+    }
 
-  //   &::before,
-  //   &::after {
-  //     position: absolute;
-  //     content: '';
-  //     top: 50%;
-  //     left: 50%;
-  //     transform: translate(-50%, -50%);
-  //     width: calc(100% + 2px);
-  //     height: calc(100% + 2px);
-  //     background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
-  //     border-radius: inherit !important;
-  //     z-index: -1;
-  //     transition: 0.2s linear;
-  //   }
+    &::before {
+      background: var(#{$gradient}-l-100);
+      // background: var(#{$gradient}) border-box;
+      // border: 1px solid transparent;
+      // mask: linear-gradient(#fff 0 0) padding-box,
+      //   linear-gradient(#fff 0 0);
+      // mask-composite: exclude;
+    }
 
-  //   &::after {
-  //     background: linear-gradient($deg, hsl(var($color1)) 0%, hsl(var($color2)) 100%);
-  //     visibility: hidden;
-  //     opacity: 0;
-  //   }
+    &::after {
+      opacity: 0;
+      visibility: hidden;
+      background: var(#{$gradient});
+    }
+  }
 
-  //   &:hover,
-  //   &:focus,
-  //   &:focus-visible {
-  //     &::after {
-  //       visibility: visible;
-  //       opacity: 1;
-  //     }
-  //   }
-  // }
+  &-soft#{$name} {
 
-  // // Outline button styles
-  // &-outline#{$name} {
-  //   background-color: transparent !important;
-  //   border: 1px solid hsl(var(--base)) !important;
-  //   color: hsl(var(--base)) !important;
-  //   position: relative;
-  //   transition: 0.2s linear;
+    &:hover,
+    &:active,
+    &:focus,
+    &:focus-visible {
+      border-color: transparent !important;
+      -webkit-text-fill-color: hsl(var(#{$color}));
 
-  //   &::before,
-  //   &::after {
-  //     position: absolute;
-  //     content: '';
-  //     top: 50%;
-  //     left: 50%;
-  //     transform: translate(-50%, -50%);
-  //     width: calc(100% + 2px);
-  //     height: calc(100% + 2px);
-  //     background: linear-gradient($deg, hsl(var($color2)) 0%, hsl(var($color1)) 100%);
-  //     border-radius: inherit !important;
-  //     z-index: -1;
-  //     transition: 0.2s linear;
-  //     visibility: hidden;
-  //     opacity: 0;
-  //   }
+      &::before {
+        opacity: 0;
+        visibility: hidden;
+      }
 
-  //   &:hover,
-  //   &:focus,
-  //   &:focus-visible {
-  //     color: hsl(var(--white)) !important;
-
-  //     &::before,
-  //     &::after {
-  //       visibility: visible;
-  //       opacity: 1;
-  //     }
-  //   }
-  // }
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
 }
