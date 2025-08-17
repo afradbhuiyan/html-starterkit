@@ -1,7 +1,8 @@
 /* ========================= Card CSS Start =========================== */
 .custom--card {
-  padding: 24px;
-  border-radius: 20px;
+  // padding: 24px;
+  overflow: hidden;
+  border-radius: 12px;
   border: 1px solid hsl(var(--border-color));
 
   @include msm-screen {
@@ -11,16 +12,17 @@
   .card-header,
   .card-body,
   .card-footer {
-    padding: 0px;
+    padding: 16px;
     background-color: transparent;
   }
 
   .card-header {
-    padding-bottom: 16px;
     border-bottom: 1px solid hsl(var(--border-color));
+    background-color: hsl(var(--gray-l-400));
 
-    &:not(:last-child) {
-      margin-bottom: 16px;
+    &:first-child {
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
     }
   }
 
@@ -32,8 +34,9 @@
     padding-top: 16px;
     border-top: 1px solid hsl(var(--border-color));
 
-    &:not(:first-child) {
-      margin-top: 16px;
+    &:last-child {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
     }
   }
 

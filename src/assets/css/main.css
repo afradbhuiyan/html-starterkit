@@ -1757,8 +1757,8 @@ ol {
 /* ========================= Button CSS End =========================== */
 /* ========================= Card CSS Start =========================== */
 .custom--card {
-    padding: 24px;
-    border-radius: 20px;
+    overflow: hidden;
+    border-radius: 12px;
     border: 1px solid hsl(var(--border-color));
 }
 
@@ -1771,17 +1771,18 @@ ol {
 .custom--card .card-header,
 .custom--card .card-body,
 .custom--card .card-footer {
-    padding: 0px;
+    padding: 16px;
     background-color: transparent;
 }
 
 .custom--card .card-header {
-    padding-bottom: 16px;
     border-bottom: 1px solid hsl(var(--border-color));
+    background-color: hsl(var(--gray-l-400));
 }
 
-.custom--card .card-header:not(:last-child) {
-    margin-bottom: 16px;
+.custom--card .card-header:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
 }
 
 .custom--card .card-body {
@@ -1793,8 +1794,9 @@ ol {
     border-top: 1px solid hsl(var(--border-color));
 }
 
-.custom--card .card-footer:not(:first-child) {
-    margin-top: 16px;
+.custom--card .card-footer:last-child {
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
 }
 
 .custom--card .card-title {
@@ -2727,7 +2729,7 @@ textarea.form--control {
 .custom--modal .modal-content {
     border: 1px solid hsl(var(--border-color));
     background-color: hsl(var(--white));
-    border-radius: 6px;
+    border-radius: 12px;
 }
 
 .custom--modal .modal-header {
