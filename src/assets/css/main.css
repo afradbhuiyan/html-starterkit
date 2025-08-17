@@ -2305,7 +2305,7 @@ input[type=number] {
 }
 
 .form--control {
-    padding: 14px 20px;
+    padding: 14px 18px;
     color: hsl(var(--gray-d-300)) !important;
 }
 
@@ -2356,14 +2356,14 @@ input[type=number] {
 
 @media screen and (min-width: 576px) {
     .form--control.form-control--xl {
-        padding: 19.5px 24px;
+        padding: 19.5px 18px;
         font-size: 1.25rem;
     }
 }
 
 @media screen and (min-width: 576px) {
     .form--control.form-control--lg {
-        padding: 16.5px 24px;
+        padding: 16.5px 18px;
         font-size: 1.125rem;
     }
 }
@@ -2443,7 +2443,7 @@ textarea.form--control {
 }
 
 .form--select {
-    padding: 15px 20px;
+    padding: 15px 18px;
     color: hsl(var(--gray-l-100));
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 }
@@ -2455,14 +2455,14 @@ textarea.form--control {
 
 @media screen and (min-width: 576px) {
     .form--select.form-select--xl {
-        padding: 21px 24px;
+        padding: 21px 18px;
         font-size: 1.25rem;
     }
 }
 
 @media screen and (min-width: 576px) {
     .form--select.form-select--lg {
-        padding: 18px 24px;
+        padding: 18px;
         font-size: 1.125rem;
     }
 }
@@ -2545,6 +2545,9 @@ textarea.form--control {
 .input--group {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     border: 1px solid hsl(var(--border-color));
     background-color: hsl(var(--white));
     border-radius: 6px;
@@ -2554,8 +2557,13 @@ textarea.form--control {
     border-color: hsl(var(--base));
 }
 
+.input--group:focus-within .input-group-text {
+    color: hsl(var(--gray-d-300));
+}
+
 .input--group .form-control.form--control {
     border: none;
+    margin-left: 0 !important;
 }
 
 .input--group .input-group-text {
@@ -2564,21 +2572,24 @@ textarea.form--control {
     line-height: 120%;
     padding: 16px 22px;
     border: none;
-    color: hsl(var(--gray-d-300));
+    color: hsl(var(--gray-l-100));
     background-color: transparent;
     padding: 0px 20px;
+    margin-left: 0px !important;
 }
 
 .input--group .input-group-text:first-child {
     border-top-left-radius: inherit;
     border-bottom-left-radius: inherit;
     border-right: 1px solid hsl(var(--border-color));
+    padding: 0px 9px 0px 18px;
 }
 
 .input--group .input-group-text:last-child {
     border-top-right-radius: inherit;
     border-bottom-right-radius: inherit;
     border-left: 1px solid hsl(var(--border-color));
+    padding: 0px 18px 0px 9px;
 }
 
 .input--group .btn {
@@ -2595,7 +2606,7 @@ textarea.form--control {
 }
 
 .input--group:has([readonly]) .input-group-text, .input--group:has(:disabled) .input-group-text {
-    border-color: hsl(var(--gray-two)) !important;
+    border-color: hsl(var(--border-color)) !important;
     background-color: hsl(var(--gray-two));
 }
 
@@ -2604,118 +2615,37 @@ textarea.form--control {
 }
 
 .input--group:has(.form-control--sm) .input-group-text, .input--group:has(.form-select--sm) .input-group-text {
-    font-size: 14px;
-    padding: 0px 16px;
+    font-size: 0.875rem;
 }
 
 .input--group:has(.form-control--lg) .input-group-text, .input--group:has(.form-select--lg) .input-group-text {
-    padding: 0px 24px;
-}
-
-.input--group:has(.select2-wrapper:first-child .select2-container--open) {
-    border-top-left-radius: 80px;
-    border-bottom-left-radius: 0px;
-}
-
-.input--group:has(.select2-wrapper:last-child .select2-container--open) {
-    border-top-right-radius: 80px;
-    border-bottom-right-radius: 0px;
-}
-
-.input--group .select2-wrapper {
-    --select2-border-color: transparent;
-    --select2-border-color-focus: transparent;
-}
-
-.input--group .select2-wrapper:first-child {
-    --select2-border-radius: 250px 0px 0px 250px;
-}
-
-.input--group .select2-wrapper:first-child .select2-container--default.select2-container .select2-selection--single,
-.input--group .select2-wrapper:first-child .select2-container--default.select2-container .select2-selection--multiple {
-    border-right: 1px solid hsl(var(--white)/0.23);
-}
-
-.input--group .select2-wrapper:first-child .select2-container.select2-container--open .select2-selection--single,
-.input--group .select2-wrapper:first-child .select2-container.select2-container--open .select2-selection--multipe {
-    border-right-color: hsl(var(--base)) !important;
-}
-
-.input--group .select2-wrapper:first-child .select2-container--default.select2-container--below.select2-container--open .select2-selection--single,
-.input--group .select2-wrapper:first-child .select2-container--default.select2-container--below.select2-container--open .select2-selection--multiple {
-    border-top-right-radius: 0px;
-}
-
-.input--group .select2-wrapper:first-child .select2-container--default.select2-container--above.select2-container--open .select2-selection--single,
-.input--group .select2-wrapper:first-child .select2-container--default.select2-container--above.select2-container--open .select2-selection--multiple {
-    border-bottom-right-radius: 0px;
-}
-
-.input--group .select2-wrapper:last-child {
-    --select2-border-radius: 0px 250px 250px 0px;
-}
-
-.input--group .select2-wrapper:last-child .select2-container .select2-selection--single,
-.input--group .select2-wrapper:last-child .select2-container .select2-selection--multiple {
-    border-left: 1px solid hsl(var(--white)/0.23);
-}
-
-.input--group .select2-wrapper:last-child .select2-container.select2-container--open .select2-selection--single,
-.input--group .select2-wrapper:last-child .select2-container.select2-container--open .select2-selection--multipe {
-    border-left-color: hsl(var(--base)) !important;
-}
-
-.input--group .select2-wrapper:last-child .select2-container--default.select2-container--below.select2-container--open .select2-selection--single,
-.input--group .select2-wrapper:last-child .select2-container--default.select2-container--below.select2-container--open .select2-selection--multiple {
-    border-top-left-radius: 0px;
-}
-
-.input--group .select2-wrapper:last-child .select2-container--default.select2-container--above.select2-container--open .select2-selection--single,
-.input--group .select2-wrapper:last-child .select2-container--default.select2-container--above.select2-container--open .select2-selection--multiple {
-    border-bottom-left-radius: 0px;
-}
-
-.input-group--copy .copy-input {
-    color: hsl(var(--light)) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: hsl(var(--white)/0.02);
-}
-
-.input-group--copy .copy-btn {
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-    color: hsl(var(--gray));
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    gap: 4px;
-    background-color: hsl(var(--white)/0.02) !important;
-}
-
-.input-group--copy .copy-btn i.las {
     font-size: 1.125rem;
 }
 
-@media screen and (min-width: 576px) {
-    .input-group--copy .copy-btn {
-        padding: 0 32px !important;
-    }
+.input--group:has(.form-control--xl) .input-group-text, .input--group:has(.form-select--xl) .input-group-text {
+    font-size: 1.25rem;
+}
+
+.input--group-copy .copy-btn.copied {
+    color: hsl(var(--success));
+}
+
+.input--group-copy .copy-btn.copied i::before {
+    content: "\f00c";
+}
+
+.input--group-copy .copy-btn i.las {
+    font-size: 1.25rem;
 }
 
 @media screen and (max-width: 575px) {
-    .input-group--copy .copy-btn {
-        font-size: 0.875rem;
-        padding: 0 16px !important;
+    .input--group-copy .copy-btn i.las {
+        font-size: 1.125rem;
     }
+}
 
-    .input-group--copy .copy-btn i.las {
-        font-size: 1rem;
-    }
+.input--group-password .input-group-btn {
+    cursor: pointer;
 }
 
 .input--group-password .input-group-btn:focus {
@@ -4181,7 +4111,7 @@ textarea.form--control {
     --select2-arrow-size: 16px;
     --select2-font-size: 16px;
     --select2-padding-y: 11px;
-    --select2-padding-x: 20px;
+    --select2-padding-x: 18px;
     --select2-border-radius: 6px;
     --select2-border-color: hsl(var(--border-color));
     --select2-border-color-focus: hsl(var(--base));

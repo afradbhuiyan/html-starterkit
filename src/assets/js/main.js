@@ -143,6 +143,30 @@
             });
         });
         /* ==================== Password Toggle JS End ================================== */
+
+        /* ==================== Input Group Copy JS Start =============================== */
+        $('.input--group-copy').each((index, element) => {
+            let copyBtn = $(element).find('.copy-btn');
+            let copyInput = $(element).find('.copy-input');
+
+            copyBtn.on('click', function () {
+                // Select the text field
+                copyInput.select()
+                copyInput[0].setSelectionRange(0, 99999); // For mobile devices
+
+                // Copy the text inside the text field
+                if (navigator.clipboard.writeText(copyInput.val())) {
+                    $(this).addClass('copied');
+
+                    let timer = setTimeout(() => {
+                        $(this).removeClass('copied');
+                        clearTimeout(timer);
+                    }, 1000);
+                }
+            });
+
+        });
+        /* ==================== Input Group Copy JS End ================================= */
     });
     /* ==================== Ready Function End ============================ */
 
