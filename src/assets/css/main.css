@@ -2479,8 +2479,10 @@ textarea.form--control {
 }
 
 .form--check {
-    min-height: auto;
+    --size: 16px;
+    --color: hsl(var(--base));
     margin-bottom: 0;
+    min-height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2488,15 +2490,14 @@ textarea.form--control {
     -ms-flex-align: center;
     align-items: center;
     gap: 8px;
-    padding-left: 4px;
 }
 
 .form--check .form-check-input {
-    width: 16px;
-    height: 16px;
+    width: var(--size);
+    height: var(--size);
     margin-top: 0;
     position: relative;
-    border: 1px solid hsl(var(--white)/0.23);
+    border: 1px solid hsl(var(--border-color));
     background-color: transparent;
     border-radius: 4px;
     -webkit-box-shadow: none;
@@ -2505,8 +2506,8 @@ textarea.form--control {
 }
 
 .form--check .form-check-input:checked {
-    background: var(--gradient) !important;
-    border-color: hsl(var(--base)) !important;
+    background: var(--color) !important;
+    border-color: var(--color) !important;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
@@ -2522,7 +2523,7 @@ textarea.form--control {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    font-size: 0.6875rem;
+    font-size: calc(var(--size) * 0.6875);
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     color: hsl(var(--white));
@@ -2532,14 +2533,185 @@ textarea.form--control {
     font-size: 1rem;
     font-weight: 500;
     line-height: 150%;
-    color: hsl(var(--light));
-    white-space: nowrap;
+    color: hsl(var(--gray));
 }
 
 .form--check .form-check-label a {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     display: inline;
+    color: var(--color);
+}
+
+.form--check .form-check-label a:hover, .form--check .form-check-label a:focus {
+    color: var(--color);
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form--check-gradient {
+    --color: var(--gradient);
+}
+
+.form--check-gradient .form-check-label a {
+    color: transparent;
+    background: var(--color);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.form--check-base-two {
+    --color: hsl(var(--base-two));
+}
+
+.form--check-primary {
+    --color: hsl(var(--primary));
+}
+
+.form--check-secondary {
+    --color: hsl(var(--secondary));
+}
+
+.form--check-success {
+    --color: hsl(var(--success));
+}
+
+.form--check-danger {
+    --color: hsl(var(--danger));
+}
+
+.form--check-warning {
+    --color: hsl(var(--warning));
+}
+
+.form--check-info {
+    --color: hsl(var(--info));
+}
+
+.form--switch {
+    --width: 40px;
+    --height: calc(var(--width) * 0.5);
+    --offset: calc(var(--width) * 0.05);
+    --color: hsl(var(--base));
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.form--switch .form-check-input {
+    width: var(--width);
+    height: var(--height);
+    border: none;
+    margin-top: 0px;
+    border-radius: 999px;
+    position: relative;
+    background: hsl(var(--gray)/0.5) !important;
+    cursor: pointer;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+.form--switch .form-check-input::before {
+    --size: calc(var(--height) * 0.8333333333);
+    content: "";
+    width: var(--size);
+    height: var(--size);
+    background-color: hsl(var(--white));
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 2px;
+    left: var(--offset);
+    border-radius: 50%;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+.form--switch .form-check-input:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form--switch .form-check-input:checked {
+    background-image: none;
+    background: var(--color) !important;
+}
+
+.form--switch .form-check-input:checked::before {
+    left: calc(100% - (var(--size) + var(--offset)));
+    background-color: hsl(var(--white)) !important;
+}
+
+.form--switch .form-check-label {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 150%;
+    color: hsl(var(--gray));
+}
+
+.form--switch .form-check-label a {
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline;
+    color: var(--color);
+}
+
+.form--switch .form-check-label a:hover, .form--switch .form-check-label a:focus {
+    color: var(--color);
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form--switch-gradient {
+    --color: var(--gradient);
+}
+
+.form--switch-gradient .form-check-label a {
+    color: transparent;
+    background: var(--color);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.form--switch-base {
+    --color: hsl(var(--base));
+}
+
+.form--switch-base-two {
+    --color: hsl(var(--base-two));
+}
+
+.form--switch-primary {
+    --color: hsl(var(--primary));
+}
+
+.form--switch-success {
+    --color: hsl(var(--success));
+}
+
+.form--switch-danger {
+    --color: hsl(var(--danger));
+}
+
+.form--switch-warning {
+    --color: hsl(var(--warning));
+}
+
+.form--switch-info {
+    --color: hsl(var(--info));
 }
 
 .input--group {

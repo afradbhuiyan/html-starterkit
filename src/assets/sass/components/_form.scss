@@ -203,28 +203,28 @@ input[type='number'] {
 }
 
 .form--check {
-  min-height: auto;
+  --size: 16px;
+  --color: hsl(var(--base));
   margin-bottom: 0;
+  min-height: auto;
   display: flex;
   align-items: center;
-  // flex-wrap: wrap;
   gap: 8px;
-  padding-left: 4px;
 
   .form-check-input {
-    width: 16px;
-    height: 16px;
+    width: var(--size);
+    height: var(--size);
     margin-top: 0;
     position: relative;
-    border: 1px solid hsl(var(--white) / 0.23);
+    border: 1px solid hsl(var(--border-color));
     background-color: transparent;
     border-radius: 4px;
     box-shadow: none;
     cursor: pointer;
 
     &:checked {
-      background: var(--gradient) !important;
-      border-color: hsl(var(--base)) !important;
+      background: var(--color) !important;
+      border-color: var(--color) !important;
       box-shadow: none;
 
       &[type='checkbox'] {
@@ -237,7 +237,7 @@ input[type='number'] {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: rem(11px);
+        font-size: calc(var(--size) * 0.6875);
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
         color: hsl(var(--white));
@@ -249,14 +249,176 @@ input[type='number'] {
     font-size: rem(16px);
     font-weight: 500;
     line-height: 150%;
-    color: hsl(var(--light));
-    white-space: nowrap;
+    color: hsl(var(--gray));
 
     a {
       font-size: rem(16px);
-      font-weight: 500;
+      font-weight: 600;
       display: inline;
+      color: var(--color);
+
+      &:hover,
+      &:focus {
+        color: var(--color);
+        outline: none;
+        box-shadow: none;
+      }
     }
+  }
+
+  &-gradient {
+    --color: var(--gradient);
+
+    .form-check-label {
+      a {
+        color: transparent;
+        background: var(--color);
+        background-clip: text;
+      }
+    }
+  }
+
+  &-base-two {
+    --color: hsl(var(--base-two));
+  }
+
+  &-primary {
+    --color: hsl(var(--primary));
+  }
+
+  &-secondary {
+    --color: hsl(var(--secondary));
+  }
+
+  &-success {
+    --color: hsl(var(--success));
+  }
+
+  &-danger {
+    --color: hsl(var(--danger));
+  }
+
+  &-warning {
+    --color: hsl(var(--warning));
+  }
+
+  &-info {
+    --color: hsl(var(--info));
+  }
+}
+
+.form--switch {
+  --width: 40px;
+  --height: calc(var(--width) * 0.5);
+  --offset: calc(var(--width) * 0.05);
+  --color: hsl(var(--base));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: 8px;
+
+  .form-check-input {
+    width: var(--width);
+    height: var(--height);
+    border: none;
+    margin-top: 0px;
+    border-radius: 999px;
+    position: relative;
+    background: hsl(var(--gray)/0.5) !important;
+    cursor: pointer;
+    transition: 0.2s linear;
+
+    &::before {
+      --size: calc(var(--height) * 0.8333333333);
+      content: '';
+      width: var(--size);
+      height: var(--size);
+      background-color: hsl(var(--white));
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 2px;
+      left: var(--offset);
+      border-radius: 50%;
+      transition: 0.2s linear;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:checked {
+      background-image: none;
+      background: var(--color) !important;
+
+      &::before {
+        left: calc(100% - (var(--size) + var(--offset)));
+        background-color: hsl(var(--white)) !important;
+      }
+    }
+  }
+
+  .form-check-label {
+    font-size: rem(16px);
+    font-weight: 500;
+    line-height: 150%;
+    color: hsl(var(--gray));
+
+    a {
+      font-size: rem(16px);
+      font-weight: 600;
+      display: inline;
+      color: var(--color);
+
+      &:hover,
+      &:focus {
+        color: var(--color);
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &-gradient {
+    --color: var(--gradient);
+
+    .form-check-label {
+      a {
+        color: transparent;
+        background: var(--color);
+        background-clip: text;
+      }
+    }
+  }
+
+  &-base {
+    --color: hsl(var(--base));
+  }
+
+  &-base-two {
+    --color: hsl(var(--base-two));
+  }
+
+  &-primary {
+    --color: hsl(var(--primary));
+  }
+
+  &-success {
+    --color: hsl(var(--success));
+  }
+
+  &-danger {
+    --color: hsl(var(--danger));
+  }
+
+  &-warning {
+    --color: hsl(var(--warning));
+  }
+
+  &-info {
+    --color: hsl(var(--info));
   }
 }
 
