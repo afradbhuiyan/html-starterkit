@@ -2958,73 +2958,71 @@ textarea.form--control {
 }
 
 /* ========================= Modal CSS End =========================*/
-/* ================================= Pagination Css Start =========================== */
-.pagination {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin-top: 56px;
-}
-
-@media screen and (max-width: 1199px) {
+/* ========================= Pagination CSS Start ========================= */
+@media screen and (max-width: 575px) {
     .pagination {
-        margin-top: 48px;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    .pagination {
-        margin-top: 40px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .pagination {
-        margin-top: 32px;
+        margin: 0 auto;
     }
 }
 
 .pagination .page-item.active .page-link {
-    background-color: hsl(var(--base));
+    font-weight: 600;
     color: hsl(var(--white));
-    border-color: hsl(var(--base));
+    background-color: hsl(var(--base));
+}
+
+.pagination .page-item.active .page-link:hover, .pagination .page-item.active .page-link:focus {
+    color: hsl(var(--white));
+}
+
+.pagination .page-item.disabled .page-link {
+    color: hsl(var(--black)/0.5);
+    border-color: hsl(var(--border-color)/0.5);
+    background-color: hsl(var(--gray-l-300));
+    pointer-events: none;
 }
 
 .pagination .page-item .page-link {
-    border: 1px solid hsl(var(--black)/0.15);
-    margin: 0 5px;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    padding: 9px 17px;
     background-color: transparent;
+    font-size: 1rem;
     font-weight: 500;
-    padding: 0;
-    color: hsl(var(--body-color));
+    line-height: 20px;
+    color: hsl(var(--gray));
+    border: 1px solid hsl(var(--border-color));
+    white-space: nowrap;
 }
 
-.pagination .page-item .page-link:hover {
-    background-color: hsl(var(--base));
-    color: hsl(var(--white));
-    border-color: hsl(var(--base));
-}
-
-.pagination .page-item .page-link:focus {
+.pagination .page-item .page-link:hover, .pagination .page-item .page-link:focus {
+    color: hsl(var(--black));
+    outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
-/* ================================= Pagination Css End =========================== */
+.pagination-wrapper {
+    margin-top: 24px;
+}
+
+.pagination-wrapper nav > * {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pagination-wrapper p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: hsl(var(--gray)) !important;
+}
+
+.pagination-wrapper p span {
+    color: hsl(var(--black)) !important;
+    font-weight: 500;
+}
+
+/* ========================= Pagination CSS End ========================= */
 /* ================================= Table Css Start =========================== */
 /* Table Content Css start */
 @media screen and (max-width: 374px) {
