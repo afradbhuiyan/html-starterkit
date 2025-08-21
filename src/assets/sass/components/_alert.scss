@@ -35,7 +35,7 @@
       --size: 32px;
     }
   }
-  
+
   &__content {
     flex-grow: 1;
   }
@@ -61,6 +61,45 @@
 
     @include msm-screen {
       --size: 40px;
+    }
+  }
+
+  &--gradient {
+    background: var(--gradient-l-100);
+    background-color: unset;
+
+    &.border--gradient {
+      --border-gradient: var(--gradient-l-100);
+    }
+
+    #{$alert}__icon {
+      color: transparent;
+      background: var(--gradient);
+      background-clip: text;
+      background-color: unset;
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        border-radius: inherit;
+        inset: 0;
+        background: var(--gradient-l-100);
+        z-index: -1;
+      }
+
+      &.border--gradient {
+        --border-gradient: var(--gradient-l-100);
+      }
+    }
+
+    .btn--close {
+      &::after {
+        color: transparent;
+        background: var(--gradient);
+        background-clip: text;
+      }
     }
   }
 

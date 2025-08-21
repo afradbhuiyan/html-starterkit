@@ -250,7 +250,8 @@
   &#{$name}:disabled,
   &#{$name}.disabled {
     color: hsl(var(#{$color}));
-    background: var(#{$gradient});
+    background: var(#{$gradient}) padding-box;
+    border-color: transparent;
   }
 
   &#{$name} {

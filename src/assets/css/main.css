@@ -27,10 +27,10 @@
     --base-l-700: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.7);
     --base-l-800: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.8);
     --base-l-900: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.9);
-  /* Base Two Color (#007AFF) */
-    --base-two-h: 211;
-    --base-two-s: 100%;
-    --base-two-l: 50%;
+  /* Base Two Color (#34d399) */
+    --base-two-h: 158;
+    --base-two-s: 64%;
+    --base-two-l: 52%;
     --base-two: var(--base-two-h) var(--base-two-s) var(--base-two-l);
     --base-two-d-100: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.1);
     --base-two-d-200: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.2);
@@ -50,10 +50,10 @@
     --base-two-l-700: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.7);
     --base-two-l-800: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.8);
     --base-two-l-900: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.9);
-  /* Primary Color (#6338ff) */
-    --primary-h: 253;
-    --primary-s: 100%;
-    --primary-l: 61%;
+  /* Primary Color (#3c83f6) */
+    --primary-h: 217;
+    --primary-s: 91%;
+    --primary-l: 60%;
     --primary: var(--primary-h) var(--primary-s) var(--primary-l);
     --primary-d-100: var(--primary-h) var(--primary-s) calc(var(--primary-l) - var(--primary-l) * 0.1);
     --primary-d-200: var(--primary-h) var(--primary-s) calc(var(--primary-l) - var(--primary-l) * 0.2);
@@ -165,10 +165,10 @@
     --warning-l-700: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.7);
     --warning-l-800: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.8);
     --warning-l-900: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.9);
-  /* Info Color (#3c83f6) */
-    --info-h: 217;
-    --info-s: 91%;
-    --info-l: 60%;
+  /* Info Color (#0ea5e9) */
+    --info-h: 199;
+    --info-s: 89%;
+    --info-l: 48%;
     --info: var(--info-h) var(--info-s) var(--info-l);
     --info-d-100: var(--info-h) var(--info-s) calc(var(--info-l) - var(--info-l) * 0.1);
     --info-d-200: var(--info-h) var(--info-s) calc(var(--info-l) - var(--info-l) * 0.2);
@@ -210,8 +210,8 @@
   /* Shadow Variables */
     --box-shadow: 0px 2px 15px hsl(var(--black) / 0.05);
   /* Gradient Variable */
-    --gradient: linear-gradient(90deg, hsl(var(--base-two)) -177.5%, hsl(var(--base)) 64.5%);
-    --gradient-l-100: linear-gradient(-90deg, hsl(var(--base-two)/0.15) -150%, hsl(var(--base)/0.15) 80%);
+    --gradient: linear-gradient(135deg, hsl(var(--base)) 0%, hsl(var(--base-two)) 100%);
+    --gradient-l-100: linear-gradient(135deg, hsl(var(--base)/0.15) 0%, hsl(var(--base-two)/0.15) 100%);
 }
 
 /* ========================= CSS Variables End ========================= */
@@ -869,7 +869,7 @@ ol {
 
 .border--gradient {
     --border-width: 1px;
-    --border-gradient: linear-gradient(180deg hsl(var(--base)), hsl(var(--base-two)));
+    --border-gradient: var(--gradient);
     position: relative;
     z-index: 1;
 }
@@ -1073,6 +1073,45 @@ ol {
     }
 }
 
+.alert--gradient {
+    background: var(--gradient-l-100);
+    background-color: unset;
+}
+
+.alert--gradient.border--gradient {
+    --border-gradient: var(--gradient-l-100);
+}
+
+.alert--gradient .alert__icon {
+    color: transparent;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-color: unset;
+    position: relative;
+    z-index: 1;
+}
+
+.alert--gradient .alert__icon::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    inset: 0;
+    background: var(--gradient-l-100);
+    z-index: -1;
+}
+
+.alert--gradient .alert__icon.border--gradient {
+    --border-gradient: var(--gradient-l-100);
+}
+
+.alert--gradient .btn--close::after {
+    color: transparent;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
 .alert--base {
     --color: var(--base);
 }
@@ -1116,6 +1155,50 @@ ol {
     text-align: center;
 }
 
+.badge--gradient {
+    color: transparent;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+}
+
+.badge--gradient::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: -1;
+    background: var(--gradient-l-100);
+}
+
+.badge--gradient.border--gradient {
+    --border-gradient: var(--gradient-l-100);
+}
+
+.badge-outline--gradient {
+    color: transparent;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+}
+
+.badge-outline--gradient::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: -1;
+    background: var(--gradient-l-100);
+}
+
+.badge-outline--gradient.border--gradient {
+    --border-gradient: var(--gradient-l-100);
+}
+
 .badge--base {
     color: hsl(var(--base));
     background-color: hsl(var(--base)/0.15);
@@ -1123,7 +1206,7 @@ ol {
 
 .badge-outline--base {
     color: hsl(var(--base));
-    border: 1px solid hsl(var(--base)/0.5);
+    border: 1px solid hsl(var(--base)/0.15);
     background-color: hsl(var(--base)/0.15);
 }
 
@@ -1134,7 +1217,7 @@ ol {
 
 .badge-outline--base-two {
     color: hsl(var(--base-two));
-    border: 1px solid hsl(var(--base-two)/0.5);
+    border: 1px solid hsl(var(--base-two)/0.15);
     background-color: hsl(var(--base-two)/0.15);
 }
 
@@ -1145,7 +1228,7 @@ ol {
 
 .badge-outline--primary {
     color: hsl(var(--primary));
-    border: 1px solid hsl(var(--primary)/0.5);
+    border: 1px solid hsl(var(--primary)/0.15);
     background-color: hsl(var(--primary)/0.15);
 }
 
@@ -1156,7 +1239,7 @@ ol {
 
 .badge-outline--secondary {
     color: hsl(var(--secondary));
-    border: 1px solid hsl(var(--secondary)/0.5);
+    border: 1px solid hsl(var(--secondary)/0.15);
     background-color: hsl(var(--secondary)/0.15);
 }
 
@@ -1167,7 +1250,7 @@ ol {
 
 .badge-outline--success {
     color: hsl(var(--success));
-    border: 1px solid hsl(var(--success)/0.5);
+    border: 1px solid hsl(var(--success)/0.15);
     background-color: hsl(var(--success)/0.15);
 }
 
@@ -1178,7 +1261,7 @@ ol {
 
 .badge-outline--danger {
     color: hsl(var(--danger));
-    border: 1px solid hsl(var(--danger)/0.5);
+    border: 1px solid hsl(var(--danger)/0.15);
     background-color: hsl(var(--danger)/0.15);
 }
 
@@ -1189,7 +1272,7 @@ ol {
 
 .badge-outline--warning {
     color: hsl(var(--warning));
-    border: 1px solid hsl(var(--warning)/0.5);
+    border: 1px solid hsl(var(--warning)/0.15);
     background-color: hsl(var(--warning)/0.15);
 }
 
@@ -1200,7 +1283,7 @@ ol {
 
 .badge-outline--info {
     color: hsl(var(--info));
-    border: 1px solid hsl(var(--info)/0.5);
+    border: 1px solid hsl(var(--info)/0.15);
     background-color: hsl(var(--info)/0.15);
 }
 
@@ -1211,7 +1294,7 @@ ol {
     font-weight: 500;
     line-height: 100%;
     text-align: center;
-    padding: 15.5px 24px;
+    padding: 15px 24px;
     border-radius: 6px;
     border-color: transparent;
     -webkit-transition: 0.2s linear;
@@ -1647,7 +1730,8 @@ ol {
 
 .btn--gradient, .btn--gradient:disabled, .btn--gradient.disabled {
     color: hsl(var(--white));
-    background: var(--gradient);
+    background: var(--gradient) padding-box;
+    border-color: transparent;
 }
 
 .btn--gradient:hover, .btn--gradient:active, .btn--gradient:focus, .btn--gradient:focus-visible {

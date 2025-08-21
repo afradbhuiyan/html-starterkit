@@ -34,7 +34,7 @@
 
   &--gradient {
     --border-width: 1px;
-    --border-gradient: linear-gradient(180deg hsl(var(--base)), hsl(var(--base-two)));
+    --border-gradient: var(--gradient);
     position: relative;
     z-index: 1;
 

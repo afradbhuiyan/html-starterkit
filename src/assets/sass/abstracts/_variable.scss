@@ -8,11 +8,11 @@
   /* Base Color (#842BE2) */
   @include colorVariable(--base, #842BE2, 9);
 
-  /* Base Two Color (#007AFF) */
-  @include colorVariable(--base-two, #007AFF, 9);
+  /* Base Two Color (#34d399) */
+  @include colorVariable(--base-two, #34d399, 9);
 
-  /* Primary Color (#6338ff) */
-  @include colorVariable(--primary, #6338ff, 9);
+  /* Primary Color (#3c83f6) */
+  @include colorVariable(--primary, #3c83f6, 9);
 
   /* Secondary Color (#585b5e) */
   @include colorVariable(--secondary, #585b5e, 9);
@@ -26,8 +26,8 @@
   /* Warning Color (#FC0) */
   @include colorVariable(--warning, #FC0, 9);
 
-  /* Info Color (#3c83f6) */
-  @include colorVariable(--info, #3c83f6, 9);
+  /* Info Color (#0ea5e9) */
+  @include colorVariable(--info, #0ea5e9, 9);
 
   /* Color Variables */
   --white: 0 0% 100%; //#ffffff 
@@ -51,8 +51,8 @@
   /* Shadow Variables */
   --box-shadow: 0px 2px 15px hsl(var(--black) / 0.05);
   /* Gradient Variable */
-  --gradient: linear-gradient(90deg, hsl(var(--base-two)) -177.5%, hsl(var(--base)) 64.5%);
-  --gradient-l-100: linear-gradient(-90deg, hsl(var(--base-two)/0.15) -150%, hsl(var(--base)/0.15) 80%);
+  --gradient: linear-gradient(135deg, hsl(var(--base)) 0%, hsl(var(--base-two)) 100%);
+  --gradient-l-100: linear-gradient(135deg, hsl(var(--base)/0.15) 0%, hsl(var(--base-two)/0.15) 100%);
 }
 
 /* ========================= CSS Variables End ========================= */
