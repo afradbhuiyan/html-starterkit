@@ -382,3 +382,62 @@
     }
   }
 }
+
+// Custom table responsiveness
+@mixin make-custom-table-responsive() {
+  min-width: unset;
+
+  thead {
+    display: none;
+  }
+
+  tbody {
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    tr {
+      display: block;
+
+      td {
+        text-align: right;
+        padding: 12px !important;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-color: transparent;
+
+        &::before {
+          content: attr(data-label);
+          font-size: rem(16px);
+          font-weight: 500;
+          line-height: 120%;
+          color: hsl(var(--black));
+          text-align: left;
+          white-space: nowrap;
+        }
+      }
+
+      &:first-child {
+        td:first-child {
+          padding-top: 24px !important;
+        }
+      }
+
+      &:last-child {
+        td:last-child {
+          padding-bottom: 24px !important;
+        }
+      }
+
+      &:not(:last-child) {
+        td:last-child {
+          border-color: hsl(var(--border-color));
+        }
+      }
+    }
+  }
+}

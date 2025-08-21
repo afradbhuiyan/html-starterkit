@@ -3023,201 +3023,160 @@ textarea.form--control {
 }
 
 /* ========================= Pagination CSS End ========================= */
-/* ================================= Table Css Start =========================== */
-/* Table Content Css start */
-@media screen and (max-width: 374px) {
-    .customer {
-        display: block;
-        text-align: left;
-    }
-}
-
-.customer__thumb {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-@media screen and (max-width: 374px) {
-    .customer__thumb {
-        margin-left: auto;
-    }
-}
-
-.customer__content {
-    width: calc(100% - 35px);
-    padding-left: 15px;
-    text-align: left;
-}
-
-@media screen and (max-width: 424px) {
-    .customer__content {
-        padding-left: 8px;
-    }
-}
-
-@media screen and (max-width: 374px) {
-    .customer__content {
-        width: 100%;
-        padding-left: 0px;
-        padding-top: 5px;
-    }
-}
-
-.customer__name {
-    margin-bottom: 0;
-    font-size: 0.8125rem;
-    color: hsl(var(--black)/0.7);
-}
-
-.action-buttons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    gap: 10px;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
-}
-
-.action-btn {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-}
-
-.edit-btn {
-    color: hsl(var(--info));
-    background-color: hsl(var(--info)/0.08);
-}
-
-.delete-btn {
-    color: hsl(var(--danger));
-    background-color: hsl(var(--danger)/0.08);
-}
-
-/* Table Css Start */
+/* ========================= Table CSS Start ========================= */
 .table {
-    margin: 0;
-    border-collapse: collapse;
+    margin-bottom: 0;
+}
+
+.table--custom {
+    overflow: hidden;
+    min-width: -webkit-max-content;
+    min-width: -moz-max-content;
+    min-width: max-content;
     border-collapse: separate;
-    border-spacing: 0px 0px;
+    border-spacing: 0;
+    border-radius: 20px;
+    border: 1px solid hsl(var(--border-color));
+    background-color: hsl(var(--white));
 }
 
-.table thead tr th {
-    background-color: hsl(var(--white));
-    text-align: center;
-    padding: 15px 20px;
-    color: hsl(var(--black)/0.7);
-    font-family: var(--heading-font);
+.table--custom thead tr th {
+    font-size: 1rem;
     font-weight: 600;
-    border-bottom: 0;
-    max-width: 170px;
-    font-size: 0.875rem;
-    border: 1px solid hsl(var(--black)/0.08);
-    background-color: hsl(var(--base)/0.03);
-}
-
-.table thead tr th:not(:first-child) {
-    border-left: 0;
-}
-
-.table thead tr th:first-child {
+    line-height: 150%;
+    padding: 16px 12px;
     text-align: left;
-    border-radius: 6px 0 0 0;
+    vertical-align: middle;
+    color: hsl(var(--black));
+    border-color: hsl(var(--border-color));
+    background-color: hsl(var(--gray-l-400));
 }
 
-.table thead tr th:last-child {
-    border-radius: 0 6px 0 0;
+.table--custom thead tr th:first-child {
+    padding-left: 32px;
+}
+
+@media screen and (max-width: 1199px) {
+    .table--custom thead tr th:first-child {
+        padding-left: 24px;
+    }
+}
+
+.table--custom thead tr th:last-child {
     text-align: right;
+    padding-right: 32px;
 }
 
-.table thead tr th:nth-child(2) {
-    text-align: left;
+@media screen and (max-width: 1199px) {
+    .table--custom thead tr th:last-child {
+        padding-right: 24px;
+    }
 }
 
-.table tbody {
-    border: 0 !important;
+.table--custom tbody {
+    position: relative;
+}
+
+.table--custom tbody::before, .table--custom tbody::after {
+    content: "";
+    width: 32px;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     background-color: hsl(var(--white));
 }
 
-.table tbody tr {
-    border-bottom: 1px solid hsl(var(--black)/0.08);
+@media screen and (max-width: 1199px) {
+    .table--custom tbody::before, .table--custom tbody::after {
+        width: 24px;
+    }
 }
 
-.table tbody tr:last-child {
-    border-bottom: 0;
+.table--custom tbody::before {
+    left: 0;
 }
 
-.table tbody tr:last-child td {
-    border-bottom: 1px solid hsl(var(--black)/0.08);
+.table--custom tbody::after {
+    right: 0;
 }
 
-.table tbody tr:last-child td:first-child {
-    border-radius: 0px 0 0 6px;
-}
-
-.table tbody tr:last-child td:last-child {
-    border-radius: 0 0px 6px 0;
-}
-
-.table tbody tr td {
-    text-align: center;
+.table--custom tbody tr td {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    padding: 16px 12px;
+    text-align: left;
     vertical-align: middle;
-    padding: 10px 15px;
-    border-width: 1px;
-    border: 0;
-    font-family: var(--heading-font);
-    color: hsl(var(--black)/0.7);
-    font-weight: 500;
-    max-width: 170px;
-    font-size: 0.8125rem;
-    border-bottom: 1px solid hsl(var(--black)/0.08);
-    border-right: 1px solid hsl(var(--black)/0.08);
+    color: hsl(var(--gray));
+    border-color: transparent;
+    background-color: hsl(var(--dark));
 }
 
-.table tbody tr td::before {
-    content: attr(data-label);
-    font-family: var(--heading-font);
-    font-size: 0.9375rem;
-    color: hsl(var(--black));
-    font-weight: 500;
-    display: none;
-    width: 45% !important;
-    text-align: left;
+.table--custom tbody tr td:first-child {
+    padding-left: 32px;
 }
 
-.table tbody tr td:first-child {
-    text-align: left;
-    border-left: 1px solid hsl(var(--black)/0.08);
-    font-size: 0.875rem;
+@media screen and (max-width: 1199px) {
+    .table--custom tbody tr td:first-child {
+        padding-left: 24px;
+    }
 }
 
-.table tbody tr td:last-child {
+.table--custom tbody tr td:last-child {
     text-align: right;
-    border-right: 1px solid hsl(var(--black)/0.08);
+    padding-right: 32px;
+}
+
+@media screen and (max-width: 1199px) {
+    .table--custom tbody tr td:last-child {
+        padding-right: 24px;
+    }
+}
+
+.table--custom tbody tr:not(:last-child) td {
+    border-color: hsl(var(--border-color));
+}
+
+.table--custom:has([colspan="100%"]) thead tr th:first-child {
+    border-bottom-left-radius: 0;
+}
+
+.table--custom:has([colspan="100%"]) thead tr th:last-child {
+    border-bottom-right-radius: 0;
+}
+
+.table--custom:has([colspan="100%"]) tbody tr td[colspan="100%"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color: hsl(var(--gray-d-100));
+    border: 1px solid hsl(var(--gray-l-100));
+    border-top: none;
+    text-align: center;
 }
 
 @media screen and (max-width: 767px) {
-    .table--responsive--md thead {
+    .table--custom.table--responsive-sm {
+        min-width: unset;
+    }
+
+    .table--custom.table--responsive-sm thead {
         display: none;
     }
 
-    .table--responsive--md tbody tr {
+    .table--custom.table--responsive-sm tbody::before, .table--custom.table--responsive-sm tbody::after {
+        display: none;
+    }
+
+    .table--custom.table--responsive-sm tbody tr {
         display: block;
     }
 
-    .table--responsive--md tbody tr:last-child td {
-        border-bottom: 0;
-    }
-
-    .table--responsive--md tbody tr td {
+    .table--custom.table--responsive-sm tbody tr td {
+        text-align: right;
+        padding: 12px !important;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -3227,48 +3186,53 @@ textarea.form--control {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        gap: 15px;
-        text-align: right;
-        padding: 10px 15px;
-        border: none;
-        border-bottom: 1px solid hsl(var(--black)/0.8);
-        max-width: unset;
+        gap: 16px;
+        border-color: transparent;
     }
 
-    .table--responsive--md tbody tr td:last-child {
-        border: none;
+    .table--custom.table--responsive-sm tbody tr td::before {
+        content: attr(data-label);
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 120%;
+        color: hsl(var(--black));
+        text-align: left;
+        white-space: nowrap;
     }
 
-    .table--responsive--md tbody tr td:first-child {
-        text-align: right;
-        border-left: 0;
+    .table--custom.table--responsive-sm tbody tr:first-child td:first-child {
+        padding-top: 24px !important;
     }
 
-    .table--responsive--md tbody tr td::before {
-        display: block;
-        font-size: 0.875rem;
-        color: hsl(var(--black)/0.7);
+    .table--custom.table--responsive-sm tbody tr:last-child td:last-child {
+        padding-bottom: 24px !important;
     }
 
-    .table--responsive--md tbody tr td {
-        border: 0;
+    .table--custom.table--responsive-sm tbody tr:not(:last-child) td:last-child {
+        border-color: hsl(var(--border-color));
     }
 }
 
 @media screen and (max-width: 991px) {
-    .table--responsive--lg thead {
+    .table--custom.table--responsive-md {
+        min-width: unset;
+    }
+
+    .table--custom.table--responsive-md thead {
         display: none;
     }
 
-    .table--responsive--lg tbody tr {
+    .table--custom.table--responsive-md tbody::before, .table--custom.table--responsive-md tbody::after {
+        display: none;
+    }
+
+    .table--custom.table--responsive-md tbody tr {
         display: block;
     }
 
-    .table--responsive--lg tbody tr:last-child td {
-        border-bottom: 0;
-    }
-
-    .table--responsive--lg tbody tr td {
+    .table--custom.table--responsive-md tbody tr td {
+        text-align: right;
+        padding: 12px !important;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -3278,48 +3242,53 @@ textarea.form--control {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        gap: 15px;
-        text-align: right;
-        padding: 10px 15px;
-        border: none;
-        border-bottom: 1px solid hsl(var(--black)/0.8);
-        max-width: unset;
+        gap: 16px;
+        border-color: transparent;
     }
 
-    .table--responsive--lg tbody tr td:last-child {
-        border: none;
+    .table--custom.table--responsive-md tbody tr td::before {
+        content: attr(data-label);
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 120%;
+        color: hsl(var(--black));
+        text-align: left;
+        white-space: nowrap;
     }
 
-    .table--responsive--lg tbody tr td:first-child {
-        text-align: right;
-        border-left: 0;
+    .table--custom.table--responsive-md tbody tr:first-child td:first-child {
+        padding-top: 24px !important;
     }
 
-    .table--responsive--lg tbody tr td::before {
-        display: block;
-        font-size: 0.875rem;
-        color: hsl(var(--black)/0.7);
+    .table--custom.table--responsive-md tbody tr:last-child td:last-child {
+        padding-bottom: 24px !important;
     }
 
-    .table--responsive--lg tbody tr td {
-        border: 0;
+    .table--custom.table--responsive-md tbody tr:not(:last-child) td:last-child {
+        border-color: hsl(var(--border-color));
     }
 }
 
 @media screen and (max-width: 1199px) {
-    .table--responsive--xl thead {
+    .table--custom.table--responsive-lg {
+        min-width: unset;
+    }
+
+    .table--custom.table--responsive-lg thead {
         display: none;
     }
 
-    .table--responsive--xl tbody tr {
+    .table--custom.table--responsive-lg tbody::before, .table--custom.table--responsive-lg tbody::after {
+        display: none;
+    }
+
+    .table--custom.table--responsive-lg tbody tr {
         display: block;
     }
 
-    .table--responsive--xl tbody tr:last-child td {
-        border-bottom: 0;
-    }
-
-    .table--responsive--xl tbody tr td {
+    .table--custom.table--responsive-lg tbody tr td {
+        text-align: right;
+        padding: 12px !important;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -3329,48 +3298,53 @@ textarea.form--control {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        gap: 15px;
-        text-align: right;
-        padding: 10px 15px;
-        border: none;
-        border-bottom: 1px solid hsl(var(--black)/0.8);
-        max-width: unset;
+        gap: 16px;
+        border-color: transparent;
     }
 
-    .table--responsive--xl tbody tr td:last-child {
-        border: none;
+    .table--custom.table--responsive-lg tbody tr td::before {
+        content: attr(data-label);
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 120%;
+        color: hsl(var(--black));
+        text-align: left;
+        white-space: nowrap;
     }
 
-    .table--responsive--xl tbody tr td:first-child {
-        text-align: right;
-        border-left: 0;
+    .table--custom.table--responsive-lg tbody tr:first-child td:first-child {
+        padding-top: 24px !important;
     }
 
-    .table--responsive--xl tbody tr td::before {
-        display: block;
-        font-size: 0.875rem;
-        color: hsl(var(--black)/0.7);
+    .table--custom.table--responsive-lg tbody tr:last-child td:last-child {
+        padding-bottom: 24px !important;
     }
 
-    .table--responsive--xl tbody tr td {
-        border: 0;
+    .table--custom.table--responsive-lg tbody tr:not(:last-child) td:last-child {
+        border-color: hsl(var(--border-color));
     }
 }
 
 @media screen and (max-width: 1399px) {
-    .table--responsive--xxl thead {
+    .table--custom.table--responsive-xl {
+        min-width: unset;
+    }
+
+    .table--custom.table--responsive-xl thead {
         display: none;
     }
 
-    .table--responsive--xxl tbody tr {
+    .table--custom.table--responsive-xl tbody::before, .table--custom.table--responsive-xl tbody::after {
+        display: none;
+    }
+
+    .table--custom.table--responsive-xl tbody tr {
         display: block;
     }
 
-    .table--responsive--xxl tbody tr:last-child td {
-        border-bottom: 0;
-    }
-
-    .table--responsive--xxl tbody tr td {
+    .table--custom.table--responsive-xl tbody tr td {
+        text-align: right;
+        padding: 12px !important;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -3380,34 +3354,66 @@ textarea.form--control {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        gap: 15px;
-        text-align: right;
-        padding: 10px 15px;
-        border: none;
-        border-bottom: 1px solid hsl(var(--black)/0.8);
-        max-width: unset;
+        gap: 16px;
+        border-color: transparent;
     }
 
-    .table--responsive--xxl tbody tr td:last-child {
-        border: none;
+    .table--custom.table--responsive-xl tbody tr td::before {
+        content: attr(data-label);
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 120%;
+        color: hsl(var(--black));
+        text-align: left;
+        white-space: nowrap;
     }
 
-    .table--responsive--xxl tbody tr td:first-child {
-        text-align: right;
-        border-left: 0;
+    .table--custom.table--responsive-xl tbody tr:first-child td:first-child {
+        padding-top: 24px !important;
     }
 
-    .table--responsive--xxl tbody tr td::before {
-        display: block;
-        font-size: 0.875rem;
-        color: hsl(var(--black)/0.7);
+    .table--custom.table--responsive-xl tbody tr:last-child td:last-child {
+        padding-bottom: 24px !important;
     }
 
-    .table--responsive--xxl tbody tr td {
-        border: 0;
+    .table--custom.table--responsive-xl tbody tr:not(:last-child) td:last-child {
+        border-color: hsl(var(--border-color));
     }
 }
-/* ================================= Table Css End =========================== */
+
+.table--responsive:has(.table--responsive-empty) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (min-width: 768px) {
+    .table--responsive:has(.table--responsive-sm) {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .table--responsive:has(.table--responsive-md) {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .table--responsive:has(.table--responsive-lg) {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .table--responsive:has(.table--responsive-xl) {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+/* ========================= Table CSS End =========================== */
 /* ================================= preload Css Start =========================== */
 .preloader {
     position: fixed;

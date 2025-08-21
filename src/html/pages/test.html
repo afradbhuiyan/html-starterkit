@@ -948,46 +948,513 @@
                         </div>
                     </div>
                     <!-- Pagination Ends -->
-                </div>
 
-                <div class="row">
-                    <!-- <div class="col-12">
-                        <div class="">
-                            <h1>Table </h1>
-                            <table class="table table--responsive--md">
+                    <!-- Table Starts -->
+                    <div>
+                        <h3 class="mb-3">
+                            <span class="text-primary">#</span>
+                            Table
+                        </h3>
+                        <div class="table--responsive">
+                            <table class="table table--custom table--trx-history table--responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th>Gateway | Transaction</th>
+                                        <th>Initiated</th>
+                                        <th>Amount</th>
+                                        <th>Conversion</th>
+                                        <th>Status</th>
+                                        <th>Details</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <td data-label="Gateway | Transaction">
+                                            <div>
+                                                <span class="fw-bold">
+                                                    <span class="text-primary">
+                                                        Stripe Hosted
+                                                    </span>
+                                                </span>
+                                                <br>
+                                                <small> 6KHBBGJP8PKU </small>
+                                            </div>
+                                        </td>
+
+                                        <td data-label="Initiated">
+                                            <div>
+                                                2025-08-04 09:06 AM<br>1 week ago
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div>
+                                                $49.00 USD + <span class="text--danger" data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Processing Charge">$1.49 USD </span>
+                                                <br>
+                                                <strong data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Amount with charge">
+                                                    $50.49 USD
+                                                </strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Conversion">
+                                            <div>
+                                                $1.00 USD = 1.00 USD
+                                                <br>
+                                                <strong>50.49 USD</strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Status">
+                                            <span class="badge badge--success">Succeed</span>
+                                        </td>
+
+                                        <td data-label="Details">
+                                            <button type="button" class="btn btn--success btn--sm btn--icon"
+                                                data-bs-toggle="tooltip" aria-label="Automatically processed"
+                                                data-bs-original-title="Automatically processed">
+                                                <i class="las la-check"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
+                                        <td data-label="Gateway | Transaction">
+                                            <div>
+                                                <span class="fw-bold">
+                                                    <span class="text-primary">
+                                                        Bank Transfer
+                                                    </span>
+                                                </span>
+                                                <br>
+                                                <small> HJ5KNBMCHSOU </small>
+                                            </div>
+                                        </td>
+
+                                        <td data-label="Initiated">
+                                            <div>
+                                                2025-07-28 10:54 AM<br>2 weeks ago
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div>
+                                                $250.00 USD + <span class="text--danger" data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Processing Charge">$3.50 USD </span>
+                                                <br>
+                                                <strong data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Amount with charge">
+                                                    $253.50 USD
+                                                </strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Conversion">
+                                            <div>
+                                                $1.00 USD = 1.00 USD
+                                                <br>
+                                                <strong>253.50 USD</strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Status">
+                                            <span><span class="badge badge--danger">Rejected</span><br>1 week ago</span>
+                                        </td>
+
+                                        <td data-label="Details">
+                                            <a href="javascript:void(0)"
+                                                class="btn btn--base btn--icon btn--sm detailBtn"
+                                                data-info="[{&quot;name&quot;:&quot;First Name&quot;,&quot;type&quot;:&quot;text&quot;,&quot;value&quot;:&quot;Gary&quot;},{&quot;name&quot;:&quot;Last Name&quot;,&quot;type&quot;:&quot;text&quot;,&quot;value&quot;:&quot;Christian&quot;},{&quot;name&quot;:&quot;Bank Name&quot;,&quot;type&quot;:&quot;text&quot;,&quot;value&quot;:&quot;Rhona Dotson&quot;},{&quot;name&quot;:&quot;Transaction Number&quot;,&quot;type&quot;:&quot;text&quot;,&quot;value&quot;:&quot;494&quot;},{&quot;name&quot;:&quot;Screenshot&quot;,&quot;type&quot;:&quot;file&quot;,&quot;value&quot;:&quot;https:\/\/script.viserlab.com\/aigraphy\/user\/download-attachments\/eyJpdiI6IldTa3dWdnNHa1dOWWZWV3d5dkJ1Vnc9PSIsInZhbHVlIjoiR3NNYjJDdHRTR1FvZU9jVXdISXVacE9XTXVudVl2NmZZR3pzaW9LSW5PVStCLzlFZ1A4SFlYWk50dnpkNjhVSFE4WTJ3U25pUWJxcEttNDg2bTh5NEE9PSIsIm1hYyI6Ijc0MDVhODQ2MDUyZTM1OWFiYmE3YTA0NDNjN2NkZTRmZjFmY2IyMjEyZjA1ZWI4OGQ5YmIwMGQ4OGNjZDIwZWMiLCJ0YWciOiIifQ==&quot;}]"
+                                                data-admin_feedback="Esse eiusmod sit nulla accusamus non">
+                                                <i class="las la-desktop"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">3</th>
-                                        <td colspan="2">Larry the Bird</td>
-                                        <td>@twitter</td>
+                                        <td data-label="Gateway | Transaction">
+                                            <div>
+                                                <span class="fw-bold">
+                                                    <span class="text-primary">
+                                                        Stripe Hosted
+                                                    </span>
+                                                </span>
+                                                <br>
+                                                <small> QV4QJ1ICI33O </small>
+                                            </div>
+                                        </td>
+
+                                        <td data-label="Initiated">
+                                            <div>
+                                                2025-07-28 10:47 AM<br>2 weeks ago
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div>
+                                                $150.00 USD + <span class="text--danger" data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Processing Charge">$2.50 USD </span>
+                                                <br>
+                                                <strong data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Amount with charge">
+                                                    $152.50 USD
+                                                </strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Conversion">
+                                            <div>
+                                                $1.00 USD = 1.00 USD
+                                                <br>
+                                                <strong>152.50 USD</strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Status">
+                                            <span class="badge badge--success">Succeed</span>
+                                        </td>
+
+                                        <td data-label="Details">
+                                            <button type="button" class="btn btn--success btn--sm btn--icon"
+                                                data-bs-toggle="tooltip" aria-label="Automatically processed"
+                                                data-bs-original-title="Automatically processed">
+                                                <i class="las la-check"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Gateway | Transaction">
+                                            <div>
+                                                <span class="fw-bold">
+                                                    <span class="text-primary">
+                                                        Stripe Hosted
+                                                    </span>
+                                                </span>
+                                                <br>
+                                                <small> UBTUUW2EA3H2 </small>
+                                            </div>
+                                        </td>
+
+                                        <td data-label="Initiated">
+                                            <div>
+                                                2025-07-28 10:36 AM<br>2 weeks ago
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div>
+                                                $15.00 USD + <span class="text--danger" data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Processing Charge">$1.15 USD </span>
+                                                <br>
+                                                <strong data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Amount with charge">
+                                                    $16.15 USD
+                                                </strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Conversion">
+                                            <div>
+                                                $1.00 USD = 1.00 USD
+                                                <br>
+                                                <strong>16.15 USD</strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Status">
+                                            <span class="badge badge--success">Succeed</span>
+                                        </td>
+
+                                        <td data-label="Details">
+                                            <button type="button" class="btn btn--success btn--icon btn--sm"
+                                                data-bs-toggle="tooltip" aria-label="Automatically processed"
+                                                data-bs-original-title="Automatically processed">
+                                                <i class="las la-check"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Gateway | Transaction">
+                                            <div>
+                                                <span class="fw-bold">
+                                                    <span class="text-primary">
+                                                        2Checkout
+                                                    </span>
+                                                </span>
+                                                <br>
+                                                <small> 6FA9GOXAXPTT </small>
+                                            </div>
+                                        </td>
+
+                                        <td data-label="Initiated">
+                                            <div>
+                                                2025-07-28 10:21 AM<br>2 weeks ago
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div>
+                                                $15.00 USD + <span class="text--danger" data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Processing Charge">$1.15 USD </span>
+                                                <br>
+                                                <strong data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Amount with charge">
+                                                    $16.15 USD
+                                                </strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Conversion">
+                                            <div>
+                                                $1.00 USD = 1.00 USD
+                                                <br>
+                                                <strong>16.15 USD</strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Status">
+                                            <span class="badge badge--success">Succeed</span>
+                                        </td>
+
+                                        <td data-label="Details">
+                                            <button type="button" class="btn btn--success btn--sm btn--icon"
+                                                data-bs-toggle="tooltip" aria-label="Automatically processed"
+                                                data-bs-original-title="Automatically processed">
+                                                <i class="las la-check"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Gateway | Transaction">
+                                            <div>
+                                                <span class="fw-bold">
+                                                    <span class="text-primary">
+                                                        Stripe Storefront
+                                                    </span>
+                                                </span>
+                                                <br>
+                                                <small> 6BK76GMLZ1SJ </small>
+                                            </div>
+                                        </td>
+
+                                        <td data-label="Initiated">
+                                            <div>
+                                                2025-07-28 09:51 AM<br>2 weeks ago
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div>
+                                                $15.00 USD + <span class="text--danger" data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Processing Charge">$1.15 USD </span>
+                                                <br>
+                                                <strong data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Amount with charge">
+                                                    $16.15 USD
+                                                </strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Conversion">
+                                            <div>
+                                                $1.00 USD = 1.00 USD
+                                                <br>
+                                                <strong>16.15 USD</strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Status">
+                                            <span class="badge badge--success">Succeed</span>
+                                        </td>
+
+                                        <td data-label="Details">
+                                            <button type="button" class="btn btn--success btn--sm btn--icon"
+                                                data-bs-toggle="tooltip" aria-label="Automatically processed"
+                                                data-bs-original-title="Automatically processed">
+                                                <i class="las la-check"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Gateway | Transaction">
+                                            <div>
+                                                <span class="fw-bold">
+                                                    <span class="text-primary">
+                                                        Stripe Hosted
+                                                    </span>
+                                                </span>
+                                                <br>
+                                                <small> OVJ29XGNGDW1 </small>
+                                            </div>
+                                        </td>
+
+                                        <td data-label="Initiated">
+                                            <div>
+                                                2025-07-28 09:40 AM<br>2 weeks ago
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div>
+                                                $15.00 USD + <span class="text--danger" data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Processing Charge">$1.15 USD </span>
+                                                <br>
+                                                <strong data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Amount with charge">
+                                                    $16.15 USD
+                                                </strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Conversion">
+                                            <div>
+                                                $1.00 USD = 1.00 USD
+                                                <br>
+                                                <strong>16.15 USD</strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Status">
+                                            <span class="badge badge--success">Succeed</span>
+                                        </td>
+
+                                        <td data-label="Details">
+                                            <button type="button" class="btn btn--success btn--sm btn--icon"
+                                                data-bs-toggle="tooltip" aria-label="Automatically processed"
+                                                data-bs-original-title="Automatically processed">
+                                                <i class="las la-check"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Gateway | Transaction">
+                                            <div>
+                                                <span class="fw-bold">
+                                                    <span class="text-primary">
+                                                        Stripe Hosted
+                                                    </span>
+                                                </span>
+                                                <br>
+                                                <small> WKBJRNNPDGPS </small>
+                                            </div>
+                                        </td>
+
+                                        <td data-label="Initiated">
+                                            <div>
+                                                2025-03-23 08:24 AM<br>4 months ago
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div>
+                                                $100.00 USD + <span class="text--danger" data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Processing Charge">$2.00 USD </span>
+                                                <br>
+                                                <strong data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Amount with charge">
+                                                    $102.00 USD
+                                                </strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Conversion">
+                                            <div>
+                                                $1.00 USD = 1.00 USD
+                                                <br>
+                                                <strong>102.00 USD</strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Status">
+                                            <span class="badge badge--success">Succeed</span>
+                                        </td>
+
+                                        <td data-label="Details">
+                                            <button type="button" class="btn btn--success btn--sm btn--icon"
+                                                data-bs-toggle="tooltip" aria-label="Automatically processed"
+                                                data-bs-original-title="Automatically processed">
+                                                <i class="las la-check"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Gateway | Transaction">
+                                            <div>
+                                                <span class="fw-bold">
+                                                    <span class="text-primary">
+                                                        Stripe Hosted
+                                                    </span>
+                                                </span>
+                                                <br>
+                                                <small> WXM9GWG5LJHI </small>
+                                            </div>
+                                        </td>
+
+                                        <td data-label="Initiated">
+                                            <div>
+                                                2025-03-23 08:23 AM<br>4 months ago
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div>
+                                                $100.00 USD + <span class="text--danger" data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Processing Charge">$2.00 USD </span>
+                                                <br>
+                                                <strong data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Amount with charge">
+                                                    $102.00 USD
+                                                </strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Conversion">
+                                            <div>
+                                                $1.00 USD = 1.00 USD
+                                                <br>
+                                                <strong>102.00 USD</strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Status">
+                                            <span class="badge badge--success">Succeed</span>
+                                        </td>
+
+                                        <td data-label="Details">
+                                            <button type="button" class="btn btn--success btn--sm btn--icon"
+                                                data-bs-toggle="tooltip" aria-label="Automatically processed"
+                                                data-bs-original-title="Automatically processed">
+                                                <i class="las la-check"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Gateway | Transaction">
+                                            <div>
+                                                <span class="fw-bold">
+                                                    <span class="text-primary">
+                                                        Bank Transfer
+                                                    </span>
+                                                </span>
+                                                <br>
+                                                <small> DSWGRYJWF2GR </small>
+                                            </div>
+                                        </td>
+
+                                        <td data-label="Initiated">
+                                            <div>
+                                                2024-10-24 02:46 PM<br>9 months ago
+                                            </div>
+                                        </td>
+                                        <td data-label="Amount">
+                                            <div>
+                                                $100.00 USD + <span class="text--danger" data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Processing Charge">$2.00 USD </span>
+                                                <br>
+                                                <strong data-bs-toggle="tooltip"
+                                                    data-bs-original-title="Amount with charge">
+                                                    $102.00 USD
+                                                </strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Conversion">
+                                            <div>
+                                                $1.00 USD = 1.00 USD
+                                                <br>
+                                                <strong>102.00 USD</strong>
+                                            </div>
+                                        </td>
+                                        <td data-label="Status">
+                                            <span><span class="badge badge--success">Approved</span><br>9 months
+                                                ago</span>
+                                        </td>
+
+                                        <td data-label="Details">
+                                            <a href="javascript:void(0)"
+                                                class="btn btn--base btn--sm btn--icon detailBtn"
+                                                data-info="[{&quot;name&quot;:&quot;First Name&quot;,&quot;type&quot;:&quot;text&quot;,&quot;value&quot;:&quot;Erin&quot;},{&quot;name&quot;:&quot;Last Name&quot;,&quot;type&quot;:&quot;text&quot;,&quot;value&quot;:&quot;Finch&quot;},{&quot;name&quot;:&quot;Bank Name&quot;,&quot;type&quot;:&quot;text&quot;,&quot;value&quot;:&quot;Iliana Wise&quot;},{&quot;name&quot;:&quot;Transaction Number&quot;,&quot;type&quot;:&quot;text&quot;,&quot;value&quot;:&quot;736&quot;},{&quot;name&quot;:&quot;Screenshot&quot;,&quot;type&quot;:&quot;file&quot;,&quot;value&quot;:&quot;https:\/\/script.viserlab.com\/aigraphy\/user\/download-attachments\/eyJpdiI6ImdqNS9JY0xMR0FpUTBvUzgweERVdnc9PSIsInZhbHVlIjoiQWVFcVZEem91alFUTGhjbTllNzQraUlUQmVFclNSRzJFdUpkclVBVUJKN1JaZUZ3RkUwWE10ZVRUUUgvZGx6ek5BeEd4ZmM3a3pnMDMxWDEzS2tja2c9PSIsIm1hYyI6ImRlMjYxN2JmNjhmZDEyYWFiMjc5NDY1OGJjNjRmZmY4NDVkOGQ5ZWM5NzU0MTc3M2Y4NmQwM2FlZDU4MjQ0YjMiLCJ0YWciOiIifQ==&quot;}]">
+                                                <i class="las la-desktop"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <br>
-                            <br>
-                            <br>
                         </div>
-                    </div> -->
+                    </div>
+                    <!-- Table Ends -->
                 </div>
             </div>
             <div class="col-lg-4 col-xxl-3">
