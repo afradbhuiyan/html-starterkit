@@ -2530,6 +2530,7 @@ textarea.form--control {
     padding: 15px 18px;
     color: hsl(var(--gray-l-100));
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-position: right 18px center;
 }
 
 .form--select option {
@@ -4392,7 +4393,6 @@ textarea.form--control {
         --select2-arrow-size: 20px;
         --select2-font-size: 1.25rem;
         --select2-padding-y: 16px;
-        --select2-padding-x: 24px;
         --select2-dropdown-field-padding-y: 12px;
     }
 }
@@ -4403,7 +4403,6 @@ textarea.form--control {
         --select2-arrow-size: 18px;
         --select2-font-size: 1.125rem;
         --select2-padding-y: 13.5px;
-        --select2-padding-x: 24px;
         --select2-dropdown-field-padding-y: 9.5px;
     }
 }
@@ -4413,7 +4412,6 @@ textarea.form--control {
     --select2-arrow-size: 14px;
     --select2-font-size: 0.875rem;
     --select2-padding-y: 7px;
-    --select2-padding-x: 18px;
     --select2-dropdown-field-padding-y: 6.5px;
 }
 
