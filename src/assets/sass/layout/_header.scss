@@ -1,4 +1,4 @@
-/* ======================= Header Start Here ======================= */
+/* ========================= Header CSS Start ======================== */
 .header {
   width: 100%;
   position: relative;
@@ -79,6 +79,7 @@
   }
 
   .nav-menu {
+
     //! Works Only for large screens
     @media screen and (min-width: 992px) {
       padding-top: 0;
@@ -278,4 +279,5 @@
     transform: translateY(0);
   }
 }
-/* ======================= Header Css End =========================== */
+
+/* ========================= Header CSS End ========================== */

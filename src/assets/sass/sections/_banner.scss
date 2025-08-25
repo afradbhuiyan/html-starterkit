@@ -1,5 +1,6 @@
-/* =========================== Banner Section Start Here ========================= */
-.banner-section {
+/* ========================= Banner CSS Start ========================= */
+
+.banner {
   position: relative;
   z-index: 1;
   padding: 180px 0 180px;
@@ -16,13 +17,6 @@
     padding: 115px 0 60px;
   }
 
-  &.bg-img {
-    @include md-screen {
-      background-position: center right;
-      object-fit: contain;
-    }
-  }
-
   &::before {
     position: absolute;
     content: "";
@@ -37,21 +31,30 @@
       background: linear-gradient(to right, transparentize(#030239, .2), transparentize(#030239, .2) 60.71%);
     }
   }
+
+  &.bg-img {
+    @include md-screen {
+      background-position: center right;
+      object-fit: contain;
+    }
+  }
+
+  &-content {
+    &__title {
+      color: hsl(var(--white));
+    }
+
+    &__desc {
+      max-width: 600px;
+      color: hsl(var(--white) / .8);
+    }
+
+    &__button {
+      margin-top: 30px;
+    }
+  }
 }
 
-.banner-content {
-  &__title {
-    color: hsl(var(--white));
-  }
 
-  &__desc {
-    max-width: 600px;
-    color: hsl(var(--white) / .8);
-  }
 
-  &__button {
-    margin-top: 30px;
-  }
-}
-
-/* =========================== Banner Section End Here ========================= */
+/* ========================= Banner CSS End =========================== */

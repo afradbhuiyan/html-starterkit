@@ -20,30 +20,81 @@
         });
         /* ==================== Header Navbar Collapse JS End ======================= */
 
+        /* ==================== Offcanvas Sidebar JS Start ======================== */
+        $('[data-toggle="offcanvas-sidebar"]').each(function (index, toggler) {
+            let id = $(toggler).data('target');
+            let sidebar = $(id);
+            let sidebarClose = sidebar.find('.btn--close');
+            let sidebarOverlay = $('.sidebar-overlay');
+
+            let hideSidebar = function () {
+                sidebar.removeClass('show');
+                sidebarOverlay.removeClass('show');
+                $(toggler).removeClass('active');
+                $('body').removeClass('scroll-hide');
+                $(document).unbind('keydown', EscSidbear);
+            }
+
+            let EscSidbear = function (e) {
+                if (e.keyCode === 27) {
+                    hideSidebar();
+                }
+            }
+
+            let showSidebar = function () {
+                $(toggler).addClass('active');
+                sidebar.addClass('show');
+                sidebarOverlay.addClass('show');
+                $('body').addClass('scroll-hide');
+                $(document).on('keydown', EscSidbear);
+            }
+
+            $(toggler).on('click', showSidebar);
+            $(sidebarOverlay).on('click', hideSidebar);
+            $(sidebarClose).on('click', hideSidebar);
+        });
+
+        $('.dashboard-sidebar__body').on('scroll', function () {
+            if ($(this).scrollTop() > 0) {
+                $(this).addClass('scrolling');
+            } else {
+                $(this).removeClass('scrolling');
+            }
+        });
+        /* ==================== Offcanvas Sidebar JS End ========================== */
+
         /*===================== Dynamically Add Active Class JS Start ============================== */
         function dynamicActiveMenuClass(selector) {
-            if (!($(selector).length)) return;
-
             let fileName = window.location.pathname.split('/').reverse()[0];
+
             selector.find('li').each(function () {
                 let anchor = $(this).find('a');
                 if ($(anchor).attr('href') == fileName) {
                     $(this).addClass('active');
                 }
             });
+
             // if any li has active element add class
             selector.children('li').each(function () {
                 if ($(this).find('.active').length) {
                     $(this).addClass('active');
                 }
+
+                //if any li.active has bootstrap's collapse component open it  
+                if ($(this).hasClass('active')) {
+                    $(this).find('.collapse').addClass('show');
+                    $(this).find('[data-bs-toggle="collapse"]').removeClass('collapsed');
+                    $(this).find('[data-bs-toggle="collapse"]').attr('aria-expanded', 'false');
+                }
             });
+
             // if no file name return
-            if ('' == fileName) {
+            if (fileName == '') {
                 selector.find('li').eq(0).addClass('active');
             }
         }
         // dynamicActiveMenuClass($('.header .nav-menu'));
-        // dynamicActiveMenuClass($('.offcanvas-sidebar--dashboard .offcanvas-sidebar-menu'));
+        dynamicActiveMenuClass($('.dashboard-sidebar-menu'));
         /*===================== Dynamically Add Active Class JS End ================================ */
 
         /* ==================== Dynamically Add BG Image JS Start ====================== */
@@ -167,6 +218,18 @@
 
         });
         /* ==================== Input Group Copy JS End ================================= */
+
+        /* ==================== Dashboard Collapse JS Start ==================== */
+        $('.dashboard-collapse').on({
+            'show.bs.collapse': function (e) {
+                $('.dashboard-collapse').each((index, collapse) => {
+                    if (e.target != collapse && $(collapse).hasClass('show')) {
+                        new bootstrap.Collapse(collapse).hide();
+                    }
+                });
+            }
+        })
+        /* ==================== Dashboard Collapse JS End ====================== */
     });
     /* ==================== Ready Function End ============================ */
 

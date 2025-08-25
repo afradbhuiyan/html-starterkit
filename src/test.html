@@ -29,22 +29,22 @@
     <div class="loader-p"></div>
 </div>
 <!--==================== Preloader End ====================-->
-  <!--==================== Overlay Start ====================-->
+  <!--==================== Body Overlay Start ====================-->
   <div class="body-overlay"></div>
-  <!--==================== Overlay End ====================-->
+  <!--==================== Body Overlay End ====================-->
 
   <!--==================== Sidebar Overlay End ====================-->
   <div class="sidebar-overlay"></div>
   <!--==================== Sidebar Overlay End ====================-->
 
-  <!-- ==================== Scroll to Top End Here ==================== -->
+  <!--==================== Scroll To Top Start ====================-->
   <button class="scroll-top" type="button">
     <svg class="scroll-top-progress" width="100%" height="100%" viewBox="-1 -1 102 102">
       <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98">
       </path>
     </svg>
   </button>
-  <!-- ==================== Scroll to Top End Here ==================== -->
+  <!--==================== Scroll to Top End ====================-->
 
 <section class="my-120">
     <div class="container custom--container">
@@ -392,6 +392,8 @@
                                         class="fas fa-user"></i></button>
                             </div>
                             <div class="d-flex flex-wrap align-items-center gap-2">
+                                <button class="btn btn--icon btn-soft--gradient" type="button"><i
+                                        class="fas fa-user"></i></button>
                                 <button class="btn btn--icon btn-soft--base" type="button"><i
                                         class="fas fa-user"></i></button>
                                 <button class="btn btn--icon btn-soft--base-two" type="button"><i
@@ -537,6 +539,92 @@
                                         <a class="dropdown-menu__view-all" href="#">
                                             View All Notifications
                                             <i class="las la-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown dropdown--user">
+                                <button class="dropdown-toggle show" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="true">
+                                    <img class="dropdown-toggle__thumb" src="assets/images/thumbs/user-profile.png"
+                                        alt="">
+                                    <div class="dropdown-toggle__content">
+                                        <div class="dropdown-info">
+                                            <p class="dropdown-info__title">John Doe</p>
+                                            <span class="dropdown-info__subtitle">johndoe@mail.com</span>
+                                        </div>
+                                    </div>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start show"
+                                    style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 50px);"
+                                    data-popper-placement="bottom-start">
+                                    <div class="dropdown-menu__header">
+                                        <div class="dropdown-info">
+                                            <p class="dropdown-info__title">John Doe</p>
+                                            <span class="dropdown-info__subtitle">johndoe@mail.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-menu__body">
+                                        <a class="dropdown-item" href="dashboard.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-layout-dashboard">
+                                                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                                                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                                                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                                                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                                            </svg>
+                                            <span>Dashboard</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-user-pen">
+                                                <path d="M11.5 15H7a4 4 0 0 0-4 4v2"></path>
+                                                <path
+                                                    d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z">
+                                                </path>
+                                                <circle cx="10" cy="7" r="4"></circle>
+                                            </svg>
+                                            <span>Edit Profile</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-lock">
+                                                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                            </svg>
+                                            <span>Change Password</span>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-scan-barcode">
+                                                <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                                                <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                                                <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                                                <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                                                <path d="M8 7v10"></path>
+                                                <path d="M12 7v10"></path>
+                                                <path d="M17 7v10"></path>
+                                            </svg>
+                                            <span>2FA Security</span>
+                                        </a>
+                                        <a class="dropdown-item logout" href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-log-out">
+                                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                                <polyline points="16 17 21 12 16 7"></polyline>
+                                                <line x1="21" x2="9" y1="12" y2="12"></line>
+                                            </svg>
+                                            <span>Logout</span>
                                         </a>
                                     </div>
                                 </div>

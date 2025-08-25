@@ -135,8 +135,8 @@
     #{$property}: map-get($values, md);
   }
 
-  @include xsm-screen {
-    #{$property}: map-get($values, xsm);
+  @include msm-screen {
+    #{$property}: map-get($values, msm);
   }
 }
 

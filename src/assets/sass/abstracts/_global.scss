@@ -37,4 +37,62 @@
   }
 }
 
+.latest-blog {
+  &-item {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid hsl(var(--black) / 0.1);
+
+    &:last-of-type {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      border-bottom: 0;
+    }
+
+    &__thumb {
+      width: 80px;
+      max-height: 80px;
+      display: flex;
+      border-radius: 5px;
+      overflow: hidden;
+
+      @include xsm-screen {
+        width: 60px;
+      }
+
+      a {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__content {
+      width: calc(100% - 80px);
+      padding-left: 15px;
+
+      @include xsm-screen {
+        width: calc(100% - 60px);
+      }
+    }
+
+    &__title {
+      margin-bottom: 5px;
+
+      a {
+        color: hsl(var(--heading-color));
+        font-weight: 500;
+        font-size: rem(16px);
+        @include line-clamp(2);
+
+        &:hover {
+          color: hsl(var(--base));
+        }
+      }
+    }
+  }
+}
+
 /* ========================= Globale CSS End ========================= */
