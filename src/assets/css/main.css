@@ -262,27 +262,27 @@ h6 {
 }
 
 h1 {
-    font-size: clamp(2.5rem, 1.8745rem + 3.1274vw, 5rem);
+    font-size: clamp(2.5rem, 1.7181rem + 3.9093vw, 5.625rem);
 }
 
 h2 {
-    font-size: clamp(2rem, 1.7615rem + 1.1923vw, 2.5rem);
+    font-size: clamp(2rem, 1.6247rem + 1.8765vw, 3.5rem);
 }
 
 h3 {
-    font-size: clamp(1.5rem, 1.2615rem + 1.1923vw, 2rem);
+    font-size: clamp(1.75rem, 1.4373rem + 1.5637vw, 3rem);
 }
 
 h4 {
-    font-size: clamp(1.25rem, 1.1308rem + 0.5961vw, 1.5rem);
+    font-size: clamp(1.5rem, 1.3749rem + 0.6255vw, 2rem);
 }
 
 h5 {
-    font-size: clamp(1.125rem, 1.0654rem + 0.2981vw, 1.25rem);
+    font-size: clamp(1.25rem, 1.1875rem + 0.3127vw, 1.5rem);
 }
 
 h6 {
-    font-size: clamp(1rem, 0.9404rem + 0.2981vw, 1.125rem);
+    font-size: clamp(1.125rem, 1.0937rem + 0.1564vw, 1.25rem);
 }
 
 h1 > a,
@@ -2892,7 +2892,7 @@ textarea.form--control {
 
 .form--check .form-check-label a {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     display: inline;
     color: var(--color);
 }
@@ -4492,6 +4492,68 @@ textarea.form--control {
     }
 }
 /* ========================= Social List CSS End =========================== */
+/* ========================= Social Auth CSS Start =================== */
+.social-auth {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.social-auth__btn {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    color: hsl(var(--gray));
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 140%;
+    white-space: nowrap;
+    padding: 11.5px 12px;
+    border-radius: 12px;
+    border: 1px solid hsl(var(--border-color));
+    background-color: hsl(var(--white));
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+@media screen and (max-width: 1199px) {
+    .social-auth__btn {
+        font-size: 1.125rem;
+    }
+}
+
+.social-auth__btn img {
+    --size: 24px;
+    width: var(--size);
+    height: var(--size);
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.social-auth__btn:hover, .social-auth__btn:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: hsl(var(--black));
+    border-color: hsl(var(--gray)/0.25);
+    background-color: hsl(var(--gray)/0.05);
+}
+
+/* ========================= Social Auth CSS End ===================== */
 /* ========================= Breadcrumb CSS Start ========================= */
 .breadcrumb {
     position: relative;
@@ -5032,6 +5094,250 @@ textarea.form--control {
 }
 
 /* ========================= Range Slider CSS End ============================= */
+/* ========================= Account CSS Start ========================= */
+.account {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.account-logo {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    display: block;
+    margin-inline: auto;
+    margin-bottom: 24px;
+}
+
+@media screen and (max-width: 575px) {
+    .account-logo {
+        margin-bottom: 16px;
+    }
+}
+
+.account-logo img {
+    max-width: 176px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+}
+
+@media screen and (max-width: 1199px) {
+    .account-logo img {
+        max-width: 150px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .account-logo img {
+        max-width: 130px;
+    }
+}
+
+.account-heading__title {
+    color: hsl(var(--base));
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+    .account-heading__title {
+        text-align: center;
+    }
+}
+
+.account-heading__subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 150%;
+    text-align: center;
+    color: hsl(var(--gray));
+}
+
+.account-divider {
+    width: 100%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.account-divider::before, .account-divider::after {
+    content: "";
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 100%;
+    height: 1px;
+    display: inline-block;
+    background-color: hsl(var(--border-color));
+}
+
+.account-divider span {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 150%;
+    color: hsl(var(--gray));
+    white-space: nowrap;
+}
+
+.account-form__extra {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.account-form__forgot-link {
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: hsl(var(--danger));
+}
+
+.account-form__forgot-link:focus {
+    outline: none;
+    color: hsl(var(--danger-d-100));
+}
+
+.account-info {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: hsl(var(--gray));
+}
+
+.account-info a {
+    color: hsl(var(--base));
+    font-weight: 500;
+}
+
+.account-thumb, .account-content {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.account-thumb {
+    width: 61.14583333vw;
+}
+
+@media screen and (max-width: 1399px) {
+    .account-thumb {
+        width: 55vw;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .account-thumb {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .account-thumb {
+        display: none;
+    }
+}
+
+.account-thumb__bottom {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px 16px;
+}
+
+.account-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 36px 72px;
+}
+
+@media screen and (max-width: 1399px) {
+    .account-content {
+        padding: 32px 64px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .account-content {
+        padding: 32px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .account-content {
+        padding: 24px;
+    }
+}
+
+.account-header, .account-body {
+    max-width: 600px;
+}
+
+.account-header:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 767px) {
+    .account-header:not(:last-child) {
+        margin-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .account-header:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+.account-body > *:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+@media screen and (max-width: 575px) {
+    .account-body > *:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+/* ========================= Account CSS End =========================== */
 /* ========================= Dashboard CSS Start ========================= */
 .dashboard {
     position: relative;
