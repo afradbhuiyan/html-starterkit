@@ -1238,6 +1238,7 @@ ol {
         margin-bottom: 20px;
     }
 }
+
 /* ========================= Spacing Utilities CSS End ========================= */
 /* ========================= Border Utilities CSS Start ========================= */
 .border--base {
@@ -1394,6 +1395,7 @@ ol {
         font-size: 0.875rem;
     }
 }
+
 /* ========================= Accordion CSS End =============================== */
 /* ========================= Alert CSS Start ======================= */
 .alert {
@@ -3874,6 +3876,7 @@ textarea.form--control {
         -webkit-overflow-scrolling: touch;
     }
 }
+
 /* ========================= Table CSS End =========================== */
 /* ========================= Preload CSS Start ======================= */
 .preloader {
@@ -4683,6 +4686,7 @@ textarea.form--control {
         font-size: 0.875rem;
     }
 }
+
 /* ========================= Social List CSS End =========================== */
 /* ========================= Social Auth CSS Start =================== */
 .social-auth {
@@ -5529,6 +5533,7 @@ textarea.form--control {
         margin-bottom: 16px;
     }
 }
+
 /* ========================= Account CSS End =========================== */
 /* ========================= Dashboard CSS Start ========================= */
 .dashboard {
@@ -5846,4 +5851,6 @@ textarea.form--control {
         padding: 16px;
     }
 }
+
 /* ========================= Dashboard CSS End =========================== */
+/*# sourceMappingURL=main.css.map */

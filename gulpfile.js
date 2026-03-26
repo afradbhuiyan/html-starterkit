@@ -1,6 +1,5 @@
 import gulp from 'gulp';
-import pkg from 'gulp';
-const { series } = pkg;
+const { src, dest, watch, series, parallel } = gulp;
 
 import * as path from 'path';
 import { fileURLToPath } from 'url';
@@ -16,91 +15,96 @@ import concat from 'gulp-concat';
 import sassCompiler from 'sass';
 import gulpSass from 'gulp-sass';
 const sass = gulpSass(sassCompiler);
+
 import browserSyncInstance from 'browser-sync';
 const browserSync = browserSyncInstance.create();
 
-function style() {
-  return gulp
-    .src('./src/assets/sass/main.scss')
+const paths = {
+  html: './src/html/pages/*.html',
+  htmlWatch: './src/html/**/*.html',
+
+  scss: './src/assets/sass/**/*.scss',
+  mainScss: './src/assets/sass/main.scss',
+
+  js: './src/assets/js/custom-lib/*.js',
+  jsWatch: './src/assets/js/**/*.js',
+
+  output: './src/',
+};
+
+export function style() {
+  return src(paths.mainScss)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(sass())
-    .pipe(
-      autoprefixer({
-        cascade: false,
-      })
-    )
+    .pipe(autoprefixer({ cascade: false }))
     .pipe(cssbeautify())
-
-    .pipe(gulp.dest('./src/assets/css'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('./src/assets/css'))
     .pipe(browserSync.stream());
 }
 
-function htmlfileinclude() {
-  return gulp
-    .src('./src/html/pages/*.html')
+export function htmlfileinclude() {
+  return src(paths.html)
     .pipe(
       fileinclude({
         prefix: '@@',
         basepath: '@file',
       })
     )
-    .pipe(gulp.dest('./src/'))
+    .pipe(dest(paths.output))
     .pipe(browserSync.stream());
 }
 
-function scripts() {
-  return gulp
-    .src('./src/assets/js/custom-lib/*.js')
+export function scripts() {
+  return src(paths.js)
     .pipe(concat('main.js'))
-    .pipe(gulp.dest('./src/assets/js/'));
+    .pipe(dest('./src/assets/js/'))
+    .pipe(browserSync.stream());
 }
 
-// Watch file and browser reload
-function watch() {
+export function clean() {
+  return deleteAsync(['src/*.html']);
+}
+
+function serve(done) {
   browserSync.init({
     server: {
       baseDir: './src/',
     },
+    notify: false,
   });
-
-  gulp.watch('./src/html/**/*.html', htmlfileinclude);
-  gulp.watch('./src/assets/sass/**/*.scss', style);
-  gulp.watch('./src/assets/js/custom-lib/*.js', scripts);
-
-  gulp.watch('./src/html/**/*.html').on('change', browserSync.reload);
-  gulp.watch('./src/assets/sass/**/*.scss').on('change', browserSync.reload);
-  gulp.watch('./src/assets/js/**/*.js').on('change', browserSync.reload);
-  gulp
-    .watch('./src/assets/js/custom-lib/*.js')
-    .on('change', browserSync.reload);
+  done();
 }
 
-function makeZip() {
+function watcher() {
+  watch(paths.htmlWatch, htmlfileinclude);
+  watch(paths.scss, style);
+  watch(paths.js, scripts);
+
+  watch(paths.htmlWatch).on('change', browserSync.reload);
+  watch(paths.scss).on('change', browserSync.reload);
+  watch(paths.jsWatch).on('change', browserSync.reload);
+}
+
+export function makeZip() {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
   const currentDir = path.basename(__dirname);
 
-  return gulp
-    .src([
-      'src/**',
-      '!src/html/**',
-      '!src/assets/sass/**',
-      '!src/test.html',
-      '!src/assets/css/main.css.map',
-    ])
+  return src([
+    'src/**',
+    '!src/html/**',
+    '!src/assets/sass/**',
+    '!src/test.html',
+    '!src/assets/css/*.map',
+  ])
     .pipe(zip(`${currentDir}.zip`))
-    .pipe(gulp.dest('./'));
+    .pipe(dest('./'));
 }
 
-async function clean() {
-  deleteAsync(['src/*.html']);
-}
-gulp.task('clean', await clean);
-gulp.task('htmlInclude', await htmlfileinclude);
-gulp.task('cssInclude', await style);
-gulp.task('makeZip', await makeZip);
-gulp.task('watch', await watch);
+export const build = series(clean, htmlfileinclude, style, scripts);
+export const dev = series(build, serve, watcher);
+export const zipBuild = series(build, makeZip);
 
-gulp.task('zip', series('clean', 'htmlInclude', 'cssInclude', 'makeZip'));
-gulp.task('default', series('clean', 'htmlInclude', 'cssInclude', 'watch'));
+// Default
+export default dev;
