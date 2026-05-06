@@ -95,7 +95,6 @@ export function makeZip() {
     'src/**',
     '!src/html/**',
     '!src/assets/sass/**',
-    '!src/test.html',
     '!src/assets/css/*.map',
   ])
     .pipe(zip(`${currentDir}.zip`))
